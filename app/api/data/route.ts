@@ -1,7 +1,7 @@
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-const BOT_API = 'https://desktop-5ghsjh6.tail05872a.ts.net:8443';
+const BOT_API = 'https://desktop-5ghsjh6.tail05872a.ts.net';
 
 export async function GET() {
   // Fetch all live data from the bot's data server

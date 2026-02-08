@@ -1,5 +1,5 @@
 {
-  "balance": 100.98,
+  "balance": 101.33,
   "initial_balance": 100,
   "strategies": [
     "Ensemble"
@@ -46,6 +46,25 @@
       "window_end": "2026-02-08T01:15:00+00:00",
       "buy_price_cents": 50,
       "edge": 0.1664
+    },
+    {
+      "id": "57282a55",
+      "timestamp": "2026-02-08T01:17:15.934036+00:00",
+      "strategy": "Ensemble",
+      "direction": "DOWN",
+      "confidence": 0.7526,
+      "entry_price": 69270.15,
+      "exit_price": 69144.89,
+      "result": "WIN",
+      "profit": 0.35,
+      "indicators": {
+        "OpenVsCurrent": "DOWN",
+        "VolumeWeightedDirection": "DOWN"
+      },
+      "window_start": "2026-02-08T01:15:00+00:00",
+      "window_end": "2026-02-08T01:30:00+00:00",
+      "buy_price_cents": 65,
+      "edge": 0.102
     }
   ]
 }

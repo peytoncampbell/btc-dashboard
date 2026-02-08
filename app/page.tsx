@@ -36,16 +36,22 @@ interface DashboardData {
     bet_amount: number;
     status: string;
     pnl: number;
+    strategy?: string;
   }>;
+  strategies?: string[];
+  active_strategy?: string;
+  strategy_stats?: Record<string, { wins: number; total: number; pnl: number }>;
 }
 
 export default function Home() {
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [selectedStrategy, setSelectedStrategy] = useState('all');
 
   const fetchData = async () => {
     try {
-      const response = await fetch('/data.json');
+      const url = selectedStrategy === 'all' ? '/api/data' : `/api/data?strategy=${encodeURIComponent(selectedStrategy)}`;
+      const response = await fetch(url);
       const newData = await response.json();
       setData(newData);
       setLoading(false);
@@ -57,9 +63,10 @@ export default function Home() {
 
   useEffect(() => {
     fetchData();
-    const interval = setInterval(fetchData, 60000); // Refresh every 60 seconds
+    const interval = setInterval(fetchData, 60000);
     return () => clearInterval(interval);
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedStrategy]);
 
   if (loading || !data) {
     return (
@@ -113,6 +120,9 @@ export default function Home() {
     .sort((a, b) => new Date(a[0]).getTime() - new Date(b[0]).getTime())
     .slice(-7);
 
+  const strategies = data.strategies || [];
+  const strategyStats = data.strategy_stats || {};
+
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white p-4 md:p-6 lg:p-8">
       {/* Header */}
@@ -130,6 +140,22 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Strategy Selector */}
+      {strategies.length > 0 && (
+        <div className="mb-6">
+          <select
+            value={selectedStrategy}
+            onChange={(e) => setSelectedStrategy(e.target.value)}
+            className="bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-white text-sm focus:outline-none focus:border-blue-500"
+          >
+            <option value="all">All Strategies</option>
+            {strategies.map(s => (
+              <option key={s} value={s}>{s}</option>
+            ))}
+          </select>
+        </div>
+      )}
+
       {/* P&L Card */}
       <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 mb-6 border border-gray-700">
         <div className="text-sm text-gray-400 mb-2">Portfolio Balance</div>
@@ -145,7 +171,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="text-gray-400">Today's P&L</div>
+            <div className="text-gray-400">Today&apos;s P&L</div>
             <div className={`text-xl font-semibold ${todaysPnl >= 0 ? 'text-[#22c55e]' : 'text-[#ef4444]'}`}>
               {todaysPnl >= 0 ? '+' : ''}${todaysPnl.toFixed(2)}
             </div>
@@ -201,6 +227,41 @@ export default function Home() {
           <div className="text-3xl font-bold text-[#22c55e]">+{data.performance.best_streak}</div>
         </div>
       </div>
+
+      {/* Strategy Comparison */}
+      {Object.keys(strategyStats).length > 0 && (
+        <div className="bg-gray-900 rounded-xl p-6 mb-6 border border-gray-700">
+          <h2 className="text-xl font-bold mb-4">Strategy Comparison</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="text-gray-400 border-b border-gray-700">
+                  <th className="text-left py-2">Strategy</th>
+                  <th className="text-right py-2">Trades</th>
+                  <th className="text-right py-2">Win Rate</th>
+                  <th className="text-right py-2">P&L</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Object.entries(strategyStats).map(([name, stats]) => (
+                  <tr key={name} className="border-b border-gray-800">
+                    <td className="py-2 font-medium">{name}</td>
+                    <td className="text-right py-2">{stats.total}</td>
+                    <td className="text-right py-2">
+                      <span className={(stats.total > 0 && stats.wins / stats.total >= 0.5) ? 'text-[#22c55e]' : 'text-[#ef4444]'}>
+                        {stats.total > 0 ? ((stats.wins / stats.total) * 100).toFixed(0) : 0}%
+                      </span>
+                    </td>
+                    <td className={`text-right py-2 ${stats.pnl >= 0 ? 'text-[#22c55e]' : 'text-[#ef4444]'}`}>
+                      {stats.pnl >= 0 ? '+' : ''}${stats.pnl.toFixed(2)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
 
       {/* Current Prediction */}
       {data.current_prediction && (
@@ -279,7 +340,10 @@ export default function Home() {
                     {trade.prediction === 'UP' ? '⬆️' : '⬇️'}
                   </div>
                   <div>
-                    <div className="text-sm font-semibold">{trade.confidence}% confidence</div>
+                    <div className="text-sm font-semibold">
+                      {trade.confidence}% confidence
+                      {trade.strategy && <span className="text-gray-400 ml-2 font-normal">· {trade.strategy}</span>}
+                    </div>
                     <div className="text-xs text-gray-400">
                       {new Date(trade.timestamp).toLocaleTimeString()}
                     </div>
@@ -305,30 +369,30 @@ export default function Home() {
       <div className="bg-gray-900 rounded-xl p-6 mb-6 border border-gray-700">
         <h2 className="text-xl font-bold mb-4">Win Rate by Confidence</h2>
         <div className="space-y-4">
-          {Object.entries(confidenceBuckets).map(([bucket, data]) => {
-            const winRate = data.count > 0 ? (data.wins / data.count) * 100 : 0;
+          {Object.entries(confidenceBuckets).map(([bucket, bucketData]) => {
+            const winRate = bucketData.count > 0 ? (bucketData.wins / bucketData.count) * 100 : 0;
             return (
               <div key={bucket}>
                 <div className="flex justify-between text-sm mb-2">
                   <span className="text-gray-300">{bucket}</span>
                   <span className="text-gray-400">
-                    {data.wins}/{data.count} trades ({winRate.toFixed(0)}% win)
+                    {bucketData.wins}/{bucketData.count} trades ({winRate.toFixed(0)}% win)
                   </span>
                 </div>
                 <div className="h-8 bg-gray-800 rounded-lg overflow-hidden flex">
-                  {data.count > 0 && (
+                  {bucketData.count > 0 && (
                     <>
                       <div 
                         className="bg-[#22c55e] flex items-center justify-center text-xs font-semibold"
-                        style={{ width: `${(data.wins / data.count) * 100}%` }}
+                        style={{ width: `${(bucketData.wins / bucketData.count) * 100}%` }}
                       >
-                        {data.wins > 0 && `${data.wins}`}
+                        {bucketData.wins > 0 && `${bucketData.wins}`}
                       </div>
                       <div 
                         className="bg-[#ef4444] flex items-center justify-center text-xs font-semibold"
-                        style={{ width: `${((data.count - data.wins) / data.count) * 100}%` }}
+                        style={{ width: `${((bucketData.count - bucketData.wins) / bucketData.count) * 100}%` }}
                       >
-                        {data.count - data.wins > 0 && `${data.count - data.wins}`}
+                        {bucketData.count - bucketData.wins > 0 && `${bucketData.count - bucketData.wins}`}
                       </div>
                     </>
                   )}
@@ -349,7 +413,7 @@ export default function Home() {
         ) : (
           <div className="flex items-end justify-between gap-2 h-32">
             {dailyPnlArray.map(([date, pnl]) => {
-              const maxPnl = Math.max(...dailyPnlArray.map(([_, p]) => Math.abs(p)));
+              const maxPnl = Math.max(...dailyPnlArray.map(([, p]) => Math.abs(p)));
               const height = maxPnl > 0 ? (Math.abs(pnl) / maxPnl) * 100 : 0;
               const isPositive = pnl >= 0;
               return (

@@ -1,0 +1,7 @@
+{
+  "balance": 100,
+  "initial_balance": 100,
+  "strategies": [],
+  "active_strategy": "all",
+  "trades": []
+}

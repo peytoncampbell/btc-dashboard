@@ -1,5 +1,5 @@
 {
-  "balance": 100.54,
+  "balance": 101.04,
   "initial_balance": 100.0,
   "strategies": [
     "Ensemble"
@@ -141,6 +141,26 @@
       "window_end": "2026-02-08T17:00:00+00:00",
       "buy_price_cents": 50,
       "edge": 0.3952
+    },
+    {
+      "id": "094fcdca",
+      "timestamp": "2026-02-08T17:03:06.544559+00:00",
+      "strategy": "Ensemble",
+      "direction": "UP",
+      "confidence": 0.754,
+      "entry_price": 70569.28,
+      "exit_price": 70625.94,
+      "result": "WIN",
+      "profit": 0.5,
+      "indicators": {
+        "OpenVsCurrent": "UP",
+        "BinanceOrderbook": "UP",
+        "OrderbookImbalance": "DOWN"
+      },
+      "window_start": "2026-02-08T17:00:00+00:00",
+      "window_end": "2026-02-08T17:15:00+00:00",
+      "buy_price_cents": 50,
+      "edge": 0.259
     }
   ]
 }

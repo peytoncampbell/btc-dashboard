@@ -1,18 +1,18 @@
 {
-  "timestamp": "2026-02-08T02:38:29.012785+00:00",
-  "window_start": "2026-02-08T02:30:00+00:00",
-  "window_end": "2026-02-08T02:45:00+00:00",
-  "minute": 8,
-  "btc_price": 69330.73,
-  "window_open": 69481.83,
-  "change_pct": -0.2175,
+  "timestamp": "2026-02-08T02:51:23.213350+00:00",
+  "window_start": "2026-02-08T02:45:00+00:00",
+  "window_end": "2026-02-08T03:00:00+00:00",
+  "minute": 6,
+  "btc_price": 69385.46,
+  "window_open": 69308.0,
+  "change_pct": 0.1118,
   "strategies": {
     "BollingerBreakout": {
       "direction": "SKIP",
       "confidence": 0.0
     },
     "OpenVsCurrent": {
-      "direction": "DOWN",
+      "direction": "UP",
       "confidence": 0.95
     },
     "RSIDivergence": {
@@ -20,60 +20,60 @@
       "confidence": 0.0
     },
     "VolumeWeightedDirection": {
-      "direction": "DOWN",
-      "confidence": 0.5113
+      "direction": "UP",
+      "confidence": 0.5597
     },
     "PriceTrendStrength": {
-      "direction": "DOWN",
-      "confidence": 0.8228
+      "direction": "UP",
+      "confidence": 0.6735
     },
     "ATRBreakout": {
       "direction": "UP",
-      "confidence": 0.6659
+      "confidence": 0.6507
     },
     "WilliamsR": {
-      "direction": "UP",
-      "confidence": 0.6021
-    },
-    "WickRatio": {
       "direction": "SKIP",
       "confidence": 0.0
     },
+    "WickRatio": {
+      "direction": "UP",
+      "confidence": 0.597
+    },
     "OrderbookImbalance": {
       "direction": "DOWN",
-      "confidence": 0.7908
+      "confidence": 0.6672
     }
   },
   "ensemble": {
-    "direction": "DOWN",
-    "confidence": 0.5014
+    "direction": "UP",
+    "confidence": 0.5819
   },
   "market": {
-    "yes_price": 0.485,
-    "no_price": 0.515
+    "yes_price": 0.5,
+    "no_price": 0.5
   },
-  "polymarket_yes_price": 0.485,
-  "polymarket_no_price": 0.515,
-  "polymarket_liquidity": 13837.05,
-  "polymarket_volume": 352.96,
-  "orderbook_imbalance": -0.9016,
+  "polymarket_yes_price": 0.5,
+  "polymarket_no_price": 0.5,
+  "polymarket_liquidity": 11274.99,
+  "polymarket_volume": 312.05,
+  "orderbook_imbalance": -0.4897,
   "price_source": "POLY",
-  "edge": -0.0136,
+  "edge": 0.0819,
   "action": "HOLD",
   "current_trade": {
-    "id": "f01ad6b4",
-    "timestamp": "2026-02-08T02:32:31.203167+00:00",
-    "direction": "DOWN",
-    "side": "NO",
-    "buy_price_cents": 52,
-    "buy_price": 0.515,
-    "confidence": 0.6796,
-    "edge": 0.1646,
-    "entry_minute": 2,
-    "window_start": "2026-02-08T02:30:00+00:00",
-    "window_end": "2026-02-08T02:45:00+00:00",
-    "btc_entry": 69453.28,
-    "btc_open": 69481.83,
+    "id": "4e1696b4",
+    "timestamp": "2026-02-08T02:50:38.800166+00:00",
+    "direction": "UP",
+    "side": "YES",
+    "buy_price_cents": 50,
+    "buy_price": 0.5,
+    "confidence": 0.5543,
+    "edge": 0.0543,
+    "entry_minute": 5,
+    "window_start": "2026-02-08T02:45:00+00:00",
+    "window_end": "2026-02-08T03:00:00+00:00",
+    "btc_entry": 69358.19,
+    "btc_open": 69308.0,
     "strategy": "Ensemble",
     "signals": {
       "BollingerBreakout": {
@@ -81,36 +81,36 @@
         "conf": 0.0
       },
       "OpenVsCurrent": {
-        "dir": "DOWN",
-        "conf": 0.7054
+        "dir": "UP",
+        "conf": 0.8621
       },
       "RSIDivergence": {
         "dir": "SKIP",
         "conf": 0.0
       },
       "VolumeWeightedDirection": {
-        "dir": "DOWN",
-        "conf": 0.525
+        "dir": "UP",
+        "conf": 0.5616
       },
       "PriceTrendStrength": {
-        "dir": "SKIP",
-        "conf": 0.0
+        "dir": "UP",
+        "conf": 0.5222
       },
       "ATRBreakout": {
-        "dir": "DOWN",
-        "conf": 0.7126
+        "dir": "UP",
+        "conf": 0.6664
       },
       "WilliamsR": {
         "dir": "SKIP",
         "conf": 0.0
       },
       "WickRatio": {
-        "dir": "SKIP",
-        "conf": 0.0
+        "dir": "UP",
+        "conf": 0.6708
       },
       "OrderbookImbalance": {
         "dir": "DOWN",
-        "conf": 0.7625
+        "conf": 0.6888
       }
     }
   }

@@ -178,7 +178,7 @@ export default function Home() {
                   {n(sig.change_pct) >= 0 ? '+' : ''}{n(sig.change_pct).toFixed(3)}%
                 </span>
               </div>
-              <div className="flex flex-wrap gap-1 mb-2">
+              <div className="flex flex-wrap gap-1 mb-2 max-h-[72px] overflow-y-auto">
                 {sig.strategies && Object.entries(sig.strategies).map(([name, s]) => (
                   <SignalPill key={name} direction={s?.direction ?? 'SKIP'} confidence={n(s?.confidence)} />
                 ))}
@@ -432,7 +432,7 @@ export default function Home() {
             </div>
             <div>
               <h3 className="text-white font-semibold mb-0.5">🤖 The Ensemble</h3>
-              <p><strong>8 independent strategies</strong> analyze BTC price action from different angles. Every 10 seconds, each votes UP, DOWN, or SKIP with a confidence level.</p>
+              <p><strong>16 independent strategies</strong> analyze BTC price action from different angles. Every 10 seconds, each votes UP, DOWN, or SKIP with a confidence level.</p>
             </div>
             <div>
               <h3 className="text-white font-semibold mb-0.5">⚖️ Weighted Voting</h3>

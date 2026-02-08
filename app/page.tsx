@@ -89,7 +89,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchData();
-    const iv = setInterval(fetchData, 30000);
+    const iv = setInterval(fetchData, 15000);
     return () => clearInterval(iv);
   }, [fetchData]);
 

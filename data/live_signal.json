@@ -1,103 +1,54 @@
 {
-  "timestamp": "2026-02-08T01:57:57.246085+00:00",
-  "window_start": "2026-02-08T01:45:00+00:00",
-  "window_end": "2026-02-08T02:00:00+00:00",
-  "minute": 12,
-  "btc_price": 69356.81,
-  "window_open": 69319.99,
-  "change_pct": 0.0531,
+  "timestamp": "2026-02-08T02:02:03.896593+00:00",
+  "window_start": "2026-02-08T02:00:00+00:00",
+  "window_end": "2026-02-08T02:15:00+00:00",
+  "minute": 2,
+  "btc_price": 69318.17,
+  "window_open": 69379.56,
+  "change_pct": -0.0885,
   "strategies": {
     "BollingerBreakout": {
       "direction": "SKIP",
       "confidence": 0.0
     },
     "OpenVsCurrent": {
-      "direction": "UP",
-      "confidence": 0.7656
+      "direction": "DOWN",
+      "confidence": 0.9424
     },
     "RSIDivergence": {
-      "direction": "UP",
-      "confidence": 0.5703
+      "direction": "SKIP",
+      "confidence": 0.0
     },
     "VolumeWeightedDirection": {
       "direction": "DOWN",
-      "confidence": 0.5124
+      "confidence": 0.6776
     },
     "PriceTrendStrength": {
       "direction": "SKIP",
       "confidence": 0.0
     },
     "ATRBreakout": {
-      "direction": "SKIP",
-      "confidence": 0.0
+      "direction": "UP",
+      "confidence": 0.6757
     },
     "WilliamsR": {
       "direction": "SKIP",
       "confidence": 0.0
     },
     "WickRatio": {
-      "direction": "UP",
-      "confidence": 0.6473
+      "direction": "DOWN",
+      "confidence": 0.6089
     }
   },
   "ensemble": {
-    "direction": "UP",
-    "confidence": 0.4904
+    "direction": "DOWN",
+    "confidence": 0.5317
   },
   "market": {
-    "yes_price": 0.8399,
-    "no_price": 0.1601
+    "yes_price": 0.4056,
+    "no_price": 0.5944
   },
-  "edge": -0.3495,
+  "edge": -0.0627,
   "action": "HOLD",
-  "current_trade": {
-    "id": "8d4ba9e3",
-    "timestamp": "2026-02-08T01:47:19.675915+00:00",
-    "direction": "DOWN",
-    "side": "NO",
-    "buy_price_cents": 51,
-    "buy_price": 0.5119869222908746,
-    "confidence": 0.5794,
-    "edge": 0.0674,
-    "entry_minute": 2,
-    "window_start": "2026-02-08T01:45:00+00:00",
-    "window_end": "2026-02-08T02:00:00+00:00",
-    "btc_entry": 69312.2,
-    "btc_open": 69319.99,
-    "strategy": "Ensemble",
-    "signals": {
-      "BollingerBreakout": {
-        "dir": "SKIP",
-        "conf": 0.0
-      },
-      "OpenVsCurrent": {
-        "dir": "DOWN",
-        "conf": 0.5562
-      },
-      "RSIDivergence": {
-        "dir": "SKIP",
-        "conf": 0.0
-      },
-      "VolumeWeightedDirection": {
-        "dir": "DOWN",
-        "conf": 0.5053
-      },
-      "PriceTrendStrength": {
-        "dir": "SKIP",
-        "conf": 0.0
-      },
-      "ATRBreakout": {
-        "dir": "DOWN",
-        "conf": 0.6583
-      },
-      "WilliamsR": {
-        "dir": "SKIP",
-        "conf": 0.0
-      },
-      "WickRatio": {
-        "dir": "SKIP",
-        "conf": 0.0
-      }
-    }
-  }
+  "current_trade": null
 }

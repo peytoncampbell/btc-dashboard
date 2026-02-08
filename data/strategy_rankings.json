@@ -1,0 +1,62 @@
+[
+  {
+    "name": "BollingerBreakout",
+    "backtest_win_rate": 0.82,
+    "backtest_min1_wr": 0.60,
+    "backtest_sharpe": 26.23,
+    "live_trades": 0,
+    "live_win_rate": 0,
+    "live_pnl": 0,
+    "active": true
+  },
+  {
+    "name": "ATRBreakout",
+    "backtest_win_rate": 0.7995,
+    "backtest_min1_wr": 0.6773,
+    "backtest_sharpe": 43.59,
+    "live_trades": 0,
+    "live_win_rate": 0,
+    "live_pnl": 0,
+    "active": true
+  },
+  {
+    "name": "OpenVsCurrent",
+    "backtest_win_rate": 0.71,
+    "backtest_min1_wr": 0.59,
+    "backtest_sharpe": 14.54,
+    "live_trades": 0,
+    "live_win_rate": 0,
+    "live_pnl": 0,
+    "active": true
+  },
+  {
+    "name": "PriceTrendStrength",
+    "backtest_win_rate": 0.64,
+    "backtest_min1_wr": 0.53,
+    "backtest_sharpe": 8.97,
+    "live_trades": 0,
+    "live_win_rate": 0,
+    "live_pnl": 0,
+    "active": true
+  },
+  {
+    "name": "VolumeWeightedDirection",
+    "backtest_win_rate": 0.64,
+    "backtest_min1_wr": 0.53,
+    "backtest_sharpe": 9.30,
+    "live_trades": 0,
+    "live_win_rate": 0,
+    "live_pnl": 0,
+    "active": true
+  },
+  {
+    "name": "RSIDivergence",
+    "backtest_win_rate": 0.54,
+    "backtest_min1_wr": 0.61,
+    "backtest_sharpe": 2.31,
+    "live_trades": 0,
+    "live_win_rate": 0,
+    "live_pnl": 0,
+    "active": true
+  }
+]

@@ -1,138 +1,21 @@
-import tradesData from '@/data/trades.json';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 export const dynamic = 'force-dynamic';
 
-interface Trade {
-  id: string;
-  timestamp: string;
-  strategy: string;
-  direction: "UP" | "DOWN";
-  confidence: number;
-  entry_price: number;
-  exit_price: number | null;
-  result: "WIN" | "LOSS" | "PENDING";
-  profit: number;
-  indicators: Record<string, number>;
-  window_start: string;
-  window_end: string;
-}
-
-interface TradeData {
-  balance: number;
-  initial_balance: number;
-  strategies: string[];
-  active_strategy: string;
-  trades: Trade[];
-}
-
-function computeMetrics(data: TradeData, strategyFilter: string | null) {
-  const trades = strategyFilter && strategyFilter !== 'all'
-    ? data.trades.filter(t => t.strategy === strategyFilter)
-    : data.trades;
-
-  const completedTrades = trades.filter(t => t.result !== 'PENDING');
-  const wins = completedTrades.filter(t => t.result === 'WIN').length;
-  const losses = completedTrades.filter(t => t.result === 'LOSS').length;
-  const totalPredictions = completedTrades.length;
-  const winRate = totalPredictions > 0 ? (wins / totalPredictions) * 100 : 0;
-  const totalPnl = completedTrades.reduce((sum, t) => sum + t.profit, 0);
-
-  // Streaks
-  let currentStreak = 0;
-  let bestStreak = 0;
-  let worstStreak = 0;
-  let tempStreak = 0;
-  const sorted = [...completedTrades].sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
-  for (const t of sorted) {
-    if (t.result === 'WIN') {
-      tempStreak = tempStreak >= 0 ? tempStreak + 1 : 1;
-    } else {
-      tempStreak = tempStreak <= 0 ? tempStreak - 1 : -1;
-    }
-    if (tempStreak > bestStreak) bestStreak = tempStreak;
-    if (tempStreak < worstStreak) worstStreak = tempStreak;
+function readJSON(filename: string) {
+  try {
+    const raw = readFileSync(join(process.cwd(), 'data', filename), 'utf-8');
+    return JSON.parse(raw);
+  } catch {
+    return null;
   }
-  currentStreak = tempStreak;
-
-  // Today's P&L
-  const today = new Date().toDateString();
-  const todaysPnl = completedTrades
-    .filter(t => new Date(t.timestamp).toDateString() === today)
-    .reduce((sum, t) => sum + t.profit, 0);
-
-  // Current prediction (latest trade)
-  const latestTrade = trades.length > 0 ? trades[trades.length - 1] : null;
-
-  // Indicator weights from latest trade
-  const weights = latestTrade?.indicators || {
-    rsi_1m: 0.1, rsi_5m: 0.1, macd: 0.1, bollinger: 0.1, vwap: 0.1,
-    volume: 0.1, momentum_5m: 0.1, momentum_15m: 0.1, ema_trend: 0.1,
-    order_book: 0.05, news_sentiment: 0.05
-  };
-
-  // Map trades to dashboard format
-  const dashboardTrades = [...trades]
-    .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
-    .slice(0, 20)
-    .map(t => ({
-      id: t.id,
-      timestamp: t.timestamp,
-      prediction: t.direction,
-      confidence: Math.round(t.confidence * 100),
-      bet_amount: Math.abs(t.profit) || 0,
-      status: t.result === 'WIN' ? 'won' : t.result === 'LOSS' ? 'lost' : 'open',
-      pnl: t.profit,
-      strategy: t.strategy,
-    }));
-
-  // Current prediction in dashboard format
-  const currentPrediction = latestTrade && latestTrade.result === 'PENDING' ? {
-    prediction: latestTrade.direction,
-    confidence: Math.round(latestTrade.confidence * 100),
-    edge: latestTrade.confidence - 0.5,
-    bet_amount: 0,
-    market_price_up: 0.5,
-    market_price_down: 0.5,
-    potential_payout: 0,
-    time_to_resolution: latestTrade.window_end
-      ? Math.max(0, Math.floor((new Date(latestTrade.window_end).getTime() - Date.now()) / 1000))
-      : 300,
-  } : null;
-
-  // Strategy comparison
-  const strategyStats: Record<string, { wins: number; total: number; pnl: number }> = {};
-  for (const t of data.trades.filter(t => t.result !== 'PENDING')) {
-    if (!strategyStats[t.strategy]) strategyStats[t.strategy] = { wins: 0, total: 0, pnl: 0 };
-    strategyStats[t.strategy].total++;
-    if (t.result === 'WIN') strategyStats[t.strategy].wins++;
-    strategyStats[t.strategy].pnl += t.profit;
-  }
-
-  return {
-    performance: {
-      total_predictions: totalPredictions,
-      correct: wins,
-      wrong: losses,
-      win_rate: winRate,
-      current_streak: currentStreak,
-      best_streak: bestStreak,
-      worst_streak: worstStreak,
-      total_pnl: totalPnl,
-      starting_balance: data.initial_balance,
-      current_balance: data.balance,
-    },
-    weights,
-    current_prediction: currentPrediction,
-    trades: dashboardTrades,
-    strategies: data.strategies,
-    active_strategy: strategyFilter || data.active_strategy,
-    strategy_stats: strategyStats,
-  };
 }
 
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const strategy = searchParams.get('strategy');
+export async function GET() {
+  const trades = readJSON('trades.json') || { balance: 100, initial_balance: 100, trades: [] };
+  const liveSignal = readJSON('live_signal.json');
+  const strategyRankings = readJSON('strategy_rankings.json') || [];
 
   // Fetch live BTC price
   let btcPrice = 0;
@@ -146,21 +29,107 @@ export async function GET(request: Request) {
     btcPrice = 0;
   }
 
-  const data = tradesData as unknown as TradeData;
-  const metrics = computeMetrics(data, strategy);
+  // Compute performance from trades
+  const allTrades = trades.trades || [];
+  const completed = allTrades.filter((t: { result: string }) => t.result !== 'PENDING');
+  const wins = completed.filter((t: { result: string }) => t.result === 'WIN').length;
+  const losses = completed.filter((t: { result: string }) => t.result === 'LOSS').length;
+  const totalPnl = completed.reduce((s: number, t: { profit: number }) => s + t.profit, 0);
+  const winRate = completed.length > 0 ? (wins / completed.length) * 100 : 0;
+
+  // Streak
+  let currentStreak = 0;
+  let bestStreak = 0;
+  const sorted = [...completed].sort((a: { timestamp: string }, b: { timestamp: string }) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
+  let temp = 0;
+  for (const t of sorted) {
+    if ((t as { result: string }).result === 'WIN') {
+      temp = temp >= 0 ? temp + 1 : 1;
+    } else {
+      temp = temp <= 0 ? temp - 1 : -1;
+    }
+    if (temp > bestStreak) bestStreak = temp;
+  }
+  currentStreak = temp;
+
+  // Today's P&L
+  const today = new Date().toDateString();
+  const todayPnl = completed
+    .filter((t: { timestamp: string }) => new Date(t.timestamp).toDateString() === today)
+    .reduce((s: number, t: { profit: number }) => s + t.profit, 0);
+
+  // Daily P&L for chart
+  const dailyMap: Record<string, number> = {};
+  for (const t of completed) {
+    const d = new Date((t as { timestamp: string }).timestamp).toLocaleDateString();
+    dailyMap[d] = (dailyMap[d] || 0) + (t as { profit: number }).profit;
+  }
+  const dailyPnl = Object.entries(dailyMap)
+    .sort((a, b) => new Date(a[0]).getTime() - new Date(b[0]).getTime())
+    .slice(-7)
+    .map(([date, pnl]) => ({ date, pnl }));
+
+  // Edge analysis from trades (group by edge buckets)
+  const edgeBuckets: Record<string, { wins: number; total: number }> = {
+    '0-5¢': { wins: 0, total: 0 },
+    '5-10¢': { wins: 0, total: 0 },
+    '10-15¢': { wins: 0, total: 0 },
+    '15¢+': { wins: 0, total: 0 },
+  };
+  for (const t of completed) {
+    const edge = (t as { edge?: number }).edge || 0;
+    let bucket: string;
+    if (edge < 0.05) bucket = '0-5¢';
+    else if (edge < 0.10) bucket = '5-10¢';
+    else if (edge < 0.15) bucket = '10-15¢';
+    else bucket = '15¢+';
+    edgeBuckets[bucket].total++;
+    if ((t as { result: string }).result === 'WIN') edgeBuckets[bucket].wins++;
+  }
+
+  // Win rate by entry minute
+  const minuteStats: Record<number, { wins: number; total: number }> = {};
+  for (const t of completed) {
+    const min = (t as { entry_minute?: number }).entry_minute;
+    if (min !== undefined && min !== null) {
+      if (!minuteStats[min]) minuteStats[min] = { wins: 0, total: 0 };
+      minuteStats[min].total++;
+      if ((t as { result: string }).result === 'WIN') minuteStats[min].wins++;
+    }
+  }
+
+  // Format recent trades
+  const recentTrades = [...allTrades]
+    .sort((a: { timestamp: string }, b: { timestamp: string }) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+    .slice(0, 20);
 
   const response = {
     btc_price: btcPrice,
     last_updated: new Date().toISOString(),
-    ...metrics,
+    performance: {
+      balance: trades.balance || 100,
+      initial_balance: trades.initial_balance || 100,
+      total_pnl: totalPnl,
+      today_pnl: todayPnl,
+      total_trades: completed.length,
+      wins,
+      losses,
+      win_rate: winRate,
+      current_streak: currentStreak,
+      best_streak: bestStreak,
+    },
+    live_signal: liveSignal,
+    strategy_rankings: strategyRankings,
+    recent_trades: recentTrades,
+    edge_analysis: edgeBuckets,
+    minute_stats: minuteStats,
+    daily_pnl: dailyPnl,
   };
 
   return new Response(JSON.stringify(response), {
     headers: {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
     },
   });
 }

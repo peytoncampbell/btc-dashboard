@@ -1,0 +1,15 @@
+{
+  "timestamp": null,
+  "window_start": null,
+  "window_end": null,
+  "minute": null,
+  "btc_price": 0,
+  "window_open": 0,
+  "change_pct": 0,
+  "strategies": {},
+  "ensemble": {"direction": "SKIP", "confidence": 0},
+  "market": {"yes_price": 0, "no_price": 0},
+  "edge": 0,
+  "action": "IDLE",
+  "current_trade": null
+}

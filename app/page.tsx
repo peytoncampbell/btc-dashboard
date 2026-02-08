@@ -419,6 +419,37 @@ export default function Home() {
         )}
       </section>
 
+      {/* How It Works */}
+      <section className="bg-gray-900/50 rounded-xl border border-gray-800 p-5">
+        <h2 className="text-lg font-bold mb-4">📖 How It Works</h2>
+        <div className="space-y-4 text-sm text-gray-300 leading-relaxed">
+          <div>
+            <h3 className="text-white font-semibold mb-1">🎯 The Strategy</h3>
+            <p>We trade Polymarket&apos;s 15-minute BTC up/down binary markets. Every 15 minutes, a new market opens asking: &quot;Will BTC go up or down in the next 15 minutes?&quot; YES tokens pay $1 if BTC goes up, $0 if down.</p>
+          </div>
+          <div>
+            <h3 className="text-white font-semibold mb-1">🤖 The Ensemble</h3>
+            <p>We run <strong>8 independent strategies</strong> simultaneously — each analyzing BTC price action from a different angle (Bollinger Bands, ATR breakouts, RSI divergence, Williams %R, volume analysis, trend strength, candle wick patterns, and open-vs-current price). Every 10 seconds, each strategy votes UP, DOWN, or SKIP with a confidence level.</p>
+          </div>
+          <div>
+            <h3 className="text-white font-semibold mb-1">⚖️ Weighted Voting</h3>
+            <p>Votes are weighted by each strategy&apos;s <strong>backtested win rate at that specific entry minute</strong>. ATR Breakout at minute 3 (75% historical accuracy) gets more weight than WickRatio at minute 3 (53%). The ensemble combines all weighted votes into a single direction + confidence score.</p>
+          </div>
+          <div>
+            <h3 className="text-white font-semibold mb-1">📊 Edge Detection</h3>
+            <p>We only trade when our ensemble confidence <strong>exceeds the market price</strong>. If we&apos;re 70% confident BTC goes up but YES tokens cost 65¢, that&apos;s a 5¢ edge. If YES is already at 75¢, there&apos;s no edge — we hold. This is how we avoid overpaying.</p>
+          </div>
+          <div>
+            <h3 className="text-white font-semibold mb-1">⏱️ Entry Window</h3>
+            <p>We enter trades at <strong>minutes 2-7</strong> of each 15-minute window. Too early (min 0-1) = not enough data. Too late (min 8+) = market already priced the move in. The sweet spot gives us enough signal while still having time to profit.</p>
+          </div>
+          <div>
+            <h3 className="text-white font-semibold mb-1">🏆 Strategy Tracking</h3>
+            <p>Each strategy is individually tracked. When the ensemble places a trade, every strategy that voted with the ensemble gets credit (or blame) for the outcome. This lets us see which strategies actually contribute edge vs which are dead weight — and we continuously add new strategies from backtesting.</p>
+          </div>
+        </div>
+      </section>
+
       <footer className="text-center text-xs text-gray-600 mt-6 pb-4">
         BTC Scalper v2 — Multi-Strategy Ensemble · Updated {new Date(data.last_updated).toLocaleTimeString()}
       </footer>

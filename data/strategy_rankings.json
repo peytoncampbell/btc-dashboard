@@ -11,8 +11,8 @@
   },
   {
     "name": "ATRBreakout",
-    "backtest_win_rate": 0.7995,
-    "backtest_min1_wr": 0.6773,
+    "backtest_win_rate": 0.80,
+    "backtest_min1_wr": 0.68,
     "backtest_sharpe": 43.59,
     "live_trades": 0,
     "live_win_rate": 0,
@@ -54,6 +54,26 @@
     "backtest_win_rate": 0.54,
     "backtest_min1_wr": 0.61,
     "backtest_sharpe": 2.31,
+    "live_trades": 0,
+    "live_win_rate": 0,
+    "live_pnl": 0,
+    "active": true
+  },
+  {
+    "name": "WilliamsR",
+    "backtest_win_rate": 0.615,
+    "backtest_min1_wr": 0.615,
+    "backtest_sharpe": 8.50,
+    "live_trades": 0,
+    "live_win_rate": 0,
+    "live_pnl": 0,
+    "active": true
+  },
+  {
+    "name": "WickRatio",
+    "backtest_win_rate": 0.525,
+    "backtest_min1_wr": 0.525,
+    "backtest_sharpe": 1.60,
     "live_trades": 0,
     "live_win_rate": 0,
     "live_pnl": 0,

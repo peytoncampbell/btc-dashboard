@@ -1,15 +1,54 @@
 {
-  "timestamp": null,
-  "window_start": null,
-  "window_end": null,
-  "minute": null,
-  "btc_price": 0,
-  "window_open": 0,
-  "change_pct": 0,
-  "strategies": {},
-  "ensemble": {"direction": "SKIP", "confidence": 0},
-  "market": {"yes_price": 0, "no_price": 0},
-  "edge": 0,
-  "action": "IDLE",
+  "timestamp": "2026-02-08T01:41:33.998503+00:00",
+  "window_start": "2026-02-08T01:30:00+00:00",
+  "window_end": "2026-02-08T01:45:00+00:00",
+  "minute": 11,
+  "btc_price": 69326.5,
+  "window_open": 69368.86,
+  "change_pct": -0.0611,
+  "strategies": {
+    "BollingerBreakout": {
+      "direction": "SKIP",
+      "confidence": 0.0
+    },
+    "OpenVsCurrent": {
+      "direction": "DOWN",
+      "confidence": 0.8053
+    },
+    "RSIDivergence": {
+      "direction": "UP",
+      "confidence": 0.5771
+    },
+    "VolumeWeightedDirection": {
+      "direction": "UP",
+      "confidence": 0.5957
+    },
+    "PriceTrendStrength": {
+      "direction": "UP",
+      "confidence": 0.8326
+    },
+    "ATRBreakout": {
+      "direction": "SKIP",
+      "confidence": 0.0
+    },
+    "WilliamsR": {
+      "direction": "DOWN",
+      "confidence": 0.5751
+    },
+    "WickRatio": {
+      "direction": "UP",
+      "confidence": 0.6252
+    }
+  },
+  "ensemble": {
+    "direction": "UP",
+    "confidence": 0.4305
+  },
+  "market": {
+    "yes_price": 0.1418,
+    "no_price": 0.8582
+  },
+  "edge": 0.2888,
+  "action": "HOLD",
   "current_trade": null
 }

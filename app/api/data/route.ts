@@ -98,6 +98,45 @@ export async function GET() {
     }
   }
 
+  // Per-strategy live performance from trade indicators
+  const stratPerf: Record<string, { wins: number; losses: number; pnl: number }> = {};
+  for (const t of completed) {
+    const indicators = (t as { indicators?: Record<string, string> }).indicators || {};
+    const result = (t as { result: string }).result;
+    const direction = (t as { direction: string }).direction;
+    for (const [stratName, stratDir] of Object.entries(indicators)) {
+      if (!stratPerf[stratName]) stratPerf[stratName] = { wins: 0, losses: 0, pnl: 0 };
+      // Strategy agreed with ensemble direction
+      if (stratDir === direction) {
+        if (result === 'WIN') {
+          stratPerf[stratName].wins++;
+          stratPerf[stratName].pnl += (t as { profit: number }).profit;
+        } else {
+          stratPerf[stratName].losses++;
+          stratPerf[stratName].pnl -= (t as { buy_price_cents?: number }).buy_price_cents
+            ? (t as { buy_price_cents: number }).buy_price_cents / 100
+            : 0.5;
+        }
+      }
+    }
+  }
+
+  // Merge live stats into strategy rankings
+  const enrichedRankings = (strategyRankings as Array<Record<string, unknown>>).map((s) => {
+    const name = s.name as string;
+    const perf = stratPerf[name];
+    const liveTrades = perf ? perf.wins + perf.losses : 0;
+    const liveWR = liveTrades > 0 ? (perf!.wins / liveTrades) * 100 : 0;
+    return {
+      ...s,
+      live_trades: liveTrades,
+      live_win_rate: liveWR,
+      live_pnl: perf ? perf.pnl : 0,
+      live_wins: perf ? perf.wins : 0,
+      live_losses: perf ? perf.losses : 0,
+    };
+  });
+
   // Format recent trades
   const recentTrades = [...allTrades]
     .sort((a: { timestamp: string }, b: { timestamp: string }) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
@@ -119,7 +158,7 @@ export async function GET() {
       best_streak: bestStreak,
     },
     live_signal: liveSignal,
-    strategy_rankings: strategyRankings,
+    strategy_rankings: enrichedRankings,
     recent_trades: recentTrades,
     edge_analysis: edgeBuckets,
     minute_stats: minuteStats,

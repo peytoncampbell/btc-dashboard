@@ -19,9 +19,13 @@ export async function GET() {
 
   try {
     const res = await fetch(`${BOT_API}/api/live`, { cache: 'no-store', headers: { 'Authorization': `Bearer ${BOT_API_KEY}` } });
-    if (res.ok) botData = await res.json();
-  } catch {
-    // Bot offline — serve minimal data
+    if (res.ok) {
+      botData = await res.json();
+    } else {
+      console.error(`Bot API returned ${res.status}: ${await res.text().catch(() => 'no body')}`);
+    }
+  } catch (err) {
+    console.error('Bot API fetch error:', err);
   }
 
   const trades = botData?.trades || { balance: 100, initial_balance: 100, trades: [] };

@@ -1,7 +1,30 @@
 {
-  "balance": 100,
+  "balance": 100.48,
   "initial_balance": 100,
-  "strategies": [],
+  "strategies": [
+    "Ensemble"
+  ],
   "active_strategy": "all",
-  "trades": []
+  "trades": [
+    {
+      "id": "98063dab",
+      "timestamp": "2026-02-08T01:02:09.169122+00:00",
+      "strategy": "Ensemble",
+      "direction": "UP",
+      "confidence": 0.5873,
+      "entry_price": 69148.03,
+      "exit_price": 69390.81,
+      "result": "WIN",
+      "profit": 0.48,
+      "indicators": {
+        "OpenVsCurrent": "UP",
+        "VolumeWeightedDirection": "UP",
+        "PriceTrendStrength": "UP"
+      },
+      "window_start": "2026-02-08T01:00:00+00:00",
+      "window_end": "2026-02-08T01:15:00+00:00",
+      "buy_price_cents": 52,
+      "edge": 0.0697
+    }
+  ]
 }

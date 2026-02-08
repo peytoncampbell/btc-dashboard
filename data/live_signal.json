@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-02-08T01:46:47.552799+00:00",
+  "timestamp": "2026-02-08T01:53:31.320115+00:00",
   "window_start": "2026-02-08T01:45:00+00:00",
   "window_end": "2026-02-08T02:00:00+00:00",
-  "minute": 1,
-  "btc_price": 69359.32,
+  "minute": 8,
+  "btc_price": 69456.0,
   "window_open": 69319.99,
-  "change_pct": 0.0567,
+  "change_pct": 0.1962,
   "strategies": {
     "BollingerBreakout": {
       "direction": "SKIP",
@@ -13,7 +13,7 @@
     },
     "OpenVsCurrent": {
       "direction": "UP",
-      "confidence": 0.7837
+      "confidence": 0.95
     },
     "RSIDivergence": {
       "direction": "SKIP",
@@ -21,34 +21,83 @@
     },
     "VolumeWeightedDirection": {
       "direction": "UP",
-      "confidence": 0.5138
+      "confidence": 0.5395
     },
     "PriceTrendStrength": {
       "direction": "UP",
-      "confidence": 0.5819
+      "confidence": 0.5087
     },
     "ATRBreakout": {
-      "direction": "DOWN",
-      "confidence": 0.6329
-    },
-    "WilliamsR": {
       "direction": "SKIP",
       "confidence": 0.0
     },
-    "WickRatio": {
+    "WilliamsR": {
       "direction": "DOWN",
-      "confidence": 0.6212
+      "confidence": 0.571
+    },
+    "WickRatio": {
+      "direction": "SKIP",
+      "confidence": 0.0
     }
   },
   "ensemble": {
     "direction": "UP",
-    "confidence": 0.3653
+    "confidence": 0.5106
   },
   "market": {
-    "yes_price": 0.5303,
-    "no_price": 0.4697
+    "yes_price": 0.95,
+    "no_price": 0.05
   },
-  "edge": -0.1649,
+  "edge": -0.4394,
   "action": "HOLD",
-  "current_trade": null
+  "current_trade": {
+    "id": "8d4ba9e3",
+    "timestamp": "2026-02-08T01:47:19.675915+00:00",
+    "direction": "DOWN",
+    "side": "NO",
+    "buy_price_cents": 51,
+    "buy_price": 0.5119869222908746,
+    "confidence": 0.5794,
+    "edge": 0.0674,
+    "entry_minute": 2,
+    "window_start": "2026-02-08T01:45:00+00:00",
+    "window_end": "2026-02-08T02:00:00+00:00",
+    "btc_entry": 69312.2,
+    "btc_open": 69319.99,
+    "strategy": "Ensemble",
+    "signals": {
+      "BollingerBreakout": {
+        "dir": "SKIP",
+        "conf": 0.0
+      },
+      "OpenVsCurrent": {
+        "dir": "DOWN",
+        "conf": 0.5562
+      },
+      "RSIDivergence": {
+        "dir": "SKIP",
+        "conf": 0.0
+      },
+      "VolumeWeightedDirection": {
+        "dir": "DOWN",
+        "conf": 0.5053
+      },
+      "PriceTrendStrength": {
+        "dir": "SKIP",
+        "conf": 0.0
+      },
+      "ATRBreakout": {
+        "dir": "DOWN",
+        "conf": 0.6583
+      },
+      "WilliamsR": {
+        "dir": "SKIP",
+        "conf": 0.0
+      },
+      "WickRatio": {
+        "dir": "SKIP",
+        "conf": 0.0
+      }
+    }
+  }
 }

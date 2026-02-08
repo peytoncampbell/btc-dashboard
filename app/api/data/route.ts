@@ -130,7 +130,7 @@ export async function GET() {
           stratPerf[name].pnl += Number(t.profit || 0);
         } else {
           stratPerf[name].losses++;
-          stratPerf[name].pnl -= Number(t.buy_price_cents || 50) / 100;
+          stratPerf[name].pnl += Number(t.profit || 0);
         }
       }
     }

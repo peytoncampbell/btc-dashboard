@@ -1,117 +1,96 @@
 {
-  "timestamp": "2026-02-08T02:51:23.213350+00:00",
-  "window_start": "2026-02-08T02:45:00+00:00",
-  "window_end": "2026-02-08T03:00:00+00:00",
-  "minute": 6,
-  "btc_price": 69385.46,
-  "window_open": 69308.0,
-  "change_pct": 0.1118,
+  "timestamp": "2026-02-08T03:02:21.735298+00:00",
+  "window_start": "2026-02-08T03:00:00+00:00",
+  "window_end": "2026-02-08T03:15:00+00:00",
+  "minute": 2,
+  "btc_price": 69357.4,
+  "window_open": 69376.76,
+  "change_pct": -0.0279,
   "strategies": {
     "BollingerBreakout": {
       "direction": "SKIP",
       "confidence": 0.0
     },
     "OpenVsCurrent": {
-      "direction": "UP",
-      "confidence": 0.95
+      "direction": "DOWN",
+      "confidence": 0.6395
     },
     "RSIDivergence": {
       "direction": "SKIP",
       "confidence": 0.0
     },
     "VolumeWeightedDirection": {
-      "direction": "UP",
-      "confidence": 0.5597
+      "direction": "DOWN",
+      "confidence": 0.5451
     },
     "PriceTrendStrength": {
-      "direction": "UP",
-      "confidence": 0.6735
+      "direction": "SKIP",
+      "confidence": 0.0
     },
     "ATRBreakout": {
-      "direction": "UP",
-      "confidence": 0.6507
+      "direction": "SKIP",
+      "confidence": 0.0
     },
     "WilliamsR": {
       "direction": "SKIP",
       "confidence": 0.0
     },
     "WickRatio": {
-      "direction": "UP",
-      "confidence": 0.597
+      "direction": "SKIP",
+      "confidence": 0.0
     },
     "OrderbookImbalance": {
       "direction": "DOWN",
-      "confidence": 0.6672
+      "confidence": 0.7464
+    },
+    "MACD": {
+      "direction": "SKIP",
+      "confidence": 0.0
+    },
+    "IchimokuCloud": {
+      "direction": "SKIP",
+      "confidence": 0.0
+    },
+    "KeltnerBreakout": {
+      "direction": "SKIP",
+      "confidence": 0.0
+    },
+    "OBV_Trend": {
+      "direction": "SKIP",
+      "confidence": 0.0
+    },
+    "SqueezeMomentum": {
+      "direction": "UP",
+      "confidence": 0.6166
+    },
+    "HullMA_Trend": {
+      "direction": "UP",
+      "confidence": 0.9
+    },
+    "ParabolicSAR": {
+      "direction": "UP",
+      "confidence": 0.8752
+    },
+    "DonchianBreakout": {
+      "direction": "SKIP",
+      "confidence": 0.0
     }
   },
   "ensemble": {
     "direction": "UP",
-    "confidence": 0.5819
+    "confidence": 0.4078
   },
   "market": {
-    "yes_price": 0.5,
-    "no_price": 0.5
+    "yes_price": 0.505,
+    "no_price": 0.495
   },
-  "polymarket_yes_price": 0.5,
-  "polymarket_no_price": 0.5,
-  "polymarket_liquidity": 11274.99,
-  "polymarket_volume": 312.05,
-  "orderbook_imbalance": -0.4897,
+  "polymarket_yes_price": 0.505,
+  "polymarket_no_price": 0.495,
+  "polymarket_liquidity": 19334.93,
+  "polymarket_volume": 558.52,
+  "orderbook_imbalance": -0.7452,
   "price_source": "POLY",
-  "edge": 0.0819,
+  "edge": -0.0972,
   "action": "HOLD",
-  "current_trade": {
-    "id": "4e1696b4",
-    "timestamp": "2026-02-08T02:50:38.800166+00:00",
-    "direction": "UP",
-    "side": "YES",
-    "buy_price_cents": 50,
-    "buy_price": 0.5,
-    "confidence": 0.5543,
-    "edge": 0.0543,
-    "entry_minute": 5,
-    "window_start": "2026-02-08T02:45:00+00:00",
-    "window_end": "2026-02-08T03:00:00+00:00",
-    "btc_entry": 69358.19,
-    "btc_open": 69308.0,
-    "strategy": "Ensemble",
-    "signals": {
-      "BollingerBreakout": {
-        "dir": "SKIP",
-        "conf": 0.0
-      },
-      "OpenVsCurrent": {
-        "dir": "UP",
-        "conf": 0.8621
-      },
-      "RSIDivergence": {
-        "dir": "SKIP",
-        "conf": 0.0
-      },
-      "VolumeWeightedDirection": {
-        "dir": "UP",
-        "conf": 0.5616
-      },
-      "PriceTrendStrength": {
-        "dir": "UP",
-        "conf": 0.5222
-      },
-      "ATRBreakout": {
-        "dir": "UP",
-        "conf": 0.6664
-      },
-      "WilliamsR": {
-        "dir": "SKIP",
-        "conf": 0.0
-      },
-      "WickRatio": {
-        "dir": "UP",
-        "conf": 0.6708
-      },
-      "OrderbookImbalance": {
-        "dir": "DOWN",
-        "conf": 0.6888
-      }
-    }
-  }
+  "current_trade": null
 }

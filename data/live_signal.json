@@ -1,19 +1,27 @@
 {
-  "timestamp": "2026-02-08T14:38:02.863744+00:00",
-  "window_start": "2026-02-08T14:30:00+00:00",
-  "window_end": "2026-02-08T14:45:00+00:00",
-  "minute": 8,
-  "btc_price": 71304.54,
-  "window_open": 71242.84,
-  "change_pct": 0.0866,
+  "timestamp": "2026-02-08T17:59:23.581906+00:00",
+  "window_start": "2026-02-08T17:45:00+00:00",
+  "window_end": "2026-02-08T18:00:00+00:00",
+  "minute": 14,
+  "btc_price": 70786.0,
+  "window_open": 70786.0,
+  "change_pct": 0.0,
   "strategies": {
     "OpenVsCurrent": {
+      "direction": "SKIP",
+      "confidence": 0.0
+    },
+    "BinanceOrderbook": {
       "direction": "UP",
-      "confidence": 0.933
+      "confidence": 0.6524
+    },
+    "FundingRate": {
+      "direction": "SKIP",
+      "confidence": 0.0
     },
     "OrderbookImbalance": {
       "direction": "DOWN",
-      "confidence": 0.6499
+      "confidence": 0.7983
     },
     "RSIDivergence": {
       "direction": "SKIP",
@@ -22,48 +30,26 @@
   },
   "ensemble": {
     "direction": "UP",
-    "confidence": 0.6998
+    "confidence": 0.4349
   },
   "market": {
-    "yes_price": 0.495,
-    "no_price": 0.505
+    "yes_price": 0.165,
+    "no_price": 0.835
   },
-  "polymarket_yes_price": 0.495,
-  "polymarket_no_price": 0.505,
-  "polymarket_liquidity": 12426.94,
-  "polymarket_volume": 46.05,
-  "orderbook_imbalance": -0.4231,
+  "polymarket_yes_price": 0.165,
+  "polymarket_no_price": 0.835,
+  "polymarket_liquidity": 35679.68,
+  "polymarket_volume": 106.38,
+  "orderbook_imbalance": -0.9098,
   "price_source": "POLY",
-  "edge": 0.2048,
+  "edge": 0.2699,
   "action": "HOLD",
-  "current_trade": {
-    "id": "d29b4474",
-    "timestamp": "2026-02-08T14:32:05.762538+00:00",
-    "direction": "UP",
-    "side": "YES",
-    "buy_price_cents": 50,
-    "buy_price": 0.495,
-    "confidence": 0.6389,
-    "edge": 0.1439,
-    "entry_minute": 2,
-    "window_start": "2026-02-08T14:30:00+00:00",
-    "window_end": "2026-02-08T14:45:00+00:00",
-    "btc_entry": 71292.98,
-    "btc_open": 71242.84,
-    "strategy": "Ensemble",
-    "signals": {
-      "OpenVsCurrent": {
-        "dir": "UP",
-        "conf": 0.8519
-      },
-      "OrderbookImbalance": {
-        "dir": "DOWN",
-        "conf": 0.6949
-      },
-      "RSIDivergence": {
-        "dir": "SKIP",
-        "conf": 0.0
-      }
-    }
-  }
+  "current_trade": null,
+  "gate_status": {
+    "atr_pct": 0.0747,
+    "threshold": 0.03,
+    "is_open": true
+  },
+  "funding_rate": -4.864e-05,
+  "binance_orderbook_imbalance": 0.0608
 }

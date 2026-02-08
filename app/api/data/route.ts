@@ -2,6 +2,7 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 const BOT_API = 'https://desktop-5ghsjh6.tail05872a.ts.net';
+const BOT_API_KEY = process.env.BOT_API_KEY || '94e355f69fe2a76fcc0faf239d2fdc46fa61de6d5cfe1249';
 
 export async function GET() {
   // Fetch all live data from the bot's data server
@@ -17,7 +18,7 @@ export async function GET() {
   } | null = null;
 
   try {
-    const res = await fetch(`${BOT_API}/api/live`, { cache: 'no-store' });
+    const res = await fetch(`${BOT_API}/api/live`, { cache: 'no-store', headers: { 'Authorization': `Bearer ${BOT_API_KEY}` } });
     if (res.ok) botData = await res.json();
   } catch {
     // Bot offline — serve minimal data

@@ -9,6 +9,11 @@ export async function GET() {
     trades: { balance: number; initial_balance?: number; trades: Array<Record<string, unknown>> };
     signal: Record<string, unknown> | null;
     rankings: Array<Record<string, unknown>>;
+    gate_status?: { atr_pct: number; threshold: number; is_open: boolean };
+    gate_stats?: { windows_checked: number; windows_traded: number; windows_skipped: number; windows_passed_gate: number };
+    funding_rate?: { direction: string; confidence: number } | null;
+    orderbook_imbalance?: number;
+    strategies_config?: Record<string, number>;
   } | null = null;
 
   try {
@@ -178,6 +183,11 @@ export async function GET() {
     edge_analysis: edgeBuckets,
     minute_stats: minuteStats,
     daily_pnl: dailyPnl,
+    gate_status: botData?.gate_status || { atr_pct: 0, threshold: 0.15, is_open: true },
+    gate_stats: botData?.gate_stats || { windows_checked: 0, windows_traded: 0, windows_skipped: 0, windows_passed_gate: 0 },
+    funding_rate: botData?.funding_rate || null,
+    orderbook_imbalance: botData?.orderbook_imbalance || 0,
+    strategies_config: botData?.strategies_config || {},
   }), {
     headers: {
       'Content-Type': 'application/json',

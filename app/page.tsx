@@ -31,12 +31,18 @@ interface DashboardData {
     edge?: number;
     action?: string;
     current_trade?: Record<string, unknown> | null;
+    orderbook_imbalance?: number;
   } | null;
   strategy_rankings: Array<Record<string, unknown>>;
   recent_trades: Array<Record<string, unknown>>;
   edge_analysis: Record<string, { wins: number; total: number }>;
   minute_stats: Record<string, { wins: number; total: number }>;
   daily_pnl: Array<{ date: string; pnl: number }>;
+  gate_status: { atr_pct: number; threshold: number; is_open: boolean };
+  gate_stats: { windows_checked: number; windows_traded: number; windows_skipped: number; windows_passed_gate: number };
+  funding_rate: { direction: string; confidence: number } | null;
+  orderbook_imbalance: number;
+  strategies_config: Record<string, number>;
 }
 
 function n(v: unknown, d = 0): number {
@@ -71,6 +77,58 @@ function Countdown({ windowEnd }: { windowEnd: string | null }) {
   return <span className="font-mono text-lg text-yellow-400">{remaining}</span>;
 }
 
+function GateIndicator({ gate }: { gate: { atr_pct: number; threshold: number; is_open: boolean } }) {
+  const isOpen = gate.is_open;
+  return (
+    <div className={`rounded-xl p-3 border ${isOpen ? 'bg-green-900/15 border-green-700/40' : 'bg-red-900/15 border-red-700/40'}`}>
+      <div className="flex items-center justify-between mb-2">
+        <h2 className="text-xs font-bold text-gray-400">🚦 VOLATILITY GATE</h2>
+        <div className={`flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-bold ${isOpen ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'}`}>
+          <div className={`w-2 h-2 rounded-full ${isOpen ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`} />
+          {isOpen ? 'OPEN' : 'CLOSED'}
+        </div>
+      </div>
+      <div className="flex items-center gap-3">
+        <div>
+          <div className="text-[10px] text-gray-500">ATR%</div>
+          <div className={`text-lg font-bold font-mono ${isOpen ? 'text-green-400' : 'text-red-400'}`}>
+            {gate.atr_pct.toFixed(3)}%
+          </div>
+        </div>
+        <div className="flex-1">
+          <div className="text-[10px] text-gray-500 mb-1">Threshold: {gate.threshold}%</div>
+          <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
+            <div
+              className={`h-full rounded-full transition-all ${isOpen ? 'bg-green-500' : 'bg-red-500'}`}
+              style={{ width: `${Math.min((gate.atr_pct / (gate.threshold * 3)) * 100, 100)}%` }}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function OrderbookBar({ imbalance }: { imbalance: number }) {
+  // imbalance ranges from -1 (all asks) to +1 (all bids)
+  const pct = ((imbalance + 1) / 2) * 100; // 0-100, 50 = balanced
+  const label = imbalance > 0.15 ? 'Bullish' : imbalance < -0.15 ? 'Bearish' : 'Neutral';
+  const color = imbalance > 0.15 ? 'text-green-400' : imbalance < -0.15 ? 'text-red-400' : 'text-gray-400';
+  return (
+    <div>
+      <div className="flex justify-between text-[10px] mb-0.5">
+        <span className="text-green-400">Bids</span>
+        <span className={`font-bold ${color}`}>{label} ({(imbalance * 100).toFixed(0)}%)</span>
+        <span className="text-red-400">Asks</span>
+      </div>
+      <div className="h-3 bg-gray-800 rounded-full overflow-hidden flex">
+        <div className="bg-green-500/60 h-full transition-all" style={{ width: `${pct}%` }} />
+        <div className="bg-red-500/60 h-full transition-all" style={{ width: `${100 - pct}%` }} />
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -96,7 +154,7 @@ export default function Home() {
   if (loading || !data) {
     return (
       <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
-        <div className="text-white text-xl animate-pulse">Loading BTC Scalper...</div>
+        <div className="text-white text-xl animate-pulse">Loading BTC Scalper v4...</div>
       </div>
     );
   }
@@ -108,6 +166,11 @@ export default function Home() {
   const edges = data.edge_analysis ?? {};
   const mins = data.minute_stats ?? {};
   const daily = data.daily_pnl ?? [];
+  const gate = data.gate_status ?? { atr_pct: 0, threshold: 0.15, is_open: true };
+  const gateStats = data.gate_stats ?? { windows_checked: 0, windows_traded: 0, windows_skipped: 0, windows_passed_gate: 0 };
+  const fundingRate = data.funding_rate;
+  const obImbalance = data.orderbook_imbalance ?? sig?.orderbook_imbalance ?? 0;
+  const strategiesConfig = data.strategies_config ?? {};
 
   const balance = n(perf?.balance, 100);
   const initialBalance = n(perf?.initial_balance, 100);
@@ -138,7 +201,7 @@ export default function Home() {
       {/* HEADER */}
       <header className="mb-2 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <h1 className="text-lg font-bold">🤖 BTC Scalper</h1>
+          <h1 className="text-lg font-bold">🤖 BTC Scalper <span className="text-xs text-blue-400 font-normal">v4 · 3-Layer</span></h1>
           <div className={`w-2 h-2 rounded-full ${sigActive ? 'bg-green-500 animate-pulse' : 'bg-gray-600'}`} />
           <span className="text-xs text-gray-400">{sigActive ? 'Active' : 'Idle'}</span>
         </div>
@@ -148,7 +211,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ROW 1: Portfolio | Live Signal | Quick Stats */}
+      {/* ROW 1: Portfolio | Volatility Gate + Binance Data | Live Signal */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mb-2">
         {/* Portfolio */}
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-3 border border-gray-700">
@@ -160,6 +223,70 @@ export default function Home() {
           <div className={`text-xs mt-1 ${todayPnl >= 0 ? 'text-green-400' : 'text-red-400'}`}>
             Today: {todayPnl >= 0 ? '+' : ''}${todayPnl.toFixed(2)}
           </div>
+          <div className="mt-2 pt-2 border-t border-gray-700/50">
+            <div className="grid grid-cols-2 gap-1 text-xs">
+              <div>
+                <span className="text-gray-500">Win Rate </span>
+                <span className="font-bold">{winRate.toFixed(0)}%</span>
+              </div>
+              <div>
+                <span className="text-gray-500">Trades </span>
+                <span className="font-bold">{wins}/{totalTrades}</span>
+              </div>
+              <div>
+                <span className="text-gray-500">Streak </span>
+                <span className={`font-bold ${currentStreak >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+                  {currentStreak > 0 ? '+' : ''}{currentStreak}{currentStreak >= 3 ? ' 🔥' : ''}
+                </span>
+              </div>
+              <div>
+                <span className="text-gray-500">Best </span>
+                <span className="text-green-400 font-bold">+{bestStreak}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Layer 1: Volatility Gate + Binance Data */}
+        <div className="space-y-2">
+          <GateIndicator gate={gate} />
+          
+          {/* Gate Stats */}
+          <div className="bg-gray-900 rounded-xl p-2.5 border border-gray-700">
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-gray-400">📊 Gate Selectivity</span>
+              <span className="font-bold text-blue-400">
+                {gateStats.windows_traded} of {gateStats.windows_checked} traded
+              </span>
+            </div>
+            {gateStats.windows_checked > 0 && (
+              <div className="mt-1.5 h-2 bg-gray-800 rounded-full overflow-hidden flex">
+                <div className="bg-green-500 h-full" style={{ width: `${(gateStats.windows_traded / gateStats.windows_checked) * 100}%` }} title="Traded" />
+                <div className="bg-yellow-500/60 h-full" style={{ width: `${((gateStats.windows_passed_gate - gateStats.windows_traded) / gateStats.windows_checked) * 100}%` }} title="Passed gate, no trade" />
+                <div className="bg-red-500/40 h-full" style={{ width: `${(gateStats.windows_skipped / gateStats.windows_checked) * 100}%` }} title="Gate blocked" />
+              </div>
+            )}
+            <div className="flex justify-between text-[9px] text-gray-600 mt-0.5">
+              <span>🟢 Traded</span>
+              <span>🟡 No edge</span>
+              <span>🔴 Gate blocked</span>
+            </div>
+          </div>
+
+          {/* Funding Rate */}
+          <div className="bg-gray-900 rounded-xl p-2.5 border border-gray-700">
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-gray-400">💸 Funding Rate</span>
+              {fundingRate ? (
+                <span className={`font-bold ${fundingRate.direction === 'UP' ? 'text-green-400' : fundingRate.direction === 'DOWN' ? 'text-red-400' : 'text-gray-400'}`}>
+                  {fundingRate.direction === 'UP' ? '⬆ Bullish' : fundingRate.direction === 'DOWN' ? '⬇ Bearish' : '— Neutral'}
+                  {fundingRate.confidence > 0 && ` (${(fundingRate.confidence * 100).toFixed(0)}%)`}
+                </span>
+              ) : (
+                <span className="text-gray-500">Neutral</span>
+              )}
+            </div>
+          </div>
         </div>
 
         {/* Live Signal */}
@@ -169,7 +296,9 @@ export default function Home() {
             {sig?.window_end && <Countdown windowEnd={sig.window_end} />}
           </div>
           {!sigActive ? (
-            <div className="text-center py-3 text-gray-500 text-xs">Bot idle</div>
+            <div className="text-center py-3 text-gray-500 text-xs">
+              {!gate.is_open ? '🚫 Gate closed — low volatility' : 'Bot idle'}
+            </div>
           ) : sig && (
             <>
               <div className="flex items-center gap-2 mb-2">
@@ -178,13 +307,8 @@ export default function Home() {
                   {n(sig.change_pct) >= 0 ? '+' : ''}{n(sig.change_pct).toFixed(3)}%
                 </span>
               </div>
-              <div className="flex flex-wrap gap-1 mb-2 max-h-[72px] overflow-y-auto">
-                {sig.strategies && Object.entries(sig.strategies).map(([name, s]) => (
-                  <SignalPill key={name} direction={s?.direction ?? 'SKIP'} confidence={n(s?.confidence)} />
-                ))}
-              </div>
               {sig.ensemble && (
-                <div className="flex items-center gap-2 text-xs">
+                <div className="flex items-center gap-2 text-xs mb-2">
                   <span className="text-gray-500">Ensemble:</span>
                   <span className={`font-bold ${sig.ensemble.direction === 'UP' ? 'text-green-400' : sig.ensemble.direction === 'DOWN' ? 'text-red-400' : 'text-gray-400'}`}>
                     {sig.ensemble.direction === 'UP' ? '⬆' : sig.ensemble.direction === 'DOWN' ? '⬇' : '—'} {(n(sig.ensemble.confidence) * 100).toFixed(0)}%
@@ -193,95 +317,64 @@ export default function Home() {
                   <span className={`font-bold ${n(sig.edge) >= 0.05 ? 'text-green-400' : 'text-gray-400'}`}>{(n(sig.edge) * 100).toFixed(1)}¢</span>
                 </div>
               )}
+              {sig.market && (
+                <div className="text-xs text-gray-500 mb-2">
+                  YES {(n(sig.market.yes_price) * 100).toFixed(1)}¢ / NO {(n(sig.market.no_price) * 100).toFixed(1)}¢
+                </div>
+              )}
               {sig.current_trade && (
                 <div className="text-xs mt-1 text-green-400 font-bold">
                   BOUGHT {tradeDir} @ {tradePrice}¢
                 </div>
               )}
+              {/* Orderbook */}
+              <div className="mt-2">
+                <OrderbookBar imbalance={n(obImbalance)} />
+              </div>
             </>
           )}
         </div>
-
-        {/* Quick Stats */}
-        <div className="bg-gray-900 rounded-xl p-3 border border-gray-700">
-          <h2 className="text-xs font-bold text-gray-400 mb-2">📊 QUICK STATS</h2>
-          <div className="grid grid-cols-2 gap-2 text-xs">
-            <div>
-              <div className="text-gray-500">Win Rate</div>
-              <div className="text-lg font-bold">{winRate.toFixed(0)}%</div>
-            </div>
-            <div>
-              <div className="text-gray-500">Trades</div>
-              <div className="text-lg font-bold">{wins}/{totalTrades}</div>
-            </div>
-            <div>
-              <div className="text-gray-500">Streak</div>
-              <div className={`font-bold ${currentStreak >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-                {currentStreak > 0 ? '+' : ''}{currentStreak}{currentStreak >= 3 ? ' 🔥' : ''}
-              </div>
-            </div>
-            <div>
-              <div className="text-gray-500">Best</div>
-              <div className="text-green-400 font-bold">+{bestStreak}</div>
-            </div>
-            {sig?.market && (
-              <>
-                <div>
-                  <div className="text-gray-500">YES/NO</div>
-                  <div className="font-bold">{n(sig.market.yes_price).toFixed(2)}¢ / {n(sig.market.no_price).toFixed(2)}¢</div>
-                </div>
-              </>
-            )}
-          </div>
-        </div>
       </div>
 
-      {/* ROW 2: Strategy Leaderboard (60%) | Recent Trades (40%) */}
+      {/* ROW 2: Active Strategies (votes) | Recent Trades */}
       <div className="grid grid-cols-1 md:grid-cols-5 gap-2 mb-2">
         <div className="md:col-span-3 bg-gray-900 rounded-xl p-3 border border-gray-700">
-          <h2 className="text-xs font-bold text-gray-400 mb-2">🏆 STRATEGY LEADERBOARD</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-xs">
-              <thead>
-                <tr className="text-gray-500 border-b border-gray-800">
-                  <th className="text-left py-1">#</th>
-                  <th className="text-left py-1">Strategy</th>
-                  <th className="text-right py-1">BT%</th>
-                  <th className="text-right py-1">M1%</th>
-                  <th className="text-right py-1">Sharpe</th>
-                  <th className="text-right py-1">Live W/R</th>
-                  <th className="text-right py-1">Live P&L</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rankings.map((r, i) => {
-                  const btWr = n(r.backtest_win_rate);
-                  const m1Wr = n(r.backtest_min1_wr);
-                  const sharpe = n(r.backtest_sharpe);
-                  const lt = n(r.live_trades);
-                  const lwr = n(r.live_win_rate);
-                  const lpnl = n(r.live_pnl);
-                  return (
-                    <tr key={String(r.name ?? i)} className="border-b border-gray-800/50 hover:bg-gray-800/30">
-                      <td className="py-1 text-gray-500">{i + 1}</td>
-                      <td className="py-1 font-medium">
-                        {String(r.name ?? '?')}
-                        {Boolean(r.active) && <span className="ml-1 text-[9px] bg-green-500/20 text-green-400 px-1 rounded-full">ON</span>}
-                      </td>
-                      <td className={`text-right py-1 font-semibold ${btWr >= 0.65 ? 'text-green-400' : btWr >= 0.55 ? 'text-yellow-400' : 'text-red-400'}`}>
-                        {(btWr * 100).toFixed(0)}%
-                      </td>
-                      <td className="text-right py-1">{(m1Wr * 100).toFixed(0)}%</td>
-                      <td className="text-right py-1 text-blue-400">{sharpe.toFixed(1)}</td>
-                      <td className="text-right py-1">{lt > 0 ? `${lwr.toFixed(0)}%` : '—'}</td>
-                      <td className={`text-right py-1 ${lpnl >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-                        {lt > 0 ? `${lpnl >= 0 ? '+' : ''}$${lpnl.toFixed(2)}` : '—'}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+          <h2 className="text-xs font-bold text-gray-400 mb-2">⚙️ ACTIVE STRATEGIES (5)</h2>
+          <div className="space-y-1.5">
+            {Object.entries(strategiesConfig).length > 0 ? (
+              Object.entries(strategiesConfig).map(([name, weight]) => {
+                const vote = sig?.strategies?.[name];
+                const dir = vote?.direction ?? 'SKIP';
+                const conf = n(vote?.confidence);
+                const ranking = rankings.find((r) => String(r.name) === name);
+                const liveWr = ranking ? n(ranking.live_win_rate) : 0;
+                const liveTrades = ranking ? n(ranking.live_trades) : 0;
+                return (
+                  <div key={name} className="flex items-center gap-2 p-2 rounded-lg bg-gray-800/40 border border-gray-700/40">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <span className="font-medium text-xs truncate">{name}</span>
+                        <span className="text-[9px] text-blue-400 bg-blue-500/10 px-1 rounded">w:{weight}</span>
+                      </div>
+                      {liveTrades > 0 && (
+                        <div className="text-[10px] text-gray-500">
+                          Live: {liveWr.toFixed(0)}% ({liveTrades} trades)
+                        </div>
+                      )}
+                    </div>
+                    <SignalPill direction={dir} confidence={conf} />
+                  </div>
+                );
+              })
+            ) : (
+              // Fallback: show from signal strategies
+              sig?.strategies && Object.entries(sig.strategies).map(([name, s]) => (
+                <div key={name} className="flex items-center justify-between p-2 rounded-lg bg-gray-800/40 border border-gray-700/40">
+                  <span className="font-medium text-xs">{name}</span>
+                  <SignalPill direction={s?.direction ?? 'SKIP'} confidence={n(s?.confidence)} />
+                </div>
+              ))
+            )}
           </div>
         </div>
 
@@ -299,31 +392,50 @@ export default function Home() {
                 const ep = n(t.entry_price);
                 const ts = String(t.timestamp ?? '');
                 const agreed = Array.isArray(t.strategies_agreed) ? t.strategies_agreed : [];
+                const signals = (t.signals || t.indicators || {}) as Record<string, { dir?: string; conf?: number } | string>;
                 return (
-                  <div key={String(t.id ?? i)} className={`flex items-center justify-between p-2 rounded-lg border text-xs ${
+                  <div key={String(t.id ?? i)} className={`p-2 rounded-lg border text-xs ${
                     result === 'WIN' ? 'bg-green-900/10 border-green-700/30' :
                     result === 'LOSS' ? 'bg-red-900/10 border-red-700/30' :
                     'bg-gray-800/50 border-gray-700/50'
                   }`}>
-                    <div className="flex items-center gap-2">
-                      <span>{dir === 'UP' ? '⬆️' : '⬇️'}</span>
-                      <div>
-                        <div className="font-semibold">
-                          {(conf * 100).toFixed(0)}% conf
-                          {ep > 0 && <span className="text-gray-400 ml-1">@ {ep.toFixed(2)}¢</span>}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <span>{dir === 'UP' ? '⬆️' : '⬇️'}</span>
+                        <div>
+                          <div className="font-semibold">
+                            {(conf * 100).toFixed(0)}% conf
+                            {ep > 0 && <span className="text-gray-400 ml-1">@ {ep.toFixed(2)}¢</span>}
+                          </div>
+                          <div className="text-[10px] text-gray-500">
+                            {ts ? new Date(ts).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : ''}
+                          </div>
                         </div>
-                        <div className="text-[10px] text-gray-500">
-                          {ts ? new Date(ts).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : ''}
-                          {agreed.length > 0 && <span className="ml-1 text-green-500">✓ {agreed.join(', ')}</span>}
+                      </div>
+                      <div className="text-right">
+                        <div>{result === 'WIN' ? '✅' : result === 'LOSS' ? '❌' : '⏳'}</div>
+                        <div className={`font-bold ${profit > 0 ? 'text-green-400' : profit < 0 ? 'text-red-400' : 'text-gray-500'}`}>
+                          {profit !== 0 ? `${profit > 0 ? '+' : ''}$${profit.toFixed(2)}` : '—'}
                         </div>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <div>{result === 'WIN' ? '✅' : result === 'LOSS' ? '❌' : '⏳'}</div>
-                      <div className={`font-bold ${profit > 0 ? 'text-green-400' : profit < 0 ? 'text-red-400' : 'text-gray-500'}`}>
-                        {profit !== 0 ? `${profit > 0 ? '+' : ''}$${profit.toFixed(2)}` : '—'}
+                    {/* Strategy votes for this trade */}
+                    {Object.keys(signals).length > 0 && (
+                      <div className="flex flex-wrap gap-0.5 mt-1">
+                        {Object.entries(signals).map(([sname, sval]) => {
+                          const sdir = typeof sval === 'string' ? sval : (sval?.dir ?? 'SKIP');
+                          return (
+                            <span key={sname} className={`text-[8px] px-1 rounded ${
+                              sdir === dir ? 'bg-green-500/15 text-green-400' :
+                              sdir === 'SKIP' ? 'bg-gray-500/15 text-gray-500' :
+                              'bg-red-500/15 text-red-400'
+                            }`}>
+                              {sname.replace(/([A-Z])/g, ' $1').trim().split(' ')[0]}
+                            </span>
+                          );
+                        })}
                       </div>
-                    </div>
+                    )}
                   </div>
                 );
               })}
@@ -418,41 +530,35 @@ export default function Home() {
         </div>
       </div>
 
-      {/* How It Works - Collapsed */}
+      {/* How It Works - Updated */}
       <section className="bg-gray-900/50 rounded-xl border border-gray-800">
         <button onClick={() => setHowOpen(!howOpen)} className="w-full p-3 flex items-center justify-between text-left">
-          <h2 className="text-sm font-bold">📖 How It Works</h2>
+          <h2 className="text-sm font-bold">📖 How It Works — 3-Layer Architecture</h2>
           <span className="text-gray-500 text-xs">{howOpen ? '▲ collapse' : '▼ expand'}</span>
         </button>
         {howOpen && (
           <div className="px-3 pb-3 space-y-3 text-xs text-gray-300 leading-relaxed">
             <div>
-              <h3 className="text-white font-semibold mb-0.5">🎯 The Strategy</h3>
-              <p>We trade Polymarket&apos;s 15-minute BTC up/down binary markets. YES tokens pay $1 if BTC goes up, $0 if down.</p>
+              <h3 className="text-white font-semibold mb-0.5">🚦 Layer 1: Volatility Gate</h3>
+              <p>Before any analysis, we check if the market is volatile enough to trade. ATR% from Binance 1m candles must exceed {gate.threshold}%. Low volatility = skip the window entirely.</p>
             </div>
             <div>
-              <h3 className="text-white font-semibold mb-0.5">🤖 The Ensemble</h3>
-              <p><strong>16 independent strategies</strong> analyze BTC price action from different angles. Every 10 seconds, each votes UP, DOWN, or SKIP with a confidence level.</p>
+              <h3 className="text-white font-semibold mb-0.5">🤖 Layer 2: Strategy Ensemble</h3>
+              <p><strong>5 weighted strategies</strong> vote on direction. OpenVsCurrent (w:3.0) is the anchor. BinanceOrderbook (w:2.0) and FundingRate (w:1.5) add Binance data signals. Weighted consensus determines direction + confidence.</p>
             </div>
             <div>
-              <h3 className="text-white font-semibold mb-0.5">⚖️ Weighted Voting</h3>
-              <p>Votes are weighted by each strategy&apos;s backtested win rate at that specific entry minute.</p>
-            </div>
-            <div>
-              <h3 className="text-white font-semibold mb-0.5">📊 Edge Detection</h3>
-              <p>We only trade when ensemble confidence exceeds the market price. No edge = no trade.</p>
-            </div>
-            <div>
-              <h3 className="text-white font-semibold mb-0.5">⏱️ Entry Window</h3>
-              <p>Trades enter at minutes 2-7 of each 15-minute window — the sweet spot between signal and opportunity.</p>
+              <h3 className="text-white font-semibold mb-0.5">📊 Layer 3: Edge Detection</h3>
+              <p>We only trade when our ensemble confidence exceeds the Polymarket price by {(MIN_EDGE * 100).toFixed(0)}¢+. No edge = no trade. Entry restricted to minutes 2-7.</p>
             </div>
           </div>
         )}
       </section>
 
       <footer className="text-center text-[10px] text-gray-600 mt-2 pb-2">
-        BTC Scalper v2 — Multi-Strategy Ensemble · {new Date(data.last_updated).toLocaleTimeString()}
+        BTC Scalper v4 — 3-Layer Architecture · {new Date(data.last_updated).toLocaleTimeString()}
       </footer>
     </div>
   );
 }
+
+const MIN_EDGE = 0.08;

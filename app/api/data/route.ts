@@ -17,15 +17,47 @@ export async function GET() {
     strategies_config?: Record<string, number>;
   } | null = null;
 
+  // Try Tailscale funnel first, fall back to local data files
   try {
-    const res = await fetch(`${BOT_API}/api/live`, { cache: 'no-store', headers: { 'Authorization': `Bearer ${BOT_API_KEY}` } });
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
+    const res = await fetch(`${BOT_API}/api/live`, { 
+      cache: 'no-store', 
+      headers: { 'Authorization': `Bearer ${BOT_API_KEY}` },
+      signal: controller.signal,
+    });
+    clearTimeout(timeout);
     if (res.ok) {
       botData = await res.json();
     } else {
-      console.error(`Bot API returned ${res.status}: ${await res.text().catch(() => 'no body')}`);
+      console.error(`Bot API returned ${res.status}`);
     }
   } catch (err) {
-    console.error('Bot API fetch error:', err);
+    console.error('Bot API fetch error (will use local files):', err);
+  }
+
+  // Fallback: read from local data files (pushed via git)
+  if (!botData) {
+    try {
+      const fs = await import('fs/promises');
+      const path = await import('path');
+      const dataDir = path.join(process.cwd(), 'data');
+      const [tradesRaw, signalRaw] = await Promise.all([
+        fs.readFile(path.join(dataDir, 'trades.json'), 'utf-8').catch(() => '{}'),
+        fs.readFile(path.join(dataDir, 'live_signal.json'), 'utf-8').catch(() => 'null'),
+      ]);
+      const localTrades = JSON.parse(tradesRaw);
+      const localSignal = JSON.parse(signalRaw);
+      if (localTrades.trades) {
+        botData = {
+          trades: localTrades,
+          signal: localSignal,
+          rankings: [],
+        };
+      }
+    } catch (fsErr) {
+      console.error('Local file fallback error:', fsErr);
+    }
   }
 
   const trades = botData?.trades || { balance: 100, initial_balance: 100, trades: [] };

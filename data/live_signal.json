@@ -1,92 +1,72 @@
 {
-  "timestamp": "2026-02-08T18:03:40.135597+00:00",
-  "window_start": "2026-02-08T18:00:00+00:00",
-  "window_end": "2026-02-08T18:15:00+00:00",
-  "minute": 3,
-  "btc_price": 70830.78,
-  "window_open": 70785.99,
-  "change_pct": 0.0633,
+  "timestamp": "2026-02-08T23:17:05.408960+00:00",
+  "window_start": "2026-02-08T23:15:00+00:00",
+  "window_end": "2026-02-08T23:30:00+00:00",
+  "minute": 2,
+  "btc_price": 71283.4,
+  "window_open": 71366.0,
+  "change_pct": -0.1157,
   "strategies": {
     "OpenVsCurrent": {
-      "direction": "UP",
-      "confidence": 0.8164
+      "direction": "DOWN",
+      "confidence": 0.95
     },
     "BinanceOrderbook": {
       "direction": "DOWN",
-      "confidence": 0.6417
+      "confidence": 0.9
     },
     "FundingRate": {
       "direction": "SKIP",
       "confidence": 0.0
     },
-    "OrderbookImbalance": {
-      "direction": "DOWN",
-      "confidence": 0.7131
+    "CVD": {
+      "direction": "UP",
+      "confidence": 0.8017
     },
-    "RSIDivergence": {
+    "CrossExchange": {
       "direction": "DOWN",
-      "confidence": 0.5216
+      "confidence": 0.5511
+    },
+    "PriceAcceleration": {
+      "direction": "DOWN",
+      "confidence": 0.88
+    },
+    "LargeTrades": {
+      "direction": "UP",
+      "confidence": 0.7121
+    },
+    "Liquidations": {
+      "direction": "SKIP",
+      "confidence": 0
+    },
+    "TakerBuyRatio": {
+      "direction": "UP",
+      "confidence": 0.6384
     }
   },
   "ensemble": {
     "direction": "DOWN",
-    "confidence": 0.3597
+    "confidence": 0.5528
   },
   "market": {
-    "yes_price": 0.495,
-    "no_price": 0.505
+    "yes_price": 0.455,
+    "no_price": 0.545
   },
-  "polymarket_yes_price": 0.495,
-  "polymarket_no_price": 0.505,
-  "polymarket_liquidity": 21115.15,
-  "polymarket_volume": 19.0,
-  "orderbook_imbalance": -0.6377,
+  "polymarket_yes_price": 0.455,
+  "polymarket_no_price": 0.545,
+  "polymarket_liquidity": 24387.79,
+  "polymarket_volume": 5297.32,
+  "orderbook_imbalance": -0.7802,
   "price_source": "POLY",
-  "edge": -0.1453,
+  "edge": 0.0078,
   "action": "HOLD",
-  "current_trade": {
-    "id": "ef6993d2",
-    "timestamp": "2026-02-08T18:02:23.860821+00:00",
-    "direction": "DOWN",
-    "side": "NO",
-    "buy_price_cents": 50,
-    "buy_price": 0.505,
-    "confidence": 0.8505,
-    "edge": 0.3455,
-    "entry_minute": 2,
-    "window_start": "2026-02-08T18:00:00+00:00",
-    "window_end": "2026-02-08T18:15:00+00:00",
-    "btc_entry": 70786.25,
-    "btc_open": 70785.99,
-    "strategy": "Ensemble",
-    "signals": {
-      "OpenVsCurrent": {
-        "dir": "SKIP",
-        "conf": 0.0
-      },
-      "BinanceOrderbook": {
-        "dir": "DOWN",
-        "conf": 0.9
-      },
-      "FundingRate": {
-        "dir": "SKIP",
-        "conf": 0.0
-      },
-      "OrderbookImbalance": {
-        "dir": "DOWN",
-        "conf": 0.7516
-      },
-      "RSIDivergence": {
-        "dir": "SKIP",
-        "conf": 0.0
-      }
-    }
-  },
+  "current_trade": null,
+  "current_trades": {},
   "gate_status": {
-    "atr_pct": 0.0717,
+    "atr_pct": 0.3714,
     "threshold": 0.03,
     "is_open": true
   },
   "funding_rate": -4.864e-05,
-  "binance_orderbook_imbalance": -0.2052
+  "binance_orderbook_imbalance": -0.1746
 }

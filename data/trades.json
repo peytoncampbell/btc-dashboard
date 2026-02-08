@@ -1,5 +1,5 @@
 {
-  "balance": 103.0,
+  "balance": 100.5,
   "initial_balance": 100.0,
   "strategies": [
     "Ensemble"
@@ -7,250 +7,25 @@
   "active_strategy": "all",
   "trades": [
     {
-      "id": "438c2a31",
-      "timestamp": "2026-02-08T18:32:49.306361+00:00",
-      "strategy": "Ensemble",
-      "direction": "UP",
-      "confidence": 0.6643,
-      "entry_price": 70984.41,
-      "exit_price": 71307.98,
-      "result": "WIN",
-      "profit": 0.5,
-      "indicators": {
-        "OpenVsCurrent": "UP",
-        "BinanceOrderbook": "UP",
-        "OrderbookImbalance": "DOWN",
-        "RSIDivergence": "DOWN"
-      },
-      "window_start": "2026-02-08T18:30:00+00:00",
-      "window_end": "2026-02-08T18:45:00+00:00",
-      "buy_price_cents": 50,
-      "edge": 0.1693
-    },
-    {
-      "id": "f05c5301",
-      "timestamp": "2026-02-08T18:47:36.778104+00:00",
-      "strategy": "Ensemble",
-      "direction": "UP",
-      "confidence": 0.6577,
-      "entry_price": 71307.98,
-      "exit_price": 71147.25,
-      "result": "LOSS",
-      "profit": -0.5,
-      "indicators": {
-        "OpenVsCurrent": "UP",
-        "BinanceOrderbook": "UP",
-        "OrderbookImbalance": "DOWN"
-      },
-      "window_start": "2026-02-08T18:45:00+00:00",
-      "window_end": "2026-02-08T19:00:00+00:00",
-      "buy_price_cents": 50,
-      "edge": 0.1627
-    },
-    {
-      "id": "336f1528",
-      "timestamp": "2026-02-08T19:02:04.754268+00:00",
-      "strategy": "Ensemble",
-      "direction": "UP",
-      "confidence": 0.7417,
-      "entry_price": 71147.24,
-      "exit_price": 71294.63,
-      "result": "WIN",
-      "profit": 0.5,
-      "indicators": {
-        "OpenVsCurrent": "UP",
-        "BinanceOrderbook": "UP",
-        "OrderbookImbalance": "DOWN"
-      },
-      "window_start": "2026-02-08T19:00:00+00:00",
-      "window_end": "2026-02-08T19:15:00+00:00",
-      "buy_price_cents": 50,
-      "edge": 0.2367
-    },
-    {
-      "id": "d8d04537",
-      "timestamp": "2026-02-08T19:18:18.933133+00:00",
-      "strategy": "Ensemble",
-      "direction": "UP",
-      "confidence": 0.6712,
-      "entry_price": 71294.63,
-      "exit_price": 71201.48,
-      "result": "LOSS",
-      "profit": -0.5,
-      "indicators": {
-        "OpenVsCurrent": "UP",
-        "BinanceOrderbook": "UP",
-        "OrderbookImbalance": "DOWN"
-      },
-      "window_start": "2026-02-08T19:15:00+00:00",
-      "window_end": "2026-02-08T19:30:00+00:00",
-      "buy_price_cents": 50,
-      "edge": 0.1762
-    },
-    {
-      "id": "4177a99d",
-      "timestamp": "2026-02-08T19:32:49.216136+00:00",
+      "id": "e7eab1ba",
+      "timestamp": "2026-02-08T20:16:01.030238+00:00",
       "strategy": "Ensemble",
       "direction": "DOWN",
-      "confidence": 0.6976,
-      "entry_price": 71201.49,
-      "exit_price": 71304.68,
-      "result": "LOSS",
-      "profit": -0.5,
+      "confidence": 0.7122,
+      "entry_price": 71081.84,
+      "exit_price": 71025.69,
+      "result": "WIN",
+      "profit": 0.5,
       "indicators": {
         "OpenVsCurrent": "DOWN",
         "BinanceOrderbook": "DOWN",
-        "OrderbookImbalance": "DOWN",
-        "RSIDivergence": "UP"
+        "OrderbookImbalance": "DOWN"
       },
-      "window_start": "2026-02-08T19:30:00+00:00",
-      "window_end": "2026-02-08T19:45:00+00:00",
+      "window_start": "2026-02-08T20:15:00+00:00",
+      "window_end": "2026-02-08T20:30:00+00:00",
       "buy_price_cents": 50,
-      "edge": 0.2026
-    },
-    {
-      "id": "fe35ba44",
-      "timestamp": "2026-02-08T19:53:02.499189+00:00",
-      "strategy": "Ensemble",
-      "direction": "UP",
-      "confidence": 0.8443,
-      "entry_price": 71304.69,
-      "exit_price": 71422.97,
-      "result": "WIN",
-      "profit": 0.5,
-      "indicators": {
-        "OpenVsCurrent": "UP",
-        "BinanceOrderbook": "UP"
-      },
-      "window_start": "2026-02-08T19:45:00+00:00",
-      "window_end": "2026-02-08T20:00:00+00:00",
-      "buy_price_cents": 50,
-      "edge": 0.3393,
-      "entry_minute": 8
-    },
-    {
-      "id": "7fa28a3e",
-      "timestamp": "2026-02-08T19:54:06.817723+00:00",
-      "strategy": "Ensemble",
-      "direction": "UP",
-      "confidence": 0.8277,
-      "entry_price": 71304.69,
-      "exit_price": 71422.97,
-      "result": "WIN",
-      "profit": 0.5,
-      "indicators": {
-        "OpenVsCurrent": "UP",
-        "BinanceOrderbook": "UP"
-      },
-      "window_start": "2026-02-08T19:45:00+00:00",
-      "window_end": "2026-02-08T20:00:00+00:00",
-      "buy_price_cents": 50,
-      "edge": 0.3227,
-      "entry_minute": 9
-    },
-    {
-      "id": "8af440d3",
-      "timestamp": "2026-02-08T19:55:11.137592+00:00",
-      "strategy": "Ensemble",
-      "direction": "UP",
-      "confidence": 0.8137,
-      "entry_price": 71304.69,
-      "exit_price": 71422.97,
-      "result": "WIN",
-      "profit": 0.5,
-      "indicators": {
-        "OpenVsCurrent": "UP",
-        "BinanceOrderbook": "UP",
-        "OrderbookImbalance": "UP"
-      },
-      "window_start": "2026-02-08T19:45:00+00:00",
-      "window_end": "2026-02-08T20:00:00+00:00",
-      "buy_price_cents": 50,
-      "edge": 0.3087,
-      "entry_minute": 10
-    },
-    {
-      "id": "c5a97ef2",
-      "timestamp": "2026-02-08T19:56:40.538698+00:00",
-      "strategy": "Ensemble",
-      "direction": "UP",
-      "confidence": 0.8859,
-      "entry_price": 71304.69,
-      "exit_price": 71422.97,
-      "result": "WIN",
-      "profit": 0.5,
-      "indicators": {
-        "OpenVsCurrent": "UP",
-        "BinanceOrderbook": "UP",
-        "OrderbookImbalance": "UP"
-      },
-      "window_start": "2026-02-08T19:45:00+00:00",
-      "window_end": "2026-02-08T20:00:00+00:00",
-      "buy_price_cents": 50,
-      "edge": 0.3809,
-      "entry_minute": 11
-    },
-    {
-      "id": "847f66ad",
-      "timestamp": "2026-02-08T19:57:06.124588+00:00",
-      "strategy": "Ensemble",
-      "direction": "UP",
-      "confidence": 0.7945,
-      "entry_price": 71304.69,
-      "exit_price": 71422.97,
-      "result": "WIN",
-      "profit": 0.5,
-      "indicators": {
-        "OpenVsCurrent": "UP",
-        "BinanceOrderbook": "UP",
-        "OrderbookImbalance": "UP"
-      },
-      "window_start": "2026-02-08T19:45:00+00:00",
-      "window_end": "2026-02-08T20:00:00+00:00",
-      "buy_price_cents": 50,
-      "edge": 0.2895,
-      "entry_minute": 12
-    },
-    {
-      "id": "3963ed75",
-      "timestamp": "2026-02-08T19:58:22.555941+00:00",
-      "strategy": "Ensemble",
-      "direction": "UP",
-      "confidence": 0.8548,
-      "entry_price": 71304.69,
-      "exit_price": 71422.97,
-      "result": "WIN",
-      "profit": 0.5,
-      "indicators": {
-        "OpenVsCurrent": "UP",
-        "BinanceOrderbook": "UP"
-      },
-      "window_start": "2026-02-08T19:45:00+00:00",
-      "window_end": "2026-02-08T20:00:00+00:00",
-      "buy_price_cents": 50,
-      "edge": 0.3498,
-      "entry_minute": 13
-    },
-    {
-      "id": "1c05dccd",
-      "timestamp": "2026-02-08T19:59:26.430846+00:00",
-      "strategy": "Ensemble",
-      "direction": "UP",
-      "confidence": 0.8629,
-      "entry_price": 71304.69,
-      "exit_price": 71422.97,
-      "result": "WIN",
-      "profit": 0.5,
-      "indicators": {
-        "OpenVsCurrent": "UP",
-        "BinanceOrderbook": "UP",
-        "OrderbookImbalance": "UP"
-      },
-      "window_start": "2026-02-08T19:45:00+00:00",
-      "window_end": "2026-02-08T20:00:00+00:00",
-      "buy_price_cents": 50,
-      "edge": 0.3579,
-      "entry_minute": 14
+      "edge": 0.2072,
+      "entry_minute": 1
     }
   ]
 }

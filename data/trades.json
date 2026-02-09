@@ -1,5 +1,5 @@
 {
-  "balance": 13.6167,
+  "balance": 12.6167,
   "initial_balance": 0.0,
   "trades": [
     {
@@ -3518,6 +3518,29 @@
       "window_end": "2026-02-09T15:00:00+00:00",
       "buy_price_cents": 76,
       "edge": -0.215,
+      "entry_minute": 9
+    },
+    {
+      "id": "Take9",
+      "timestamp": "2026-02-09T14:54:33.045134+00:00",
+      "strategy": "TakerBuyRatio",
+      "direction": "DOWN",
+      "confidence": 0.6865,
+      "historical_wr": 0.55,
+      "entry_price": 69176.48,
+      "exit_price": 69272.0,
+      "result": "LOSS",
+      "profit": -1.0,
+      "bet_amount": 1.0,
+      "indicators": {
+        "OpenVsCurrent": "UP",
+        "BinanceOrderbook": "UP",
+        "TakerBuyRatio": "DOWN"
+      },
+      "window_start": "2026-02-09T14:45:00+00:00",
+      "window_end": "2026-02-09T15:00:00+00:00",
+      "buy_price_cents": 46,
+      "edge": 0.095,
       "entry_minute": 9
     }
   ],

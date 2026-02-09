@@ -1,5 +1,5 @@
 {
-  "balance": 97.44,
+  "balance": 96.96,
   "initial_balance": 100.0,
   "trades": [
     {
@@ -8176,6 +8176,28 @@
       "buy_price_cents": 34,
       "edge": 0.2106,
       "entry_minute": 3
+    },
+    {
+      "id": "75fd6538",
+      "timestamp": "2026-02-09T10:49:13.173266+00:00",
+      "strategy": "OpenVsCurrent",
+      "direction": "DOWN",
+      "historical_wr": 0.5556,
+      "entry_price": 68622.43,
+      "exit_price": 68727.88,
+      "result": "LOSS",
+      "profit": -0.48,
+      "indicators": {
+        "OpenVsCurrent": "DOWN",
+        "CVD": "UP",
+        "CrossExchange": "DOWN",
+        "LargeTrades": "UP"
+      },
+      "window_start": "2026-02-09T10:45:00+00:00",
+      "window_end": "2026-02-09T11:00:00+00:00",
+      "buy_price_cents": 48,
+      "edge": 0.0806,
+      "entry_minute": 4
     }
   ],
   "strategies": [

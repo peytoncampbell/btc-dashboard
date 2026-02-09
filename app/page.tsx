@@ -339,7 +339,7 @@ export default function Home() {
       {/* ROW 2: Active Strategies (votes) | Recent Trades */}
       <div className="grid grid-cols-1 md:grid-cols-5 gap-2 mb-2">
         <div className="md:col-span-3 bg-gray-900 rounded-xl p-3 border border-gray-700">
-          <h2 className="text-xs font-bold text-gray-400 mb-2">⚙️ ACTIVE STRATEGIES (5)</h2>
+          <h2 className="text-xs font-bold text-gray-400 mb-2">⚙️ ACTIVE STRATEGIES ({Object.keys(strategiesConfig).length})</h2>
           <div className="space-y-1.5">
             {Object.entries(strategiesConfig).length > 0 ? (
               Object.entries(strategiesConfig).map(([name, weight]) => {
@@ -349,6 +349,16 @@ export default function Home() {
                 const ranking = rankings.find((r) => String(r.name) === name);
                 const liveWr = ranking ? n(ranking.live_win_rate) : 0;
                 const liveTrades = ranking ? n(ranking.live_trades) : 0;
+                const livePnl = ranking ? n(ranking.pnl) : 0;
+                // Calculate P&L from trades if not in rankings
+                const stratTrades = trades.filter(t => String(t.strategy) === name);
+                const stratPnl = stratTrades.reduce((sum, t) => sum + n(t.profit), 0);
+                const stratWins = stratTrades.filter(t => t.result === 'WIN').length;
+                const stratLosses = stratTrades.filter(t => t.result === 'LOSS').length;
+                const stratWr = (stratWins + stratLosses) > 0 ? (stratWins / (stratWins + stratLosses)) * 100 : 0;
+                const displayPnl = livePnl !== 0 ? livePnl : stratPnl;
+                const displayWr = liveTrades > 0 ? liveWr : stratWr;
+                const displayCount = liveTrades > 0 ? liveTrades : (stratWins + stratLosses);
                 return (
                   <div key={name} className="flex items-center gap-2 p-2 rounded-lg bg-gray-800/40 border border-gray-700/40">
                     <div className="flex-1 min-w-0">
@@ -356,9 +366,9 @@ export default function Home() {
                         <span className="font-medium text-xs truncate">{name}</span>
                         <span className="text-[9px] text-blue-400 bg-blue-500/10 px-1 rounded">w:{weight}</span>
                       </div>
-                      {liveTrades > 0 && (
+                      {displayCount > 0 && (
                         <div className="text-[10px] text-gray-500">
-                          Live: {liveWr.toFixed(0)}% ({liveTrades} trades)
+                          {displayWr.toFixed(0)}% WR ({stratWins}W/{stratLosses}L) · <span className={displayPnl >= 0 ? 'text-green-400' : 'text-red-400'}>{displayPnl >= 0 ? '+' : ''}${displayPnl.toFixed(2)}</span>
                         </div>
                       )}
                     </div>
@@ -404,11 +414,11 @@ export default function Home() {
                         <span>{dir === 'UP' ? '⬆️' : '⬇️'}</span>
                         <div>
                           <div className="font-semibold">
-                            {(conf * 100).toFixed(0)}% conf
-                            {ep > 0 && <span className="text-gray-400 ml-1">@ {ep.toFixed(2)}¢</span>}
+                            {dir === 'UP' ? 'YES' : 'NO'} @ {n(t.buy_price_cents)}¢
+                            <span className="text-gray-500 font-normal ml-1 text-[10px]">{String(t.strategy ?? 'Ensemble')}</span>
                           </div>
                           <div className="text-[10px] text-gray-500">
-                            {ts ? new Date(ts).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : ''}
+                            Min {n(t.entry_minute)} · {(conf * 100).toFixed(0)}% conf · {ts ? new Date(ts).toLocaleString([], { hour: '2-digit', minute: '2-digit' }) : ''}
                           </div>
                         </div>
                       </div>
@@ -555,7 +565,7 @@ export default function Home() {
       </section>
 
       <footer className="text-center text-[10px] text-gray-600 mt-2 pb-2">
-        BTC Scalper v4 — 3-Layer Architecture · {new Date(data.last_updated).toLocaleTimeString()}
+        BTC Scalper v6 — Data Collection Mode · {new Date(data.last_updated).toLocaleTimeString()}
       </footer>
     </div>
   );

@@ -1,5 +1,5 @@
 {
-  "balance": -6.3622,
+  "balance": -1.6479,
   "initial_balance": 0.0,
   "trades": [
     {
@@ -2136,6 +2136,30 @@
       "window_end": "2026-02-09T14:45:00+00:00",
       "buy_price_cents": 82,
       "edge": -0.275,
+      "entry_minute": 6
+    },
+    {
+      "id": "Take6",
+      "timestamp": "2026-02-09T14:36:03.894453+00:00",
+      "strategy": "TakerBuyRatio",
+      "direction": "UP",
+      "confidence": 0.6689,
+      "historical_wr": 0.55,
+      "entry_price": 68994.71,
+      "exit_price": 69176.47,
+      "result": "WIN",
+      "profit": 4.7143,
+      "bet_amount": 1.0,
+      "indicators": {
+        "OpenVsCurrent": "DOWN",
+        "BinanceOrderbook": "UP",
+        "PriceAcceleration": "DOWN",
+        "TakerBuyRatio": "UP"
+      },
+      "window_start": "2026-02-09T14:30:00+00:00",
+      "window_end": "2026-02-09T14:45:00+00:00",
+      "buy_price_cents": 18,
+      "edge": 0.375,
       "entry_minute": 6
     }
   ],

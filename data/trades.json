@@ -1,5 +1,5 @@
 {
-  "balance": -3.0,
+  "balance": -4.0,
   "initial_balance": 0.0,
   "trades": [
     {
@@ -69,6 +69,29 @@
       "window_end": "2026-02-09T14:00:00+00:00",
       "buy_price_cents": 62,
       "edge": -0.075,
+      "entry_minute": 1
+    },
+    {
+      "id": "d4228cad",
+      "timestamp": "2026-02-09T13:46:00.016916+00:00",
+      "strategy": "OpenVsCurrent",
+      "direction": "UP",
+      "historical_wr": 0.55,
+      "entry_price": 69074.58,
+      "exit_price": 68594.57,
+      "result": "LOSS",
+      "profit": -1.0,
+      "bet_amount": 1.0,
+      "indicators": {
+        "OpenVsCurrent": "UP",
+        "BinanceOrderbook": "DOWN",
+        "PriceAcceleration": "UP",
+        "TakerBuyRatio": "UP"
+      },
+      "window_start": "2026-02-09T13:45:00+00:00",
+      "window_end": "2026-02-09T14:00:00+00:00",
+      "buy_price_cents": 64,
+      "edge": -0.085,
       "entry_minute": 1
     }
   ],

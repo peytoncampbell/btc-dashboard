@@ -1,5 +1,5 @@
 {
-  "balance": -22.0622,
+  "balance": -23.0622,
   "initial_balance": 0.0,
   "trades": [
     {
@@ -760,6 +760,29 @@
       "buy_price_cents": 100,
       "edge": -0.445,
       "entry_minute": 13
+    },
+    {
+      "id": "Bina4",
+      "timestamp": "2026-02-09T14:19:09.341740+00:00",
+      "strategy": "BinanceOrderbook",
+      "direction": "DOWN",
+      "confidence": 0.9,
+      "historical_wr": 0.55,
+      "entry_price": 68608.86,
+      "exit_price": 68994.7,
+      "result": "LOSS",
+      "profit": -1.0,
+      "bet_amount": 1.0,
+      "indicators": {
+        "OpenVsCurrent": "DOWN",
+        "BinanceOrderbook": "DOWN",
+        "TakerBuyRatio": "UP"
+      },
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "buy_price_cents": 62,
+      "edge": -0.075,
+      "entry_minute": 4
     }
   ],
   "strategies": [

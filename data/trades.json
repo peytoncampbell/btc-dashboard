@@ -1,5 +1,5 @@
 {
-  "balance": 100.02,
+  "balance": 99.52,
   "initial_balance": 100.0,
   "trades": [
     {
@@ -48,6 +48,28 @@
       "buy_price_cents": 50,
       "edge": 0.055,
       "entry_minute": 1
+    },
+    {
+      "id": "5718babc",
+      "timestamp": "2026-02-09T01:30:52.170888+00:00",
+      "strategy": "OpenVsCurrent",
+      "direction": "UP",
+      "historical_wr": 0.55,
+      "entry_price": 70715.97,
+      "exit_price": 70250.01,
+      "result": "LOSS",
+      "profit": -0.5,
+      "indicators": {
+        "OpenVsCurrent": "UP",
+        "BinanceOrderbook": "UP",
+        "CrossExchange": "DOWN",
+        "TakerBuyRatio": "DOWN"
+      },
+      "window_start": "2026-02-09T01:30:00+00:00",
+      "window_end": "2026-02-09T01:45:00+00:00",
+      "buy_price_cents": 50,
+      "edge": 0.055,
+      "entry_minute": 0
     }
   ],
   "strategies": [

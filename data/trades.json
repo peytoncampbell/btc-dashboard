@@ -1,8 +1,9 @@
 {
-  "balance": 104.0,
+  "balance": 104.99,
   "initial_balance": 100.0,
   "strategies": [
-    "Ensemble"
+    "Ensemble",
+    "OpenVsCurrent"
   ],
   "active_strategy": "all",
   "trades": [
@@ -197,6 +198,29 @@
       "window_end": "2026-02-08T23:45:00+00:00",
       "buy_price_cents": 50,
       "edge": 0.1726,
+      "entry_minute": 14
+    },
+    {
+      "id": "c9daf668",
+      "timestamp": "2026-02-08T23:59:48.175549+00:00",
+      "strategy": "OpenVsCurrent",
+      "direction": "DOWN",
+      "historical_wr": 0.55,
+      "entry_price": 70469.73,
+      "exit_price": 70330.38,
+      "result": "WIN",
+      "profit": 0.99,
+      "indicators": {
+        "OpenVsCurrent": "DOWN",
+        "BinanceOrderbook": "UP",
+        "CVD": "UP",
+        "CrossExchange": "DOWN",
+        "LargeTrades": "UP"
+      },
+      "window_start": "2026-02-08T23:45:00+00:00",
+      "window_end": "2026-02-09T00:00:00+00:00",
+      "buy_price_cents": 1,
+      "edge": 0.54,
       "entry_minute": 14
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "balance": -0.4733,
+  "balance": 1.2664,
   "initial_balance": 0.0,
   "trades": [
     {
@@ -2206,6 +2206,30 @@
       "window_end": "2026-02-09T14:45:00+00:00",
       "buy_price_cents": 68,
       "edge": -0.135,
+      "entry_minute": 7
+    },
+    {
+      "id": "Pric7",
+      "timestamp": "2026-02-09T14:37:20.624968+00:00",
+      "strategy": "PriceAcceleration",
+      "direction": "UP",
+      "confidence": 0.88,
+      "historical_wr": 0.55,
+      "entry_price": 68994.71,
+      "exit_price": 69176.47,
+      "result": "WIN",
+      "profit": 1.7397,
+      "bet_amount": 1.0,
+      "indicators": {
+        "OpenVsCurrent": "UP",
+        "BinanceOrderbook": "UP",
+        "PriceAcceleration": "UP",
+        "TakerBuyRatio": "UP"
+      },
+      "window_start": "2026-02-09T14:30:00+00:00",
+      "window_end": "2026-02-09T14:45:00+00:00",
+      "buy_price_cents": 36,
+      "edge": 0.185,
       "entry_minute": 7
     }
   ],

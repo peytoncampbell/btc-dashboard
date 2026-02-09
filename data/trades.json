@@ -1,5 +1,5 @@
 {
-  "balance": -22.3336,
+  "balance": -21.2717,
   "initial_balance": 0.0,
   "trades": [
     {
@@ -874,6 +874,29 @@
       "window_end": "2026-02-09T14:30:00+00:00",
       "buy_price_cents": 52,
       "edge": 0.035,
+      "entry_minute": 5
+    },
+    {
+      "id": "Take5",
+      "timestamp": "2026-02-09T14:20:00.696247+00:00",
+      "strategy": "TakerBuyRatio",
+      "direction": "UP",
+      "confidence": 0.8161,
+      "historical_wr": 0.55,
+      "entry_price": 68608.86,
+      "exit_price": 68994.7,
+      "result": "WIN",
+      "profit": 1.0619,
+      "bet_amount": 1.0,
+      "indicators": {
+        "OpenVsCurrent": "DOWN",
+        "BinanceOrderbook": "UP",
+        "TakerBuyRatio": "UP"
+      },
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "buy_price_cents": 48,
+      "edge": 0.065,
       "entry_minute": 5
     }
   ],

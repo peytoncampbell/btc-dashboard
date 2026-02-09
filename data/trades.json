@@ -1,5 +1,5 @@
 {
-  "balance": 3.1437,
+  "balance": 5.2206,
   "initial_balance": 0.0,
   "trades": [
     {
@@ -3102,6 +3102,30 @@
       "window_end": "2026-02-09T15:00:00+00:00",
       "buy_price_cents": 68,
       "edge": -0.125,
+      "entry_minute": 4
+    },
+    {
+      "id": "Open4",
+      "timestamp": "2026-02-09T14:49:01.445058+00:00",
+      "strategy": "OpenVsCurrent",
+      "direction": "UP",
+      "confidence": 0.95,
+      "historical_wr": 0.55,
+      "entry_price": 69176.48,
+      "exit_price": 69272.0,
+      "result": "WIN",
+      "profit": 2.0769,
+      "bet_amount": 1.0,
+      "indicators": {
+        "OpenVsCurrent": "UP",
+        "BinanceOrderbook": "DOWN",
+        "PriceAcceleration": "UP",
+        "TakerBuyRatio": "UP"
+      },
+      "window_start": "2026-02-09T14:45:00+00:00",
+      "window_end": "2026-02-09T15:00:00+00:00",
+      "buy_price_cents": 32,
+      "edge": 0.225,
       "entry_minute": 4
     }
   ],

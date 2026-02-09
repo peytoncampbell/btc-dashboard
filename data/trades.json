@@ -1,5 +1,5 @@
 {
-  "balance": -18.8261,
+  "balance": -19.8261,
   "initial_balance": 0.0,
   "trades": [
     {
@@ -1514,6 +1514,28 @@
       "buy_price_cents": 94,
       "edge": -0.385,
       "entry_minute": 11
+    },
+    {
+      "id": "Bina12",
+      "timestamp": "2026-02-09T14:42:00.914841+00:00",
+      "strategy": "BinanceOrderbook",
+      "direction": "DOWN",
+      "confidence": 0.8628,
+      "historical_wr": 0.55,
+      "entry_price": 68994.71,
+      "exit_price": 69176.47,
+      "result": "LOSS",
+      "profit": -1.0,
+      "bet_amount": 1.0,
+      "indicators": {
+        "OpenVsCurrent": "UP",
+        "BinanceOrderbook": "DOWN"
+      },
+      "window_start": "2026-02-09T14:30:00+00:00",
+      "window_end": "2026-02-09T14:45:00+00:00",
+      "buy_price_cents": 8,
+      "edge": 0.475,
+      "entry_minute": 12
     }
   ],
   "strategies": [

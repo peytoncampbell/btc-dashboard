@@ -1,72 +1,79 @@
 {
-  "timestamp": "2026-02-08T23:17:05.408960+00:00",
-  "window_start": "2026-02-08T23:15:00+00:00",
-  "window_end": "2026-02-08T23:30:00+00:00",
-  "minute": 2,
-  "btc_price": 71283.4,
-  "window_open": 71366.0,
-  "change_pct": -0.1157,
+  "timestamp": "2026-02-09T00:53:35.975027+00:00",
+  "window_start": "2026-02-09T00:45:00+00:00",
+  "window_end": "2026-02-09T01:00:00+00:00",
+  "minute": 8,
+  "btc_price": 70460.07,
+  "window_open": 70278.67,
+  "change_pct": 0.2581,
   "strategies": {
     "OpenVsCurrent": {
-      "direction": "DOWN",
-      "confidence": 0.95
+      "direction": "UP",
+      "confidence": 0.95,
+      "mode": "active"
     },
     "BinanceOrderbook": {
-      "direction": "DOWN",
-      "confidence": 0.9
+      "direction": "UP",
+      "confidence": 0.8734,
+      "mode": "shadow"
     },
     "FundingRate": {
       "direction": "SKIP",
-      "confidence": 0.0
+      "confidence": 0.0,
+      "mode": "shadow"
     },
     "CVD": {
-      "direction": "UP",
-      "confidence": 0.8017
+      "direction": "DOWN",
+      "confidence": 0.8253,
+      "mode": "shadow"
     },
     "CrossExchange": {
       "direction": "DOWN",
-      "confidence": 0.5511
+      "confidence": 0.6991,
+      "mode": "shadow"
     },
     "PriceAcceleration": {
-      "direction": "DOWN",
-      "confidence": 0.88
+      "direction": "SKIP",
+      "confidence": 0.0,
+      "mode": "shadow"
     },
     "LargeTrades": {
-      "direction": "UP",
-      "confidence": 0.7121
+      "direction": "DOWN",
+      "confidence": 0.7075,
+      "mode": "shadow"
     },
     "Liquidations": {
       "direction": "SKIP",
-      "confidence": 0
+      "confidence": 0.0,
+      "mode": "shadow"
     },
     "TakerBuyRatio": {
       "direction": "UP",
-      "confidence": 0.6384
+      "confidence": 0.7875,
+      "mode": "shadow"
     }
   },
   "ensemble": {
-    "direction": "DOWN",
-    "confidence": 0.5528
+    "direction": "UP",
+    "historical_wr": 0.55
   },
   "market": {
-    "yes_price": 0.455,
-    "no_price": 0.545
+    "yes_price": 0.845,
+    "no_price": 0.155
   },
-  "polymarket_yes_price": 0.455,
-  "polymarket_no_price": 0.545,
-  "polymarket_liquidity": 24387.79,
-  "polymarket_volume": 5297.32,
-  "orderbook_imbalance": -0.7802,
+  "polymarket_yes_price": 0.845,
+  "polymarket_no_price": 0.155,
+  "polymarket_liquidity": 48551.96,
+  "polymarket_volume": 98405.75,
+  "orderbook_imbalance": -0.0851,
   "price_source": "POLY",
-  "edge": 0.0078,
+  "edge": -0.295,
   "action": "HOLD",
   "current_trade": null,
   "current_trades": {},
   "gate_status": {
-    "atr_pct": 0.3714,
+    "atr_pct": 0.1749,
     "threshold": 0.03,
     "is_open": true
-  },
-  "funding_rate": -4.864e-05,
-  "binance_orderbook_imbalance": -0.1746
+  }
 }

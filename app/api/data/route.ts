@@ -192,10 +192,10 @@ export async function GET() {
     };
   });
 
-  // Merge live polymarket into signal
+  // Use bot's market data (CLOB midpoint, real-time) — only fall back to Gamma if no bot data
   const enrichedSignal = liveSignal ? {
     ...liveSignal,
-    ...(polyData ? { market: { yes_price: polyData.yes_price, no_price: polyData.no_price } } : {}),
+    market: liveSignal.market || (polyData ? { yes_price: polyData.yes_price, no_price: polyData.no_price } : { yes_price: 0.5, no_price: 0.5 }),
   } : (polyData ? { market: { yes_price: polyData.yes_price, no_price: polyData.no_price }, action: 'WAITING' } : null);
 
   const recentTrades = [...allTrades]

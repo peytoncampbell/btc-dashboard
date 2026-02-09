@@ -1,5 +1,5 @@
 {
-  "balance": -20.7421,
+  "balance": -20.5656,
   "initial_balance": 0.0,
   "trades": [
     {
@@ -506,10 +506,35 @@
       "buy_price_cents": 80,
       "edge": -0.245,
       "entry_minute": 10
+    },
+    {
+      "id": "Pric10",
+      "timestamp": "2026-02-09T14:25:58.360639+00:00",
+      "strategy": "PriceAcceleration",
+      "direction": "UP",
+      "confidence": 0.6816,
+      "historical_wr": 0.55,
+      "entry_price": 68608.86,
+      "exit_price": 68994.7,
+      "result": "WIN",
+      "profit": 0.1765,
+      "bet_amount": 1.0,
+      "indicators": {
+        "OpenVsCurrent": "UP",
+        "BinanceOrderbook": "DOWN",
+        "PriceAcceleration": "UP",
+        "TakerBuyRatio": "UP"
+      },
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "buy_price_cents": 85,
+      "edge": -0.3,
+      "entry_minute": 10
     }
   ],
   "strategies": [
     "OpenVsCurrent",
-    "BinanceOrderbook"
+    "BinanceOrderbook",
+    "PriceAcceleration"
   ]
 }

@@ -1,0 +1,2002 @@
+[
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": null,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 1,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 2,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Max2Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 3,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Max3Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 4,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Max4Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 5,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Max5Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": null,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@1Loss",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 1,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@1Loss | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 2,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@1Loss | Max2Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 3,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@1Loss | Max3Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 4,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@1Loss | Max4Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 5,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@1Loss | Max5Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": null,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@2Loss",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 1,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@2Loss | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 2,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@2Loss | Max2Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 3,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@2Loss | Max3Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 4,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@2Loss | Max4Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 5,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@2Loss | Max5Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": null,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@3Loss",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 1,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@3Loss | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 2,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@3Loss | Max2Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 3,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@3Loss | Max3Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 4,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@3Loss | Max4Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 5,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | StopOnFlip | Stop@3Loss | Max5Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": null,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": null,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5%",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 1,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 1,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 2,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Max2Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 2,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Max2Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 3,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Max3Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 3,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Max3Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 4,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Max4Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 4,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Max4Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 5,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Max5Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 5,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Max5Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": null,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@1Loss",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": null,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@1Loss",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 1,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@1Loss | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 1,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@1Loss | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 2,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@1Loss | Max2Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 2,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@1Loss | Max2Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 3,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@1Loss | Max3Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 3,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@1Loss | Max3Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 4,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@1Loss | Max4Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 4,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@1Loss | Max4Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 5,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@1Loss | Max5Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 5,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@1Loss | Max5Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": null,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@2Loss",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": null,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@2Loss",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 1,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@2Loss | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 1,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@2Loss | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 2,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@2Loss | Max2Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 2,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@2Loss | Max2Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 3,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@2Loss | Max3Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 3,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@2Loss | Max3Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 4,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@2Loss | Max4Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 4,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@2Loss | Max4Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 5,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@2Loss | Max5Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 5,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@2Loss | Max5Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": null,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@3Loss",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": null,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@3Loss",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 1,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@3Loss | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 1,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@3Loss | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 2,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@3Loss | Max2Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 2,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@3Loss | Max2Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 3,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@3Loss | Max3Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 3,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@3Loss | Max3Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 4,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@3Loss | Max4Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 4,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@3Loss | Max4Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 5,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | FirstDirOnly | Stop@3Loss | Max5Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": null,
+      "stop_on_flip": false,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 5,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | Stop@3Loss | Max5Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": null,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 1,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 2,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Max2Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 3,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Max3Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 4,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Max4Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 5,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Max5Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": null,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@1Loss",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 1,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@1Loss | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 2,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@1Loss | Max2Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 3,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@1Loss | Max3Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 4,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@1Loss | Max4Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 1,
+      "max_trades_per_window": 5,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@1Loss | Max5Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": null,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@2Loss",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 1,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@2Loss | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 2,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@2Loss | Max2Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 3,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@2Loss | Max3Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 4,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@2Loss | Max4Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 2,
+      "max_trades_per_window": 5,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@2Loss | Max5Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": null,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@3Loss",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 1,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@3Loss | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 2,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@3Loss | Max2Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 3,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@3Loss | Max3Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 4,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@3Loss | Max4Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": true,
+      "stop_after_n_losses": 3,
+      "max_trades_per_window": 5,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | StopOnFlip | Stop@3Loss | Max5Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": false,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": null,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | FirstDirOnly",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": false,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": null,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": false,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 1,
+      "first_direction_only": true
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | FirstDirOnly | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  },
+  {
+    "config": {
+      "min_minute": 1,
+      "max_minute": 1,
+      "portfolio_pct": 0.005,
+      "max_buy_price": 50,
+      "stop_on_flip": false,
+      "stop_after_n_losses": null,
+      "max_trades_per_window": 1,
+      "first_direction_only": false
+    },
+    "config_str": "M1-1 | 0.5% | MaxPrice\u226450\u00a2 | Max1Trades",
+    "final_balance": 100.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 100.0,
+    "profit_factor": null,
+    "gross_wins": 0.0,
+    "gross_losses": 0.0
+  }
+]

@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-02-09T00:53:35.975027+00:00",
-  "window_start": "2026-02-09T00:45:00+00:00",
-  "window_end": "2026-02-09T01:00:00+00:00",
-  "minute": 8,
-  "btc_price": 70460.07,
-  "window_open": 70278.67,
-  "change_pct": 0.2581,
+  "timestamp": "2026-02-09T14:24:15.622990+00:00",
+  "window_start": "2026-02-09T14:15:00+00:00",
+  "window_end": "2026-02-09T14:30:00+00:00",
+  "minute": 9,
+  "btc_price": 68777.97,
+  "window_open": 68608.86,
+  "change_pct": 0.2465,
   "strategies": {
     "OpenVsCurrent": {
       "direction": "UP",
@@ -14,42 +14,17 @@
     },
     "BinanceOrderbook": {
       "direction": "UP",
-      "confidence": 0.8734,
-      "mode": "shadow"
-    },
-    "FundingRate": {
-      "direction": "SKIP",
-      "confidence": 0.0,
-      "mode": "shadow"
-    },
-    "CVD": {
-      "direction": "DOWN",
-      "confidence": 0.8253,
-      "mode": "shadow"
-    },
-    "CrossExchange": {
-      "direction": "DOWN",
-      "confidence": 0.6991,
+      "confidence": 0.8121,
       "mode": "shadow"
     },
     "PriceAcceleration": {
-      "direction": "SKIP",
-      "confidence": 0.0,
-      "mode": "shadow"
-    },
-    "LargeTrades": {
-      "direction": "DOWN",
-      "confidence": 0.7075,
-      "mode": "shadow"
-    },
-    "Liquidations": {
-      "direction": "SKIP",
-      "confidence": 0.0,
+      "direction": "UP",
+      "confidence": 0.88,
       "mode": "shadow"
     },
     "TakerBuyRatio": {
       "direction": "UP",
-      "confidence": 0.7875,
+      "confidence": 0.88,
       "mode": "shadow"
     }
   },
@@ -58,21 +33,941 @@
     "historical_wr": 0.55
   },
   "market": {
-    "yes_price": 0.845,
-    "no_price": 0.155
+    "yes_price": 0.795,
+    "no_price": 0.205
   },
-  "polymarket_yes_price": 0.845,
-  "polymarket_no_price": 0.155,
-  "polymarket_liquidity": 48551.96,
-  "polymarket_volume": 98405.75,
-  "orderbook_imbalance": -0.0851,
+  "polymarket_yes_price": 0.795,
+  "polymarket_no_price": 0.205,
+  "polymarket_liquidity": 35198.32,
+  "polymarket_volume": 11844.03,
+  "orderbook_imbalance": -0.4522,
   "price_source": "POLY",
-  "edge": -0.295,
-  "action": "HOLD",
-  "current_trade": null,
-  "current_trades": {},
+  "edge": -0.245,
+  "action": "HOLD - no strategy signals",
+  "current_trade": {
+    "id": "Take9",
+    "timestamp": "2026-02-09T14:24:02.721684+00:00",
+    "direction": "UP",
+    "side": "YES",
+    "buy_price_cents": 80,
+    "buy_price": 0.795,
+    "bet_amount": 1.0,
+    "historical_wr": 0.55,
+    "confidence": 0.88,
+    "edge": -0.245,
+    "entry_minute": 9,
+    "window_start": "2026-02-09T14:15:00+00:00",
+    "window_end": "2026-02-09T14:30:00+00:00",
+    "btc_entry": 68751.99,
+    "btc_open": 68608.86,
+    "strategy": "TakerBuyRatio",
+    "signals": {
+      "OpenVsCurrent": {
+        "dir": "UP",
+        "conf": 0.95,
+        "mode": "active"
+      },
+      "BinanceOrderbook": {
+        "dir": "UP",
+        "conf": 0.9,
+        "mode": "shadow"
+      },
+      "PriceAcceleration": {
+        "dir": "UP",
+        "conf": 0.88,
+        "mode": "shadow"
+      },
+      "TakerBuyRatio": {
+        "dir": "UP",
+        "conf": 0.88,
+        "mode": "shadow"
+      }
+    }
+  },
+  "current_trades": {
+    "4_OpenVsCurrent": {
+      "id": "Open4",
+      "timestamp": "2026-02-09T14:19:09.341740+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 62,
+      "buy_price": 0.625,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.95,
+      "edge": -0.075,
+      "entry_minute": 4,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68494.81,
+      "btc_open": 68608.86,
+      "strategy": "OpenVsCurrent",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "DOWN",
+          "conf": 0.95,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "DOWN",
+          "conf": 0.9,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.7921,
+          "mode": "shadow"
+        }
+      }
+    },
+    "4_BinanceOrderbook": {
+      "id": "Bina4",
+      "timestamp": "2026-02-09T14:19:09.341740+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 62,
+      "buy_price": 0.625,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.9,
+      "edge": -0.075,
+      "entry_minute": 4,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68494.81,
+      "btc_open": 68608.86,
+      "strategy": "BinanceOrderbook",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "DOWN",
+          "conf": 0.95,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "DOWN",
+          "conf": 0.9,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.7921,
+          "mode": "shadow"
+        }
+      }
+    },
+    "4_TakerBuyRatio": {
+      "id": "Take4",
+      "timestamp": "2026-02-09T14:19:09.341740+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 38,
+      "buy_price": 0.375,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.7921,
+      "edge": 0.175,
+      "entry_minute": 4,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68494.81,
+      "btc_open": 68608.86,
+      "strategy": "TakerBuyRatio",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "DOWN",
+          "conf": 0.95,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "DOWN",
+          "conf": 0.9,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.7921,
+          "mode": "shadow"
+        }
+      }
+    },
+    "5_OpenVsCurrent": {
+      "id": "Open5",
+      "timestamp": "2026-02-09T14:20:00.696247+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 52,
+      "buy_price": 0.515,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.8016,
+      "edge": 0.035,
+      "entry_minute": 5,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68567.47,
+      "btc_open": 68608.86,
+      "strategy": "OpenVsCurrent",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "DOWN",
+          "conf": 0.8016,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.9,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.8161,
+          "mode": "shadow"
+        }
+      }
+    },
+    "5_BinanceOrderbook": {
+      "id": "Bina5",
+      "timestamp": "2026-02-09T14:20:00.696247+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 48,
+      "buy_price": 0.485,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.9,
+      "edge": 0.065,
+      "entry_minute": 5,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68567.47,
+      "btc_open": 68608.86,
+      "strategy": "BinanceOrderbook",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "DOWN",
+          "conf": 0.8016,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.9,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.8161,
+          "mode": "shadow"
+        }
+      }
+    },
+    "5_TakerBuyRatio": {
+      "id": "Take5",
+      "timestamp": "2026-02-09T14:20:00.696247+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 48,
+      "buy_price": 0.485,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.8161,
+      "edge": 0.065,
+      "entry_minute": 5,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68567.47,
+      "btc_open": 68608.86,
+      "strategy": "TakerBuyRatio",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "DOWN",
+          "conf": 0.8016,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.9,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.8161,
+          "mode": "shadow"
+        }
+      }
+    },
+    "6_OpenVsCurrent": {
+      "id": "Open6",
+      "timestamp": "2026-02-09T14:21:04.718606+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 57,
+      "buy_price": 0.575,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.8986,
+      "edge": -0.025,
+      "entry_minute": 6,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68554.17,
+      "btc_open": 68608.86,
+      "strategy": "OpenVsCurrent",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "DOWN",
+          "conf": 0.8986,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.893,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "DOWN",
+          "conf": 0.7958,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.7694,
+          "mode": "shadow"
+        }
+      }
+    },
+    "6_BinanceOrderbook": {
+      "id": "Bina6",
+      "timestamp": "2026-02-09T14:21:04.718606+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 42,
+      "buy_price": 0.425,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.893,
+      "edge": 0.125,
+      "entry_minute": 6,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68554.17,
+      "btc_open": 68608.86,
+      "strategy": "BinanceOrderbook",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "DOWN",
+          "conf": 0.8986,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.893,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "DOWN",
+          "conf": 0.7958,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.7694,
+          "mode": "shadow"
+        }
+      }
+    },
+    "6_PriceAcceleration": {
+      "id": "Pric6",
+      "timestamp": "2026-02-09T14:21:04.718606+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 57,
+      "buy_price": 0.575,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.7958,
+      "edge": -0.025,
+      "entry_minute": 6,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68554.17,
+      "btc_open": 68608.86,
+      "strategy": "PriceAcceleration",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "DOWN",
+          "conf": 0.8986,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.893,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "DOWN",
+          "conf": 0.7958,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.7694,
+          "mode": "shadow"
+        }
+      }
+    },
+    "6_TakerBuyRatio": {
+      "id": "Take6",
+      "timestamp": "2026-02-09T14:21:04.718606+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 42,
+      "buy_price": 0.425,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.7694,
+      "edge": 0.125,
+      "entry_minute": 6,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68554.17,
+      "btc_open": 68608.86,
+      "strategy": "TakerBuyRatio",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "DOWN",
+          "conf": 0.8986,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.893,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "DOWN",
+          "conf": 0.7958,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.7694,
+          "mode": "shadow"
+        }
+      }
+    },
+    "7_OpenVsCurrent": {
+      "id": "Open7",
+      "timestamp": "2026-02-09T14:22:07.885090+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 52,
+      "buy_price": 0.52,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.6665,
+      "edge": 0.03,
+      "entry_minute": 7,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68586.01,
+      "btc_open": 68608.86,
+      "strategy": "OpenVsCurrent",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "DOWN",
+          "conf": 0.6665,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.7739,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.7836,
+          "mode": "shadow"
+        }
+      }
+    },
+    "7_BinanceOrderbook": {
+      "id": "Bina7",
+      "timestamp": "2026-02-09T14:22:07.885090+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 48,
+      "buy_price": 0.48,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.7739,
+      "edge": 0.07,
+      "entry_minute": 7,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68586.01,
+      "btc_open": 68608.86,
+      "strategy": "BinanceOrderbook",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "DOWN",
+          "conf": 0.6665,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.7739,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.7836,
+          "mode": "shadow"
+        }
+      }
+    },
+    "7_PriceAcceleration": {
+      "id": "Pric7",
+      "timestamp": "2026-02-09T14:22:07.885090+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 52,
+      "buy_price": 0.52,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.88,
+      "edge": 0.03,
+      "entry_minute": 7,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68586.01,
+      "btc_open": 68608.86,
+      "strategy": "PriceAcceleration",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "DOWN",
+          "conf": 0.6665,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.7739,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.7836,
+          "mode": "shadow"
+        }
+      }
+    },
+    "7_TakerBuyRatio": {
+      "id": "Take7",
+      "timestamp": "2026-02-09T14:22:07.885090+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 48,
+      "buy_price": 0.48,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.7836,
+      "edge": 0.07,
+      "entry_minute": 7,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68586.01,
+      "btc_open": 68608.86,
+      "strategy": "TakerBuyRatio",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "DOWN",
+          "conf": 0.6665,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.7739,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.7836,
+          "mode": "shadow"
+        }
+      }
+    },
+    "8_OpenVsCurrent": {
+      "id": "Open8",
+      "timestamp": "2026-02-09T14:23:11.898120+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 68,
+      "buy_price": 0.685,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.95,
+      "edge": -0.135,
+      "entry_minute": 8,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68673.11,
+      "btc_open": 68608.86,
+      "strategy": "OpenVsCurrent",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.7808,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "UP",
+          "conf": 0.6987,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.8523,
+          "mode": "shadow"
+        }
+      }
+    },
+    "8_BinanceOrderbook": {
+      "id": "Bina8",
+      "timestamp": "2026-02-09T14:23:11.898120+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 68,
+      "buy_price": 0.685,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.7808,
+      "edge": -0.135,
+      "entry_minute": 8,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68673.11,
+      "btc_open": 68608.86,
+      "strategy": "BinanceOrderbook",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.7808,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "UP",
+          "conf": 0.6987,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.8523,
+          "mode": "shadow"
+        }
+      }
+    },
+    "8_PriceAcceleration": {
+      "id": "Pric8",
+      "timestamp": "2026-02-09T14:23:11.898120+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 68,
+      "buy_price": 0.685,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.6987,
+      "edge": -0.135,
+      "entry_minute": 8,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68673.11,
+      "btc_open": 68608.86,
+      "strategy": "PriceAcceleration",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.7808,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "UP",
+          "conf": 0.6987,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.8523,
+          "mode": "shadow"
+        }
+      }
+    },
+    "8_TakerBuyRatio": {
+      "id": "Take8",
+      "timestamp": "2026-02-09T14:23:11.898120+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 68,
+      "buy_price": 0.685,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.8523,
+      "edge": -0.135,
+      "entry_minute": 8,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68673.11,
+      "btc_open": 68608.86,
+      "strategy": "TakerBuyRatio",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.7808,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "UP",
+          "conf": 0.6987,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.8523,
+          "mode": "shadow"
+        }
+      }
+    },
+    "9_OpenVsCurrent": {
+      "id": "Open9",
+      "timestamp": "2026-02-09T14:24:02.721684+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 80,
+      "buy_price": 0.795,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.95,
+      "edge": -0.245,
+      "entry_minute": 9,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68751.99,
+      "btc_open": 68608.86,
+      "strategy": "OpenVsCurrent",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.9,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "shadow"
+        }
+      }
+    },
+    "9_BinanceOrderbook": {
+      "id": "Bina9",
+      "timestamp": "2026-02-09T14:24:02.721684+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 80,
+      "buy_price": 0.795,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.9,
+      "edge": -0.245,
+      "entry_minute": 9,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68751.99,
+      "btc_open": 68608.86,
+      "strategy": "BinanceOrderbook",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.9,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "shadow"
+        }
+      }
+    },
+    "9_PriceAcceleration": {
+      "id": "Pric9",
+      "timestamp": "2026-02-09T14:24:02.721684+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 80,
+      "buy_price": 0.795,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.88,
+      "edge": -0.245,
+      "entry_minute": 9,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68751.99,
+      "btc_open": 68608.86,
+      "strategy": "PriceAcceleration",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.9,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "shadow"
+        }
+      }
+    },
+    "9_TakerBuyRatio": {
+      "id": "Take9",
+      "timestamp": "2026-02-09T14:24:02.721684+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 80,
+      "buy_price": 0.795,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.88,
+      "edge": -0.245,
+      "entry_minute": 9,
+      "window_start": "2026-02-09T14:15:00+00:00",
+      "window_end": "2026-02-09T14:30:00+00:00",
+      "btc_entry": 68751.99,
+      "btc_open": 68608.86,
+      "strategy": "TakerBuyRatio",
+      "signals": {
+        "OpenVsCurrent": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        },
+        "BinanceOrderbook": {
+          "dir": "UP",
+          "conf": 0.9,
+          "mode": "shadow"
+        },
+        "PriceAcceleration": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "shadow"
+        },
+        "TakerBuyRatio": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "shadow"
+        }
+      }
+    }
+  },
   "gate_status": {
-    "atr_pct": 0.1749,
+    "atr_pct": 0.1657,
     "threshold": 0.03,
     "is_open": true
   }

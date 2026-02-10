@@ -154,7 +154,7 @@ export default function Home() {
   if (loading || !data) {
     return (
       <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
-        <div className="text-white text-xl animate-pulse">Loading BTC Scalper v4...</div>
+        <div className="text-white text-xl animate-pulse">Loading BTC Scalper v8...</div>
       </div>
     );
   }
@@ -201,7 +201,7 @@ export default function Home() {
       {/* HEADER */}
       <header className="mb-2 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <h1 className="text-lg font-bold">🤖 BTC Scalper <span className="text-xs text-blue-400 font-normal">v4 · 3-Layer</span></h1>
+          <h1 className="text-lg font-bold">🤖 BTC Scalper <span className="text-xs text-blue-400 font-normal">v8 · ML + Split TBR</span></h1>
           <div className={`w-2 h-2 rounded-full ${sigActive ? 'bg-green-500 animate-pulse' : 'bg-gray-600'}`} />
           <span className="text-xs text-gray-400">{sigActive ? 'Active' : 'Idle'}</span>
         </div>

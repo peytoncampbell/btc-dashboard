@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-02-10T03:29:25.746887+00:00",
-  "window_start": "2026-02-10T03:15:00+00:00",
-  "window_end": "2026-02-10T03:30:00+00:00",
-  "minute": 14,
-  "btc_price": 69551.56,
-  "window_open": 69844.01,
-  "change_pct": -0.4187,
+  "timestamp": "2026-02-10T03:37:00.206987+00:00",
+  "window_start": "2026-02-10T03:30:00+00:00",
+  "window_end": "2026-02-10T03:45:00+00:00",
+  "minute": 7,
+  "btc_price": 69414.42,
+  "window_open": 69542.55,
+  "change_pct": -0.1842,
   "strategies": {
     "TakerBuyRatio_UP": {
       "direction": "SKIP",
@@ -14,7 +14,7 @@
     },
     "TakerBuyRatio_DOWN": {
       "direction": "DOWN",
-      "confidence": 0.88,
+      "confidence": 0.6646,
       "mode": "active"
     },
     "FuturesOIDelta": {
@@ -23,8 +23,8 @@
       "mode": "active"
     },
     "FuturesBasisSpread": {
-      "direction": "DOWN",
-      "confidence": 0.6242,
+      "direction": "UP",
+      "confidence": 0.8162,
       "mode": "active"
     },
     "TopTraderSentiment": {
@@ -38,13 +38,13 @@
       "mode": "active"
     },
     "ML_Selective": {
-      "direction": "DOWN",
-      "confidence": 0.92,
+      "direction": "SKIP",
+      "confidence": 0.0,
       "mode": "active"
     },
     "ML_Profit": {
       "direction": "UP",
-      "confidence": 0.8072,
+      "confidence": 0.95,
       "mode": "active"
     }
   },
@@ -53,33 +53,33 @@
     "historical_wr": 0.5
   },
   "market": {
-    "yes_price": 0.0005,
-    "no_price": 0.9995
+    "yes_price": 0.255,
+    "no_price": 0.745
   },
-  "polymarket_yes_price": 0.0005,
-  "polymarket_no_price": 0.9995,
-  "polymarket_liquidity": 39552.82,
-  "polymarket_volume": 77953.35,
-  "orderbook_imbalance": -1.0,
+  "polymarket_yes_price": 0.255,
+  "polymarket_no_price": 0.745,
+  "polymarket_liquidity": 28825.56,
+  "polymarket_volume": 3154.01,
+  "orderbook_imbalance": -0.8585,
   "price_source": "POLY",
   "edge": 0.0,
-  "action": "HOLD - no strategy signals",
+  "action": "PLACED 3 TRADES: TakerBuyRatio_DOWN: NO @ 74c, FuturesBasisSpread: YES @ 26c, ML_Profit: YES @ 26c",
   "current_trade": {
-    "id": "Take13",
-    "timestamp": "2026-02-10T03:28:05.263962+00:00",
+    "id": "Take7",
+    "timestamp": "2026-02-10T03:37:00.206987+00:00",
     "direction": "DOWN",
     "side": "NO",
-    "buy_price_cents": 100,
-    "buy_price": 0.9995,
+    "buy_price_cents": 74,
+    "buy_price": 0.745,
     "bet_amount": 1.0,
     "historical_wr": 0.55,
-    "confidence": 0.88,
-    "edge": -0.4495,
-    "entry_minute": 13,
-    "window_start": "2026-02-10T03:15:00+00:00",
-    "window_end": "2026-02-10T03:30:00+00:00",
-    "btc_entry": 69526.8,
-    "btc_open": 69844.01,
+    "confidence": 0.6646,
+    "edge": -0.195,
+    "entry_minute": 7,
+    "window_start": "2026-02-10T03:30:00+00:00",
+    "window_end": "2026-02-10T03:45:00+00:00",
+    "btc_entry": 69414.42,
+    "btc_open": 69542.55,
     "strategy": "TakerBuyRatio_DOWN",
     "ml_pred_profit": 0,
     "signals": {
@@ -90,7 +90,7 @@
       },
       "TakerBuyRatio_DOWN": {
         "dir": "DOWN",
-        "conf": 0.88,
+        "conf": 0.6646,
         "mode": "active"
       },
       "FuturesOIDelta": {
@@ -99,8 +99,8 @@
         "mode": "active"
       },
       "FuturesBasisSpread": {
-        "dir": "DOWN",
-        "conf": 0.6388,
+        "dir": "UP",
+        "conf": 0.8162,
         "mode": "active"
       },
       "TopTraderSentiment": {
@@ -114,34 +114,278 @@
         "mode": "active"
       },
       "ML_Selective": {
-        "dir": "DOWN",
-        "conf": 0.92,
+        "dir": "SKIP",
+        "conf": 0.0,
         "mode": "active"
       },
       "ML_Profit": {
         "dir": "UP",
-        "conf": 0.8072,
+        "conf": 0.95,
         "mode": "active"
       }
     }
   },
   "current_trades": {
-    "12_TakerBuyRatio_DOWN": {
-      "id": "Take12",
-      "timestamp": "2026-02-10T03:27:31.550222+00:00",
+    "0_TakerBuyRatio_DOWN": {
+      "id": "Take0",
+      "timestamp": "2026-02-10T03:30:14.368024+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 100,
-      "buy_price": 0.995,
+      "buy_price_cents": 64,
+      "buy_price": 0.635,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
       "confidence": 0.88,
-      "edge": -0.445,
-      "entry_minute": 12,
-      "window_start": "2026-02-10T03:15:00+00:00",
-      "window_end": "2026-02-10T03:30:00+00:00",
-      "btc_entry": 69554.54,
-      "btc_open": 69844.01,
+      "edge": -0.085,
+      "entry_minute": 0,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69449.55,
+      "btc_open": 69542.55,
+      "strategy": "TakerBuyRatio_DOWN",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "DOWN",
+          "conf": 0.92,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "0_ML_Selective": {
+      "id": "ML_S0",
+      "timestamp": "2026-02-10T03:30:14.368024+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 64,
+      "buy_price": 0.635,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.92,
+      "edge": -0.085,
+      "entry_minute": 0,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69449.55,
+      "btc_open": 69542.55,
+      "strategy": "ML_Selective",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "DOWN",
+          "conf": 0.92,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "0_ML_Profit": {
+      "id": "ML_P0",
+      "timestamp": "2026-02-10T03:30:14.368024+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 36,
+      "buy_price": 0.365,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.95,
+      "edge": 0.185,
+      "entry_minute": 0,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69449.55,
+      "btc_open": 69542.55,
+      "strategy": "ML_Profit",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "DOWN",
+          "conf": 0.92,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "0_FuturesBasisSpread": {
+      "id": "Futu0",
+      "timestamp": "2026-02-10T03:30:31.739745+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 24,
+      "buy_price": 0.245,
+      "bet_amount": 1.0,
+      "historical_wr": 0.68,
+      "confidence": 0.88,
+      "edge": 0.435,
+      "entry_minute": 0,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69378.25,
+      "btc_open": 69542.55,
+      "strategy": "FuturesBasisSpread",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "DOWN",
+          "conf": 0.92,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "1_TakerBuyRatio_DOWN": {
+      "id": "Take1",
+      "timestamp": "2026-02-10T03:31:04.728013+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 80,
+      "buy_price": 0.805,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.88,
+      "edge": -0.255,
+      "entry_minute": 1,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69305.5,
+      "btc_open": 69542.55,
       "strategy": "TakerBuyRatio_DOWN",
       "ml_pred_profit": 0,
       "signals": {
@@ -162,7 +406,7 @@
         },
         "FuturesBasisSpread": {
           "dir": "DOWN",
-          "conf": 0.6217,
+          "conf": 0.6574,
           "mode": "active"
         },
         "TopTraderSentiment": {
@@ -182,27 +426,27 @@
         },
         "ML_Profit": {
           "dir": "UP",
-          "conf": 0.8072,
+          "conf": 0.95,
           "mode": "active"
         }
       }
     },
-    "12_FuturesBasisSpread": {
-      "id": "Futu12",
-      "timestamp": "2026-02-10T03:27:31.550222+00:00",
+    "1_FuturesBasisSpread": {
+      "id": "Futu1",
+      "timestamp": "2026-02-10T03:31:04.728013+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 100,
-      "buy_price": 0.995,
+      "buy_price_cents": 80,
+      "buy_price": 0.805,
       "bet_amount": 1.0,
-      "historical_wr": 0.6667,
-      "confidence": 0.6217,
-      "edge": -0.3283,
-      "entry_minute": 12,
-      "window_start": "2026-02-10T03:15:00+00:00",
-      "window_end": "2026-02-10T03:30:00+00:00",
-      "btc_entry": 69554.54,
-      "btc_open": 69844.01,
+      "historical_wr": 0.68,
+      "confidence": 0.6574,
+      "edge": -0.125,
+      "entry_minute": 1,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69305.5,
+      "btc_open": 69542.55,
       "strategy": "FuturesBasisSpread",
       "ml_pred_profit": 0,
       "signals": {
@@ -223,7 +467,7 @@
         },
         "FuturesBasisSpread": {
           "dir": "DOWN",
-          "conf": 0.6217,
+          "conf": 0.6574,
           "mode": "active"
         },
         "TopTraderSentiment": {
@@ -243,27 +487,27 @@
         },
         "ML_Profit": {
           "dir": "UP",
-          "conf": 0.8072,
+          "conf": 0.95,
           "mode": "active"
         }
       }
     },
-    "12_ML_Selective": {
-      "id": "ML_S12",
-      "timestamp": "2026-02-10T03:27:31.550222+00:00",
+    "1_ML_Selective": {
+      "id": "ML_S1",
+      "timestamp": "2026-02-10T03:31:04.728013+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 100,
-      "buy_price": 0.995,
+      "buy_price_cents": 80,
+      "buy_price": 0.805,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
       "confidence": 0.92,
-      "edge": -0.445,
-      "entry_minute": 12,
-      "window_start": "2026-02-10T03:15:00+00:00",
-      "window_end": "2026-02-10T03:30:00+00:00",
-      "btc_entry": 69554.54,
-      "btc_open": 69844.01,
+      "edge": -0.255,
+      "entry_minute": 1,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69305.5,
+      "btc_open": 69542.55,
       "strategy": "ML_Selective",
       "ml_pred_profit": 0,
       "signals": {
@@ -284,7 +528,7 @@
         },
         "FuturesBasisSpread": {
           "dir": "DOWN",
-          "conf": 0.6217,
+          "conf": 0.6574,
           "mode": "active"
         },
         "TopTraderSentiment": {
@@ -304,27 +548,27 @@
         },
         "ML_Profit": {
           "dir": "UP",
-          "conf": 0.8072,
+          "conf": 0.95,
           "mode": "active"
         }
       }
     },
-    "12_ML_Profit": {
-      "id": "ML_P12",
-      "timestamp": "2026-02-10T03:27:31.550222+00:00",
+    "1_ML_Profit": {
+      "id": "ML_P1",
+      "timestamp": "2026-02-10T03:31:04.728013+00:00",
       "direction": "UP",
       "side": "YES",
-      "buy_price_cents": 0,
-      "buy_price": 0.005,
+      "buy_price_cents": 20,
+      "buy_price": 0.195,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
-      "confidence": 0.8072,
-      "edge": 0.545,
-      "entry_minute": 12,
-      "window_start": "2026-02-10T03:15:00+00:00",
-      "window_end": "2026-02-10T03:30:00+00:00",
-      "btc_entry": 69554.54,
-      "btc_open": 69844.01,
+      "confidence": 0.95,
+      "edge": 0.355,
+      "entry_minute": 1,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69305.5,
+      "btc_open": 69542.55,
       "strategy": "ML_Profit",
       "ml_pred_profit": 0,
       "signals": {
@@ -345,7 +589,7 @@
         },
         "FuturesBasisSpread": {
           "dir": "DOWN",
-          "conf": 0.6217,
+          "conf": 0.6574,
           "mode": "active"
         },
         "TopTraderSentiment": {
@@ -365,27 +609,515 @@
         },
         "ML_Profit": {
           "dir": "UP",
-          "conf": 0.8072,
+          "conf": 0.95,
           "mode": "active"
         }
       }
     },
-    "13_TakerBuyRatio_DOWN": {
-      "id": "Take13",
-      "timestamp": "2026-02-10T03:28:05.263962+00:00",
+    "2_TakerBuyRatio_DOWN": {
+      "id": "Take2",
+      "timestamp": "2026-02-10T03:32:08.992927+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 100,
-      "buy_price": 0.9995,
+      "buy_price_cents": 78,
+      "buy_price": 0.775,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
       "confidence": 0.88,
-      "edge": -0.4495,
-      "entry_minute": 13,
-      "window_start": "2026-02-10T03:15:00+00:00",
-      "window_end": "2026-02-10T03:30:00+00:00",
-      "btc_entry": 69526.8,
-      "btc_open": 69844.01,
+      "edge": -0.225,
+      "entry_minute": 2,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69321.7,
+      "btc_open": 69542.55,
+      "strategy": "TakerBuyRatio_DOWN",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "DOWN",
+          "conf": 0.92,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "2_ML_Selective": {
+      "id": "ML_S2",
+      "timestamp": "2026-02-10T03:32:08.992927+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 78,
+      "buy_price": 0.775,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.92,
+      "edge": -0.225,
+      "entry_minute": 2,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69321.7,
+      "btc_open": 69542.55,
+      "strategy": "ML_Selective",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "DOWN",
+          "conf": 0.92,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "2_ML_Profit": {
+      "id": "ML_P2",
+      "timestamp": "2026-02-10T03:32:08.992927+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 22,
+      "buy_price": 0.225,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.95,
+      "edge": 0.325,
+      "entry_minute": 2,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69321.7,
+      "btc_open": 69542.55,
+      "strategy": "ML_Profit",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "DOWN",
+          "conf": 0.92,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "2_FuturesBasisSpread": {
+      "id": "Futu2",
+      "timestamp": "2026-02-10T03:32:41.305850+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 22,
+      "buy_price": 0.215,
+      "bet_amount": 1.0,
+      "historical_wr": 0.68,
+      "confidence": 0.5825,
+      "edge": 0.465,
+      "entry_minute": 2,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69332.51,
+      "btc_open": 69542.55,
+      "strategy": "FuturesBasisSpread",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "UP",
+          "conf": 0.5825,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "DOWN",
+          "conf": 0.92,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "3_TakerBuyRatio_DOWN": {
+      "id": "Take3",
+      "timestamp": "2026-02-10T03:33:13.900430+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 78,
+      "buy_price": 0.775,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.88,
+      "edge": -0.225,
+      "entry_minute": 3,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69332.0,
+      "btc_open": 69542.55,
+      "strategy": "TakerBuyRatio_DOWN",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "UP",
+          "conf": 0.8118,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "DOWN",
+          "conf": 0.92,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "3_FuturesBasisSpread": {
+      "id": "Futu3",
+      "timestamp": "2026-02-10T03:33:13.900430+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 22,
+      "buy_price": 0.225,
+      "bet_amount": 1.0,
+      "historical_wr": 0.68,
+      "confidence": 0.8118,
+      "edge": 0.455,
+      "entry_minute": 3,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69332.0,
+      "btc_open": 69542.55,
+      "strategy": "FuturesBasisSpread",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "UP",
+          "conf": 0.8118,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "DOWN",
+          "conf": 0.92,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "3_ML_Selective": {
+      "id": "ML_S3",
+      "timestamp": "2026-02-10T03:33:13.900430+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 78,
+      "buy_price": 0.775,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.92,
+      "edge": -0.225,
+      "entry_minute": 3,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69332.0,
+      "btc_open": 69542.55,
+      "strategy": "ML_Selective",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "UP",
+          "conf": 0.8118,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "DOWN",
+          "conf": 0.92,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "3_ML_Profit": {
+      "id": "ML_P3",
+      "timestamp": "2026-02-10T03:33:13.900430+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 22,
+      "buy_price": 0.225,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.95,
+      "edge": 0.325,
+      "entry_minute": 3,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69332.0,
+      "btc_open": 69542.55,
+      "strategy": "ML_Profit",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "UP",
+          "conf": 0.8118,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "DOWN",
+          "conf": 0.92,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "4_TakerBuyRatio_DOWN": {
+      "id": "Take4",
+      "timestamp": "2026-02-10T03:34:02.486377+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 76,
+      "buy_price": 0.755,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.88,
+      "edge": -0.205,
+      "entry_minute": 4,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69332.01,
+      "btc_open": 69542.55,
       "strategy": "TakerBuyRatio_DOWN",
       "ml_pred_profit": 0,
       "signals": {
@@ -406,7 +1138,7 @@
         },
         "FuturesBasisSpread": {
           "dir": "DOWN",
-          "conf": 0.6388,
+          "conf": 0.8603,
           "mode": "active"
         },
         "TopTraderSentiment": {
@@ -426,27 +1158,27 @@
         },
         "ML_Profit": {
           "dir": "UP",
-          "conf": 0.8072,
+          "conf": 0.95,
           "mode": "active"
         }
       }
     },
-    "13_FuturesBasisSpread": {
-      "id": "Futu13",
-      "timestamp": "2026-02-10T03:28:05.263962+00:00",
+    "4_FuturesBasisSpread": {
+      "id": "Futu4",
+      "timestamp": "2026-02-10T03:34:02.486377+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 100,
-      "buy_price": 0.9995,
+      "buy_price_cents": 76,
+      "buy_price": 0.755,
       "bet_amount": 1.0,
-      "historical_wr": 0.6667,
-      "confidence": 0.6388,
-      "edge": -0.3328,
-      "entry_minute": 13,
-      "window_start": "2026-02-10T03:15:00+00:00",
-      "window_end": "2026-02-10T03:30:00+00:00",
-      "btc_entry": 69526.8,
-      "btc_open": 69844.01,
+      "historical_wr": 0.68,
+      "confidence": 0.8603,
+      "edge": -0.075,
+      "entry_minute": 4,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69332.01,
+      "btc_open": 69542.55,
       "strategy": "FuturesBasisSpread",
       "ml_pred_profit": 0,
       "signals": {
@@ -467,7 +1199,7 @@
         },
         "FuturesBasisSpread": {
           "dir": "DOWN",
-          "conf": 0.6388,
+          "conf": 0.8603,
           "mode": "active"
         },
         "TopTraderSentiment": {
@@ -487,27 +1219,27 @@
         },
         "ML_Profit": {
           "dir": "UP",
-          "conf": 0.8072,
+          "conf": 0.95,
           "mode": "active"
         }
       }
     },
-    "13_ML_Selective": {
-      "id": "ML_S13",
-      "timestamp": "2026-02-10T03:28:05.263962+00:00",
+    "4_ML_Selective": {
+      "id": "ML_S4",
+      "timestamp": "2026-02-10T03:34:02.486377+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 100,
-      "buy_price": 0.9995,
+      "buy_price_cents": 76,
+      "buy_price": 0.755,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
       "confidence": 0.92,
-      "edge": -0.4495,
-      "entry_minute": 13,
-      "window_start": "2026-02-10T03:15:00+00:00",
-      "window_end": "2026-02-10T03:30:00+00:00",
-      "btc_entry": 69526.8,
-      "btc_open": 69844.01,
+      "edge": -0.205,
+      "entry_minute": 4,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69332.01,
+      "btc_open": 69542.55,
       "strategy": "ML_Selective",
       "ml_pred_profit": 0,
       "signals": {
@@ -528,7 +1260,7 @@
         },
         "FuturesBasisSpread": {
           "dir": "DOWN",
-          "conf": 0.6388,
+          "conf": 0.8603,
           "mode": "active"
         },
         "TopTraderSentiment": {
@@ -548,27 +1280,27 @@
         },
         "ML_Profit": {
           "dir": "UP",
-          "conf": 0.8072,
+          "conf": 0.95,
           "mode": "active"
         }
       }
     },
-    "13_ML_Profit": {
-      "id": "ML_P13",
-      "timestamp": "2026-02-10T03:28:05.263962+00:00",
+    "4_ML_Profit": {
+      "id": "ML_P4",
+      "timestamp": "2026-02-10T03:34:02.486377+00:00",
       "direction": "UP",
       "side": "YES",
-      "buy_price_cents": 0,
-      "buy_price": 0.0005,
+      "buy_price_cents": 24,
+      "buy_price": 0.245,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
-      "confidence": 0.8072,
-      "edge": 0.5495,
-      "entry_minute": 13,
-      "window_start": "2026-02-10T03:15:00+00:00",
-      "window_end": "2026-02-10T03:30:00+00:00",
-      "btc_entry": 69526.8,
-      "btc_open": 69844.01,
+      "confidence": 0.95,
+      "edge": 0.305,
+      "entry_minute": 4,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69332.01,
+      "btc_open": 69542.55,
       "strategy": "ML_Profit",
       "ml_pred_profit": 0,
       "signals": {
@@ -589,7 +1321,7 @@
         },
         "FuturesBasisSpread": {
           "dir": "DOWN",
-          "conf": 0.6388,
+          "conf": 0.8603,
           "mode": "active"
         },
         "TopTraderSentiment": {
@@ -609,14 +1341,441 @@
         },
         "ML_Profit": {
           "dir": "UP",
-          "conf": 0.8072,
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "5_FuturesBasisSpread": {
+      "id": "Futu5",
+      "timestamp": "2026-02-10T03:35:06.865395+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 34,
+      "buy_price": 0.335,
+      "bet_amount": 1.0,
+      "historical_wr": 0.68,
+      "confidence": 0.6286,
+      "edge": 0.345,
+      "entry_minute": 5,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69435.96,
+      "btc_open": 69542.55,
+      "strategy": "FuturesBasisSpread",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "UP",
+          "conf": 0.6286,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "5_ML_Profit": {
+      "id": "ML_P5",
+      "timestamp": "2026-02-10T03:35:06.865395+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 34,
+      "buy_price": 0.335,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.95,
+      "edge": 0.215,
+      "entry_minute": 5,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69435.96,
+      "btc_open": 69542.55,
+      "strategy": "ML_Profit",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "UP",
+          "conf": 0.6286,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "6_FuturesBasisSpread": {
+      "id": "Futu6",
+      "timestamp": "2026-02-10T03:36:11.898324+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 26,
+      "buy_price": 0.265,
+      "bet_amount": 1.0,
+      "historical_wr": 0.68,
+      "confidence": 0.5838,
+      "edge": 0.415,
+      "entry_minute": 6,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69408.0,
+      "btc_open": 69542.55,
+      "strategy": "FuturesBasisSpread",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "UP",
+          "conf": 0.5838,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "6_ML_Profit": {
+      "id": "ML_P6",
+      "timestamp": "2026-02-10T03:36:11.898324+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 26,
+      "buy_price": 0.265,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.95,
+      "edge": 0.285,
+      "entry_minute": 6,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69408.0,
+      "btc_open": 69542.55,
+      "strategy": "ML_Profit",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "UP",
+          "conf": 0.5838,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "7_TakerBuyRatio_DOWN": {
+      "id": "Take7",
+      "timestamp": "2026-02-10T03:37:00.206987+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 74,
+      "buy_price": 0.745,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.6646,
+      "edge": -0.195,
+      "entry_minute": 7,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69414.42,
+      "btc_open": 69542.55,
+      "strategy": "TakerBuyRatio_DOWN",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.6646,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "UP",
+          "conf": 0.8162,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "7_FuturesBasisSpread": {
+      "id": "Futu7",
+      "timestamp": "2026-02-10T03:37:00.206987+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 26,
+      "buy_price": 0.255,
+      "bet_amount": 1.0,
+      "historical_wr": 0.68,
+      "confidence": 0.8162,
+      "edge": 0.425,
+      "entry_minute": 7,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69414.42,
+      "btc_open": 69542.55,
+      "strategy": "FuturesBasisSpread",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.6646,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "UP",
+          "conf": 0.8162,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
+          "mode": "active"
+        }
+      }
+    },
+    "7_ML_Profit": {
+      "id": "ML_P7",
+      "timestamp": "2026-02-10T03:37:00.206987+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 26,
+      "buy_price": 0.255,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.95,
+      "edge": 0.295,
+      "entry_minute": 7,
+      "window_start": "2026-02-10T03:30:00+00:00",
+      "window_end": "2026-02-10T03:45:00+00:00",
+      "btc_entry": 69414.42,
+      "btc_open": 69542.55,
+      "strategy": "ML_Profit",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.6646,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "UP",
+          "conf": 0.8162,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_UpConfident": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Selective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "ML_Profit": {
+          "dir": "UP",
+          "conf": 0.95,
           "mode": "active"
         }
       }
     }
   },
   "gate_status": {
-    "atr_pct": 0.1486,
+    "atr_pct": 0.1442,
     "threshold": 0.03,
     "is_open": true
   }

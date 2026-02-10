@@ -1,5 +1,5 @@
 {
-  "balance": -69.2704,
+  "balance": -73.23,
   "initial_balance": 0.0,
   "trades": [
     {
@@ -279,6 +279,7 @@
       "entry_minute": 11
     },
     {
+
       "id": "522fa9f8",
       "timestamp": "2026-02-09T14:12:07.794884+00:00",
       "strategy": "OpenVsCurrent",
@@ -840,7 +841,7 @@
       "entry_price": 68608.86,
       "exit_price": 68994.7,
       "result": "WIN",
-      "profit": 1.0619,
+    "profit": 1.0619,
       "bet_amount": 1.0,
       "indicators": {
         "OpenVsCurrent": "DOWN",
@@ -1119,8 +1120,8 @@
       "id": "Open8",
       "timestamp": "2026-02-09T14:23:11.898120+00:00",
       "strategy": "OpenVsCurrent",
-      "direction": "UP",
-      "confidence": 0.95,
+      "direction": "UP",,
+      "confidence": 0.,
       "historical_wr": 0.55,
       "entry_price": 68608.86,
       "exit_price": 68994.7,
@@ -1399,8 +1400,8 @@
       "window_start": "2026-02-09T14:30:00+00:00",
       "window_end": "2026-02-09T14:45:00+00:00",
       "buy_price_cents": 96,
-      "edge": -0.415,
-      "entry_minute": 10
+      "edge": -0-0.415,
+      "entry_minute"10
     },
     {
       "id": "Open10",
@@ -1683,7 +1684,7 @@
       "confidence": 0.95,
       "historical_wr": 0.55,
       "entry_price": 68994.71,
-      "exit_price": 69176.47,
+      "exit_price": 6969176.47,
       "result": "LOSS",
       "profit": -1.0,
       "bet_amount": 1.0,
@@ -1966,7 +1967,7 @@
         "OpenVsCurrent": "DOWN",
         "BinanceOrderbook": "DOWN",
         "PriceAcceleration": "DOWN",
-        "TakerBuyRatio": "UP"
+        "TakerBuyRatio": "U
       },
       "window_start": "2026-02-09T14:30:00+00:00",
       "window_end": "2026-02-09T14:45:00+00:00",
@@ -2246,7 +2247,7 @@
       "bet_amount": 1.0,
       "indicators": {
         "OpenVsCurrent": "DOWN",
-        "BinanceOrderbook": "UP",
+        "BinanceOrderbook": "U"UP",
         "TakerBuyRatio": "UP"
       },
       "window_start": "2026-02-09T14:30:00+00:00",
@@ -32654,6 +32655,289 @@
       "buy_price_cents": 100,
       "edge": -0.4485,
       "entry_minute": 13
+    },
+    {
+      "id": "Futu12",
+      "timestamp": "2026-02-10T03:27:18.808061+00:00",
+      "strategy": "FuturesBasisSpread",
+      "direction": "UP",
+      "confidence": 0.88,
+      "historical_wr": 0.6667,
+      "entry_price": 69844.01,
+      "exit_price": 69543.94,
+      "result": "LOSS",
+      "profit": -1.0,
+      "bet_amount": 1.0,
+      "indicators": {
+        "TakerBuyRatio_DOWN": "DOWN",
+        "FuturesBasisSpread": "UP",
+        "ML_Selective": "DOWN",
+        "ML_Profit": "UP"
+      },
+      "window_start": "2026-02-10T03:15:00+00:00",
+      "window_end": "2026-02-10T03:30:00+00:00",
+      "buy_price_cents": 2,
+      "edge": 0.6517,
+      "entry_minute": 12
+    },
+    {
+      "id": "ML_P12",
+      "timestamp": "2026-02-10T03:27:18.808061+00:00",
+      "strategy": "ML_Profit",
+      "direction": "UP",
+      "confidence": 0.8072,
+      "historical_wr": 0.55,
+      "entry_price": 69844.01,
+      "exit_price": 69543.94,
+      "result": "LOSS",
+      "profit": -1.0,
+      "bet_amount": 1.0,
+      "indicators": {
+        "TakerBuyRatio_DOWN": "DOWN",
+        "FuturesBasisSpread": "UP",
+        "ML_Selective": "DOWN",
+        "ML_Profit": "UP"
+      },
+      "window_start": "2026-02-10T03:15:00+00:00",
+      "window_end": "2026-02-10T03:30:00+00:00",
+      "buy_price_cents": 2,
+      "edge": 0.535,
+      "entry_minute": 12
+    },
+    {
+      "id": "ML_S12",
+      "timestamp": "2026-02-10T03:27:18.808061+00:00",
+      "strategy": "ML_Selective",
+      "direction": "DOWN",
+      "confidence": 0.92,
+      "historical_wr": 0.55,
+      "entry_price": 69844.01,
+      "exit_price": 69543.94,
+      "result": "WIN",
+      "profit": 0.0152,
+      "bet_amount": 1.0,
+      "indicators": {
+        "TakerBuyRatio_DOWN": "DOWN",
+        "FuturesBasisSpread": "UP",
+        "ML_Selective": "DOWN",
+        "ML_Profit": "UP"
+      },
+      "window_start": "2026-02-10T03:15:00+00:00",
+      "window_end": "2026-02-10T03:30:00+00:00",
+      "buy_price_cents": 98,
+      "edge": -0.435,
+      "entry_minute": 12
+    },
+    {
+      "id": "Take12",
+      "timestamp": "2026-02-10T03:27:18.808061+00:00",
+      "strategy": "TakerBuyRatio_DOWN",
+      "direction": "DOWN",
+      "confidence": 0.88,
+      "historical_wr": 0.55,
+      "entry_price": 69844.01,
+      "exit_price": 69543.94,
+      "result": "WIN",
+      "profit": 0.0152,
+      "bet_amount": 1.0,
+      "indicators": {
+        "TakerBuyRatio_DOWN": "DOWN",
+        "FuturesBasisSpread": "UP",
+        "ML_Selective": "DOWN",
+        "ML_Profit": "UP"
+      },
+      "window_start": "2026-02-10T03:15:00+00:00",
+      "window_end": "2026-02-10T03:30:00+00:00",
+      "buy_price_cents": 98,
+      "edge": -0.435,
+      "entry_minute": 12
+    },
+    {
+      "id": "Futu13",
+      "timestamp": "2026-02-10T03:28:24.535992+00:00",
+      "strategy": "FuturesBasisSpread",
+      "direction": "DOWN",
+      "confidence": 0.8644,
+      "historical_wr": 0.6667,
+      "entry_price": 69844.01,
+      "exit_price": 69543.94,
+      "result": "WIN",
+      "profit": 0.0005,
+      "bet_amount": 1.0,
+      "indicators": {
+        "TakerBuyRatio_DOWN": "DOWN",
+        "FuturesBasisSpread": "DOWN",
+        "ML_Selective": "DOWN",
+        "ML_Profit": "UP"
+      },
+      "window_start": "2026-02-10T03:15:00+00:00",
+      "window_end": "2026-02-10T03:30:00+00:00",
+      "buy_price_cents": 100,
+      "edge": -0.3328,
+      "entry_minute": 13
+    },
+    {
+      "id": "ML_P13",
+      "timestamp": "2026-02-10T03:28:08.423631+00:00",
+      "strategy": "ML_Profit",
+      "direction": "UP",
+      "confidence": 0.8072,
+      "historical_wr": 0.55,
+      "entry_price": 69844.01,
+      "exit_price": 69543.94,
+      "result": "LOSS",
+      "profit": -1.0,
+      "bet_amount": 1.0,
+      "indicators": {
+        "TakerBuyRatio_DOWN": "DOWN",
+        "ML_Selective": "DOWN",
+        "ML_Profit": "UP"
+      },
+      "window_start": "2026-02-10T03:15:00+00:00",
+      "window_end": "2026-02-10T03:30:00+00:00",
+      "buy_price_cents": 0,
+      "edge": 0.5495,
+      "entry_minute": 13
+    },
+    {
+      "id": "ML_S13",
+      "timestamp": "2026-02-10T03:28:08.423631+00:00",
+      "strategy": "ML_Selective",
+      "direction": "DOWN",
+      "confidence": 0.92,
+      "historical_wr": 0.55,
+      "entry_price": 69844.01,
+      "exit_price": 69543.94,
+      "result": "WIN",
+      "profit": 0.0005,
+      "bet_amount": 1.0,
+      "indicators": {
+        "TakerBuyRatio_DOWN": "DOWN",
+        "ML_Selective": "DOWN",
+        "ML_Profit": "UP"
+      },
+      "window_start": "2026-02-10T03:15:00+00:00",
+      "window_end": "2026-02-10T03:30:00+00:00",
+      "buy_price_cents": 100,
+      "edge": -0.4495,
+      "entry_minute": 13
+    },
+    {
+      "id": "Take13",
+      "timestamp": "2026-02-10T03:28:08.423631+00:00",
+      "strategy": "TakerBuyRatio_DOWN",
+      "direction": "DOWN",
+      "confidence": 0.88,
+      "historical_wr": 0.55,
+      "entry_price": 69844.01,
+      "exit_price": 69543.94,
+      "result": "WIN",
+      "profit": 0.0005,
+      "bet_amount": 1.0,
+      "indicators": {
+        "TakerBuyRatio_DOWN": "DOWN",
+        "ML_Selective": "DOWN",
+        "ML_Profit": "UP"
+      },
+      "window_start": "2026-02-10T03:15:00+00:00",
+      "window_end": "2026-02-10T03:30:00+00:00",
+      "buy_price_cents": 100,
+      "edge": -0.4495,
+      "entry_minute": 13
+    },
+    {
+      "id": "ML_P12",
+      "timestamp": "2026-02-10T03:27:52.881325+00:00",
+      "strategy": "ML_Profit",
+      "direction": "UP",
+      "confidence": 0.8072,
+      "historical_wr": 0.55,
+      "entry_price": 69844.01,
+      "exit_price": 69543.94,
+      "result": "LOSS",
+      "profit": -1.0,
+      "bet_amount": 1.0,
+      "indicators": {
+        "TakerBuyRatio_DOWN": "DOWN",
+        "ML_Selective": "DOWN",
+        "ML_Profit": "UP"
+      },
+      "window_start": "2026-02-10T03:15:00+00:00",
+      "window_end": "2026-02-10T03:30:00+00:00",
+      "buy_price_cents": 0,
+      "edge": 0.546,
+      "entry_minute": 12
+    },
+    {
+      "id": "ML_S12",
+      "timestamp": "2026-02-10T03:27:52.881325+00:00",
+      "strategy": "ML_Selective",
+      "direction": "DOWN",
+      "confidence": 0.92,
+      "historical_wr": 0.55,
+      "entry_price": 69844.01,
+      "exit_price": 69543.94,
+      "result": "WIN",
+      "profit": 0.004,
+      "bet_amount": 1.0,
+      "indicators": {
+        "TakerBuyRatio_DOWN": "DOWN",
+        "ML_Selective": "DOWN",
+        "ML_Profit": "UP"
+      },
+      "window_start": "2026-02-10T03:15:00+00:00",
+      "window_end": "2026-02-10T03:30:00+00:00",
+      "buy_price_cents": 100,
+      "edge": -0.446,
+      "entry_minute": 12
+    },
+    {
+      "id": "ML_P12",
+      "timestamp": "2026-02-10T03:27:20.862519+00:00",
+      "strategy": "ML_Profit",
+      "direction": "UP",
+      "confidence": 0.8072,
+      "historical_wr": 0.55,
+      "entry_price": 69844.01,
+      "exit_price": 69543.94,
+      "result": "LOSS",
+      "profit": -1.0,
+      "bet_amount": 1.0,
+      "indicators": {
+        "TakerBuyRatio_DOWN": "DOWN",
+        "FuturesBasisSpread": "UP",
+        "ML_Selective": "DOWN",
+        "ML_Profit": "UP"
+      },
+      "window_start": "2026-02-10T03:15:00+00:00",
+      "window_end": "2026-02-10T03:30:00+00:00",
+      "buy_price_cents": 2,
+      "edge": 0.535,
+      "entry_minute": 12
+    },
+    {
+      "id": "ML_S12",
+      "timestamp": "2026-02-10T03:27:20.862519+00:00",
+      "strategy": "ML_Selective",
+      "direction": "DOWN",
+      "confidence": 0.92,
+      "historical_wr": 0.55,
+      "entry_price": 69844.01,
+      "exit_price": 69543.94,
+      "result": "WIN",
+      "profit": 0.0152,
+      "bet_amount": 1.0,
+      "indicators": {
+        "TakerBuyRatio_DOWN": "DOWN",
+        "FuturesBasisSpread": "UP",
+        "ML_Selective": "DOWN",
+        "ML_Profit": "UP"
+      },
+      "window_start": "2026-02-10T03:15:00+00:00",
+      "window_end": "2026-02-10T03:30:00+00:00",
+      "buy_price_cents": 98,
+      "edge": -0.435,
+      "entry_minute": 12
     }
   ],
   "strategies": [
@@ -32664,6 +32948,9 @@
     "FuturesBasisSpread",
     "FuturesTakerFlow",
     "TakerBuyRatio_DOWN",
-    "ML_Selective"
+    "ML_Selective",
+    "ML_Profit"
+  ]
+}fit"
   ]
 }

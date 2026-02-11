@@ -1,4 +1,5 @@
 'use client';
+import { n } from './utils';
 
 import { useState } from 'react';
 
@@ -82,7 +83,7 @@ export default function StrategyHeatmap({ regimeBreakdown }: StrategyHeatmapProp
                         <div
                           className={`text-center py-0.5 rounded border ${getCellColor(wr)}`}
                         >
-                          {wr >= 0 ? `${wr.toFixed(0)}%` : '—'}
+                          {wr >= 0 ? `${n(wr).toFixed(0)}%` : '—'}
                         </div>
                       </td>
                     );
@@ -96,3 +97,7 @@ export default function StrategyHeatmap({ regimeBreakdown }: StrategyHeatmapProp
     </div>
   );
 }
+
+
+
+

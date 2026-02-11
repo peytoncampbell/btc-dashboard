@@ -1,3 +1,4 @@
+import { n } from './utils';
 interface NearMiss {
   id: number;
   timestamp: string;
@@ -26,7 +27,7 @@ export default function NearMissFeed({ nearMisses }: NearMissFeedProps) {
           {nearMisses.map((nm) => {
             const wouldWin = nm.would_have_won === 1;
             const wouldLose = nm.would_have_won === 0;
-            return (
+            return n(
               <div
                 key={nm.id}
                 className={`p-2 rounded-lg border text-xs ${
@@ -50,7 +51,7 @@ export default function NearMissFeed({ nearMisses }: NearMissFeedProps) {
                     <span className="text-gray-500">Signal: </span>
                     <span className="text-green-400 font-bold">{(nm.signal_strength * 100).toFixed(0)}%</span>
                     <span className="text-gray-500"> / Thresh: </span>
-                    <span className="text-gray-400">{(nm.threshold * 100).toFixed(0)}%</span>
+                    <span className="text-gray-400">{n(nm.threshold * 100).toFixed(0)}%</span>
                   </div>
                   {nm.would_have_won != null && (
                     <span className={wouldWin ? 'text-yellow-400 font-bold' : 'text-gray-500'}>
@@ -67,3 +68,6 @@ export default function NearMissFeed({ nearMisses }: NearMissFeedProps) {
     </div>
   );
 }
+
+
+

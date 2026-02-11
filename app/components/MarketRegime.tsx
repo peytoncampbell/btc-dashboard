@@ -63,3 +63,5 @@ export default function MarketRegime({ volatility, trend, volume }: MarketRegime
     </div>
   );
 }
+
+

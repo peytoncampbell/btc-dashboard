@@ -1,3 +1,4 @@
+import { n } from './utils';
 interface EdgeAnalysisProps {
   edgeBuckets: Record<string, { wins: number; total: number }>;
 }
@@ -12,12 +13,12 @@ export default function EdgeAnalysis({ edgeBuckets }: EdgeAnalysisProps) {
         <div className="space-y-2">
           {Object.entries(edgeBuckets).map(([bucket, b]) => {
             const wr = b.total > 0 ? (b.wins / b.total) * 100 : 0;
-            return (
+            return n(
               <div key={bucket}>
                 <div className="flex justify-between text-xs mb-0.5">
                   <span className="text-gray-300">{bucket}</span>
                   <span className="text-gray-400">
-                    {b.wins}/{b.total} ({wr.toFixed(0)}%)
+                    {b.wins}/{b.total} ({n(wr).toFixed(0)}%)
                   </span>
                 </div>
                 <div className="h-4 bg-gray-800 rounded overflow-hidden flex">
@@ -36,3 +37,6 @@ export default function EdgeAnalysis({ edgeBuckets }: EdgeAnalysisProps) {
     </div>
   );
 }
+
+
+

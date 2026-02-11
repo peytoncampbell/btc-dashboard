@@ -1,3 +1,4 @@
+import { n } from './utils';
 interface HourlyStats {
   [key: string]: { wins: number; losses: number; pnl: number };
 }
@@ -54,7 +55,7 @@ export default function HourlyHeatmap({ hourlyStats }: HourlyHeatmapProps) {
                   <div
                     key={hour}
                     className={`flex-1 h-4 mx-[1px] rounded ${getCellColor(pnl)} ${total > 0 ? 'border border-gray-700' : ''}`}
-                    title={`${day} ${hour}:00 | ${total} trades | ${pnl >= 0 ? '+' : ''}$${pnl.toFixed(2)}`}
+                    title={`${day} ${hour}:00 | ${total} trades | ${pnl >= 0 ? '+' : ''}$${n(pnl).toFixed(2)}`}
                   ></div>
                 );
               })}
@@ -70,3 +71,6 @@ export default function HourlyHeatmap({ hourlyStats }: HourlyHeatmapProps) {
     </div>
   );
 }
+
+
+

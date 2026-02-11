@@ -1,3 +1,4 @@
+import { n } from './utils';
 interface DataQualityProps {
   totalTrades: number;
   tradesWithVolatilityRegime: number;
@@ -27,7 +28,7 @@ export default function DataQualityPanel({
           <div className="flex justify-between text-xs mb-0.5">
             <span className="text-gray-400">Volatility Regime</span>
             <span className="text-gray-300 font-bold">
-              {tradesWithVolatilityRegime}/{totalTrades} ({volPct.toFixed(0)}%)
+              {tradesWithVolatilityRegime}/{totalTrades} n({n(volPct).toFixed(0)}%)
             </span>
           </div>
           <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
@@ -41,7 +42,7 @@ export default function DataQualityPanel({
           <div className="flex justify-between text-xs mb-0.5">
             <span className="text-gray-400">Market Regime</span>
             <span className="text-gray-300 font-bold">
-              {tradesWithMarketRegime}/{totalTrades} ({regimePct.toFixed(0)}%)
+              {tradesWithMarketRegime}/{totalTrades} n({n(regimePct).toFixed(0)}%)
             </span>
           </div>
           <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
@@ -55,7 +56,7 @@ export default function DataQualityPanel({
           <div className="flex justify-between text-xs mb-0.5">
             <span className="text-gray-400">Orderbook Data</span>
             <span className="text-gray-300 font-bold">
-              {tradesWithOrderbookData}/{totalTrades} ({obPct.toFixed(0)}%)
+              {tradesWithOrderbookData}/{totalTrades} n({n(obPct).toFixed(0)}%)
             </span>
           </div>
           <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
@@ -79,3 +80,6 @@ export default function DataQualityPanel({
     </div>
   );
 }
+
+
+

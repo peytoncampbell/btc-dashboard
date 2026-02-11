@@ -1,3 +1,4 @@
+import { n } from './utils';
 interface Trade {
   id: number;
   timestamp: string;
@@ -34,7 +35,7 @@ export default function RecentTrades({ trades }: RecentTradesProps) {
               signals = JSON.parse(t.shadow_signals || '{}');
             } catch { /* ignore */ }
 
-            return (
+            return n(
               <div
                 key={t.id}
                 className={`p-2 rounded-lg border text-xs ${
@@ -66,7 +67,7 @@ export default function RecentTrades({ trades }: RecentTradesProps) {
                         profit > 0 ? 'text-green-400' : profit < 0 ? 'text-red-400' : 'text-gray-500'
                       }`}
                     >
-                      {profit !== 0 ? `${profit > 0 ? '+' : ''}$${profit.toFixed(2)}` : '—'}
+                      {profit !== 0 ? `${profit > 0 ? '+' : ''}$${n(profit).toFixed(2)}` : '—'}
                     </div>
                   </div>
                 </div>
@@ -102,3 +103,6 @@ export default function RecentTrades({ trades }: RecentTradesProps) {
     </div>
   );
 }
+
+
+

@@ -1,4 +1,5 @@
 'use client';
+import { n } from './utils';
 
 import { useEffect, useState } from 'react';
 
@@ -40,7 +41,7 @@ function OrderbookBar({ imbalance }: { imbalance: number }) {
   const pct = ((imbalance + 1) / 2) * 100;
   const label = imbalance > 0.15 ? 'Bullish' : imbalance < -0.15 ? 'Bearish' : 'Neutral';
   const color = imbalance > 0.15 ? 'text-green-400' : imbalance < -0.15 ? 'text-red-400' : 'text-gray-400';
-  return (
+  return n(
     <div>
       <div className="flex justify-between text-[10px] mb-0.5">
         <span className="text-green-400">Bids</span>
@@ -98,10 +99,10 @@ export default function LiveSignal({ signal, gateStatus, obImbalance }: LiveSign
                 }`}
               >
                 {(sig.change_pct || 0) >= 0 ? '+' : ''}
-                {(sig.change_pct || 0).toFixed(3)}%
+                {n(sig.change_pct || 0).toFixed(3)}%
               </span>
             </div>
-            {sig.ensemble && (
+            {sig.ensemble && n(
               <div className="flex items-center gap-2 text-xs mb-2">
                 <span className="text-gray-500">Ensemble:</span>
                 <span
@@ -122,9 +123,9 @@ export default function LiveSignal({ signal, gateStatus, obImbalance }: LiveSign
                 </span>
               </div>
             )}
-            {sig.market && (
+            {sig.market && n(
               <div className="text-xs text-gray-500 mb-2">
-                YES {(sig.market.yes_price * 100).toFixed(1)}¢ / NO {(sig.market.no_price * 100).toFixed(1)}¢
+                YES {(sig.market.yes_price * 100).toFixed(1)}¢ / NO {n(sig.market.no_price * 100).toFixed(1)}¢
               </div>
             )}
             {sig.current_trade && (
@@ -141,3 +142,7 @@ export default function LiveSignal({ signal, gateStatus, obImbalance }: LiveSign
     </div>
   );
 }
+
+
+
+

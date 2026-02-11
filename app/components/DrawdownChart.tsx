@@ -1,3 +1,4 @@
+import { n } from './utils';
 interface DrawdownChartProps {
   cumulativePnl: Array<{ timestamp: string; pnl: number }>;
   maxDrawdown: number;
@@ -35,19 +36,19 @@ export default function DrawdownChart({ cumulativePnl, maxDrawdown }: DrawdownCh
   // Zero line
   const zeroY = yScale(0);
 
-  return (
+  return n(
     <div className="bg-gray-900 rounded-xl p-3 border border-gray-700">
       <h2 className="text-xs font-bold text-gray-400 mb-2">📉 CUMULATIVE P&L</h2>
       <div className="flex items-center justify-between text-xs mb-2">
         <div>
           <span className="text-gray-500">Total: </span>
           <span className={`font-bold ${cumulativePnl[cumulativePnl.length - 1].pnl >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-            ${cumulativePnl[cumulativePnl.length - 1].pnl.toFixed(2)}
+            ${n(cumulativePnl[cumulativePnl.length - 1]?.pnl).toFixed(2)}
           </span>
         </div>
         <div>
           <span className="text-gray-500">Max DD: </span>
-          <span className="text-red-400 font-bold">${maxDrawdown.toFixed(2)}</span>
+          <span className="text-red-400 font-bold">${n(maxDrawdown).toFixed(2)}</span>
         </div>
       </div>
       <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-24">
@@ -80,3 +81,6 @@ export default function DrawdownChart({ cumulativePnl, maxDrawdown }: DrawdownCh
     </div>
   );
 }
+
+
+

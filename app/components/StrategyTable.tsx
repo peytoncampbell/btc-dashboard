@@ -1,4 +1,5 @@
 'use client';
+import { n } from './utils';
 
 import { useState } from 'react';
 
@@ -89,7 +90,7 @@ export default function StrategyTable({ strategies }: StrategyTableProps) {
               </tr>
             </thead>
             <tbody>
-              {sorted.map((s) => (
+              {sorted.map((s) => n(
                 <tr key={s.name} className="border-b border-gray-800/50 hover:bg-gray-800/30">
                   <td className="py-1.5 px-2 text-gray-300 truncate max-w-[150px]">{s.name}</td>
                   <td className="py-1.5 px-2 text-center text-gray-400">{s.live_trades}</td>
@@ -103,12 +104,12 @@ export default function StrategyTable({ strategies }: StrategyTableProps) {
                           : 'text-red-400'
                       }`}
                     >
-                      {s.live_win_rate.toFixed(0)}%
+                      {n(s.live_win_rate).toFixed(0)}%
                     </span>
                   </td>
                   <td className="py-1.5 px-2 text-center">
                     <span className={`font-bold ${s.live_pnl >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-                      {s.live_pnl >= 0 ? '+' : ''}${s.live_pnl.toFixed(2)}
+                      {s.live_pnl >= 0 ? '+' : ''}${n(s.live_pnl).toFixed(2)}
                     </span>
                   </td>
                   <td className="py-1.5 px-2 text-center text-gray-500 text-[10px]">
@@ -123,3 +124,7 @@ export default function StrategyTable({ strategies }: StrategyTableProps) {
     </div>
   );
 }
+
+
+
+

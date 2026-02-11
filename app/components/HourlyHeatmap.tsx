@@ -30,10 +30,10 @@ export default function HourlyHeatmap({ hourlyStats }: HourlyHeatmapProps) {
 
   return (
     <div className="bg-gray-900 rounded-xl p-3 border border-gray-700">
-      <h2 className="text-xs font-bold text-gray-400 mb-2">🕐 HOURLY HEATMAP (UTC)</h2>
+      <h2 className="text-xs font-bold text-gray-400 mb-2">🕐 HOURLY HEATMAP (EST)</h2>
       <div className="overflow-x-auto">
         <div className="min-w-[500px]">
-          {/* Hour labels */}
+          {/* Hour labels in EST (UTC-5) */}
           <div className="flex mb-1">
             <div className="w-8"></div>
             {hours.map((h) => (
@@ -42,20 +42,24 @@ export default function HourlyHeatmap({ hourlyStats }: HourlyHeatmapProps) {
               </div>
             ))}
           </div>
-          {/* Grid */}
+          {/* Grid — remap UTC data to EST by shifting +5 hours */}
           {days.map((day, dow) => (
             <div key={dow} className="flex items-center mb-0.5">
               <div className="w-8 text-[9px] text-gray-500">{day}</div>
-              {hours.map((hour) => {
-                const key = `${dow}-${hour}`;
+              {hours.map((estHour) => {
+                // Convert EST display hour back to UTC to look up data
+                const utcHour = (estHour + 5) % 24;
+                // If EST hour < 5, the UTC day is actually the next day
+                const utcDow = estHour < 5 ? (dow + 1) % 7 : dow;
+                const key = `${utcDow}-${utcHour}`;
                 const stats = hourlyStats[key];
                 const pnl = stats?.pnl || 0;
                 const total = stats ? stats.wins + stats.losses : 0;
                 return (
                   <div
-                    key={hour}
+                    key={estHour}
                     className={`flex-1 h-4 mx-[1px] rounded ${getCellColor(pnl)} ${total > 0 ? 'border border-gray-700' : ''}`}
-                    title={`${day} ${hour}:00 | ${total} trades | ${pnl >= 0 ? '+' : ''}$${n(pnl).toFixed(2)}`}
+                    title={`${day} ${estHour}:00 EST | ${total} trades | ${pnl >= 0 ? '+' : ''}$${n(pnl).toFixed(2)}`}
                   ></div>
                 );
               })}

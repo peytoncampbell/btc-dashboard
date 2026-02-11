@@ -36,7 +36,7 @@ export default function DrawdownChart({ cumulativePnl, maxDrawdown }: DrawdownCh
   // Zero line
   const zeroY = yScale(0);
 
-  return n(
+  return (
     <div className="bg-gray-900 rounded-xl p-3 border border-gray-700">
       <h2 className="text-xs font-bold text-gray-400 mb-2">📉 CUMULATIVE P&L</h2>
       <div className="flex items-center justify-between text-xs mb-2">

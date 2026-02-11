@@ -27,15 +27,15 @@ export default function RecentTrades({ trades }: RecentTradesProps) {
           {trades.map((t) => {
             const result = t.result || '';
             const dir = t.direction || '?';
-            const conf = t.confidence || 0;
-            const profit = t.profit || 0;
+            const conf = n(t.confidence);
+            const profit = n(t.profit);
 
             let signals: Record<string, any> = {};
             try {
               signals = JSON.parse(t.shadow_signals || '{}');
             } catch { /* ignore */ }
 
-            return n(
+            return (
               <div
                 key={t.id}
                 className={`p-2 rounded-lg border text-xs ${
@@ -51,11 +51,11 @@ export default function RecentTrades({ trades }: RecentTradesProps) {
                     <span>{dir === 'UP' ? '⬆️' : '⬇️'}</span>
                     <div>
                       <div className="font-semibold">
-                        {dir === 'UP' ? 'YES' : 'NO'} @ {t.buy_price_cents}¢
+                        {dir === 'UP' ? 'YES' : 'NO'} @ {n(t.buy_price_cents)}¢
                         <span className="text-gray-500 font-normal ml-1 text-[10px]">{t.strategy}</span>
                       </div>
                       <div className="text-[10px] text-gray-500">
-                        Min {t.entry_minute} · {(conf * 100).toFixed(0)}% conf ·{' '}
+                        Min {n(t.entry_minute)} · {(conf * 100).toFixed(0)}% conf ·{' '}
                         {new Date(t.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                       </div>
                     </div>
@@ -67,7 +67,7 @@ export default function RecentTrades({ trades }: RecentTradesProps) {
                         profit > 0 ? 'text-green-400' : profit < 0 ? 'text-red-400' : 'text-gray-500'
                       }`}
                     >
-                      {profit !== 0 ? `${profit > 0 ? '+' : ''}$${n(profit).toFixed(2)}` : '—'}
+                      {profit !== 0 ? `${profit > 0 ? '+' : ''}$${profit.toFixed(2)}` : '—'}
                     </div>
                   </div>
                 </div>

@@ -74,7 +74,7 @@ export async function GET(request: Request) {
     }
 
     // Extract data from live endpoint
-    const performance = liveData?.performance || {
+    const rawPerformance = liveData?.performance || {
       balance: 100,
       total_pnl: 0,
       win_rate: 0,
@@ -85,6 +85,12 @@ export async function GET(request: Request) {
       best_streak: 0,
       today_pnl: 0,
       initial_balance: 100,
+    };
+    
+    // Compute balance if null: initial_balance + total_pnl
+    const performance = {
+      ...rawPerformance,
+      balance: rawPerformance.balance ?? (rawPerformance.initial_balance || 100) + (rawPerformance.total_pnl || 0),
     };
 
     const liveSignal = liveData?.signal || null;

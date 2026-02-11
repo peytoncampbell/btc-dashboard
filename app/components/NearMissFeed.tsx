@@ -27,7 +27,7 @@ export default function NearMissFeed({ nearMisses }: NearMissFeedProps) {
           {nearMisses.map((nm) => {
             const wouldWin = nm.would_have_won === 1;
             const wouldLose = nm.would_have_won === 0;
-            return n(
+            return (
               <div
                 key={nm.id}
                 className={`p-2 rounded-lg border text-xs ${
@@ -44,14 +44,14 @@ export default function NearMissFeed({ nearMisses }: NearMissFeedProps) {
                     <span className="font-semibold truncate">{nm.strategy}</span>
                     {wouldWin && <span className="text-yellow-400">💡</span>}
                   </div>
-                  <div className="text-[10px] text-gray-500">Min {nm.entry_minute}</div>
+                  <div className="text-[10px] text-gray-500">Min {n(nm.entry_minute)}</div>
                 </div>
                 <div className="flex items-center justify-between text-[10px]">
                   <div>
                     <span className="text-gray-500">Signal: </span>
-                    <span className="text-green-400 font-bold">{(nm.signal_strength * 100).toFixed(0)}%</span>
+                    <span className="text-green-400 font-bold">{(n(nm.signal_strength) * 100).toFixed(0)}%</span>
                     <span className="text-gray-500"> / Thresh: </span>
-                    <span className="text-gray-400">{n(nm.threshold * 100).toFixed(0)}%</span>
+                    <span className="text-gray-400">{(n(nm.threshold) * 100).toFixed(0)}%</span>
                   </div>
                   {nm.would_have_won != null && (
                     <span className={wouldWin ? 'text-yellow-400 font-bold' : 'text-gray-500'}>

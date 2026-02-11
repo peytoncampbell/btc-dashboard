@@ -90,16 +90,16 @@ export default function StrategyTable({ strategies }: StrategyTableProps) {
               </tr>
             </thead>
             <tbody>
-              {sorted.map((s) => n(
+              {sorted.map((s) => (
                 <tr key={s.name} className="border-b border-gray-800/50 hover:bg-gray-800/30">
                   <td className="py-1.5 px-2 text-gray-300 truncate max-w-[150px]">{s.name}</td>
-                  <td className="py-1.5 px-2 text-center text-gray-400">{s.live_trades}</td>
+                  <td className="py-1.5 px-2 text-center text-gray-400">{n(s.live_trades)}</td>
                   <td className="py-1.5 px-2 text-center">
                     <span
                       className={`font-bold ${
-                        s.live_win_rate >= 60
+                        n(s.live_win_rate) >= 60
                           ? 'text-green-400'
-                          : s.live_win_rate >= 40
+                          : n(s.live_win_rate) >= 40
                           ? 'text-yellow-400'
                           : 'text-red-400'
                       }`}
@@ -108,12 +108,12 @@ export default function StrategyTable({ strategies }: StrategyTableProps) {
                     </span>
                   </td>
                   <td className="py-1.5 px-2 text-center">
-                    <span className={`font-bold ${s.live_pnl >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-                      {s.live_pnl >= 0 ? '+' : ''}${n(s.live_pnl).toFixed(2)}
+                    <span className={`font-bold ${n(s.live_pnl) >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+                      {n(s.live_pnl) >= 0 ? '+' : ''}${n(s.live_pnl).toFixed(2)}
                     </span>
                   </td>
                   <td className="py-1.5 px-2 text-center text-gray-500 text-[10px]">
-                    {s.live_wins}/{s.live_losses}
+                    {n(s.live_wins)}/{n(s.live_losses)}
                   </td>
                 </tr>
               ))}

@@ -88,9 +88,15 @@ export async function GET(request: Request) {
     };
     
     // Compute balance if null: initial_balance + total_pnl
+    // Default initial_balance to 100 if not provided
+    const initialBalance = rawPerformance.initial_balance ?? 100;
+    const totalPnl = rawPerformance.total_pnl ?? 0;
+    const computedBalance = rawPerformance.balance ?? (initialBalance + totalPnl);
+    
     const performance = {
       ...rawPerformance,
-      balance: rawPerformance.balance ?? (rawPerformance.initial_balance || 100) + (rawPerformance.total_pnl || 0),
+      initial_balance: initialBalance,
+      balance: computedBalance,
     };
 
     const liveSignal = liveData?.signal || null;

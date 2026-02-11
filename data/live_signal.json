@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-02-11T20:22:25.749912+00:00",
+  "timestamp": "2026-02-11T20:23:54.972116+00:00",
   "window_start": "2026-02-11T20:15:00+00:00",
   "window_end": "2026-02-11T20:30:00+00:00",
-  "minute": 7,
-  "btc_price": 67540.68,
+  "minute": 8,
+  "btc_price": 67526.08,
   "window_open": 67656.99,
-  "change_pct": -0.1719,
+  "change_pct": -0.1935,
   "strategies": {
     "TakerBuyRatio_UP": {
       "direction": "UP",
@@ -23,7 +23,7 @@
       "mode": "active"
     },
     "FuturesBasisSpread": {
-      "direction": "DOWN",
+      "direction": "UP",
       "confidence": 0.88,
       "mode": "active"
     },
@@ -34,12 +34,12 @@
     },
     "VWAPCross": {
       "direction": "DOWN",
-      "confidence": 0.806,
+      "confidence": 0.825,
       "mode": "active"
     },
     "EMACross": {
-      "direction": "UP",
-      "confidence": 0.6042,
+      "direction": "DOWN",
+      "confidence": 0.5826,
       "mode": "active"
     },
     "RSISignal": {
@@ -59,12 +59,12 @@
     },
     "MeanReversion": {
       "direction": "UP",
-      "confidence": 0.8079,
+      "confidence": 0.8402,
       "mode": "active"
     },
     "MomentumROC": {
       "direction": "DOWN",
-      "confidence": 0.8613,
+      "confidence": 0.88,
       "mode": "active"
     },
     "CandlePattern": {
@@ -79,7 +79,7 @@
     },
     "SpreadMomentum": {
       "direction": "DOWN",
-      "confidence": 0.7332,
+      "confidence": 0.7356,
       "mode": "active"
     },
     "CheapVolSpike": {
@@ -103,8 +103,8 @@
       "mode": "active"
     },
     "MidVolValue": {
-      "direction": "UP",
-      "confidence": 0.72,
+      "direction": "SKIP",
+      "confidence": 0.0,
       "mode": "active"
     },
     "RSINeutralVol": {
@@ -223,32 +223,32 @@
     "historical_wr": 0.5
   },
   "market": {
-    "yes_price": 0.145,
-    "no_price": 0.855
+    "yes_price": 0.115,
+    "no_price": 0.885
   },
-  "polymarket_yes_price": 0.145,
-  "polymarket_no_price": 0.855,
+  "polymarket_yes_price": 0.115,
+  "polymarket_no_price": 0.885,
   "polymarket_liquidity": 21124.69,
   "polymarket_volume": 403.45,
-  "orderbook_imbalance": -0.9034,
+  "orderbook_imbalance": -0.9189,
   "price_source": "POLY",
   "edge": 0.0,
-  "action": "PLACED 11 TRADES: TakerBuyRatio_UP: YES @ 14c, FuturesBasisSpread: NO @ 86c, VWAPCross: NO @ 86c, EMACross: YES @ 14c, MeanReversion: YES @ 14c, MomentumROC: NO @ 86c, SpreadMomentum: NO @ 86c, MidVolValue: YES @ 14c, MLProfit_v5: NO @ 86c, MLProfit_v6: NO @ 86c, CheapEntry: NO @ 86c",
+  "action": "PLACED 1 TRADES: FuturesBasisSpread: YES @ 12c",
   "current_trade": {
-    "id": "VWAP7",
-    "timestamp": "2026-02-11T20:22:25.749912+00:00",
+    "id": "VWAP8",
+    "timestamp": "2026-02-11T20:23:23.572289+00:00",
     "direction": "DOWN",
     "side": "NO",
-    "buy_price_cents": 86,
-    "buy_price": 0.855,
+    "buy_price_cents": 88,
+    "buy_price": 0.885,
     "bet_amount": 1.0,
     "historical_wr": 0.5474,
-    "confidence": 0.806,
-    "edge": -0.3076,
-    "entry_minute": 7,
+    "confidence": 0.9,
+    "edge": -0.3376,
+    "entry_minute": 8,
     "window_start": "2026-02-11T20:15:00+00:00",
     "window_end": "2026-02-11T20:30:00+00:00",
-    "btc_entry": 67540.68,
+    "btc_entry": 67491.87,
     "btc_open": 67656.99,
     "strategy": "VWAPCross",
     "ml_pred_profit": 0,
@@ -269,8 +269,8 @@
         "mode": "active"
       },
       "FuturesBasisSpread": {
-        "dir": "DOWN",
-        "conf": 0.88,
+        "dir": "SKIP",
+        "conf": 0.0,
         "mode": "active"
       },
       "TopTraderSentiment": {
@@ -280,12 +280,12 @@
       },
       "VWAPCross": {
         "dir": "DOWN",
-        "conf": 0.806,
+        "conf": 0.9,
         "mode": "active"
       },
       "EMACross": {
-        "dir": "UP",
-        "conf": 0.6042,
+        "dir": "DOWN",
+        "conf": 0.6142,
         "mode": "active"
       },
       "RSISignal": {
@@ -305,12 +305,12 @@
       },
       "MeanReversion": {
         "dir": "UP",
-        "conf": 0.8079,
+        "conf": 0.85,
         "mode": "active"
       },
       "MomentumROC": {
         "dir": "DOWN",
-        "conf": 0.8613,
+        "conf": 0.88,
         "mode": "active"
       },
       "CandlePattern": {
@@ -325,7 +325,7 @@
       },
       "SpreadMomentum": {
         "dir": "DOWN",
-        "conf": 0.7332,
+        "conf": 0.6465,
         "mode": "active"
       },
       "CheapVolSpike": {
@@ -349,8 +349,8 @@
         "mode": "active"
       },
       "MidVolValue": {
-        "dir": "UP",
-        "conf": 0.72,
+        "dir": "SKIP",
+        "conf": 0.0,
         "mode": "active"
       },
       "RSINeutralVol": {
@@ -384,8 +384,8 @@
         "mode": "active"
       },
       "EntropyReversion": {
-        "dir": "SKIP",
-        "conf": 0.0,
+        "dir": "DOWN",
+        "conf": 0.6589,
         "mode": "active"
       },
       "SmallMoveValue": {
@@ -434,8 +434,8 @@
         "mode": "shadow"
       },
       "RegimeSwitch": {
-        "dir": "SKIP",
-        "conf": 0.0,
+        "dir": "UP",
+        "conf": 0.6022,
         "mode": "shadow"
       },
       "FundingMomentumDivergence": {
@@ -15018,10 +15018,3244 @@
           "mode": "shadow"
         }
       }
+    },
+    "7_EntropyReversion": {
+      "id": "Entr7",
+      "timestamp": "2026-02-11T20:22:57.363249+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 88,
+      "buy_price": 0.875,
+      "bet_amount": 1.0,
+      "historical_wr": 0.88,
+      "confidence": 0.6589,
+      "edge": 0.005,
+      "entry_minute": 7,
+      "window_start": "2026-02-11T20:15:00+00:00",
+      "window_end": "2026-02-11T20:30:00+00:00",
+      "btc_entry": 67511.56,
+      "btc_open": 67656.99,
+      "strategy": "EntropyReversion",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "UP",
+          "conf": 0.735,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VWAPCross": {
+          "dir": "DOWN",
+          "conf": 0.8795,
+          "mode": "active"
+        },
+        "EMACross": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSISignal": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerBreak": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MeanReversion": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "active"
+        },
+        "MomentumROC": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "CandlePattern": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingContrarian": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.695,
+          "mode": "active"
+        },
+        "CheapVolSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSIOversoldCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "NightSession": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MidVolValue": {
+          "dir": "UP",
+          "conf": 0.72,
+          "mode": "active"
+        },
+        "RSINeutralVol": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MLXGBoost": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v6": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "CheapEntry": {
+          "dir": "DOWN",
+          "conf": 0.72,
+          "mode": "active"
+        },
+        "ConsensusPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "DOWN",
+          "conf": 0.6589,
+          "mode": "active"
+        },
+        "SmallMoveValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumDownBias": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PrimeHoursPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "OverboughtPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TripleConfirmDown": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "RegimeSwitch": {
+          "dir": "UP",
+          "conf": 0.6026,
+          "mode": "shadow"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CorrelationBreakETHBTC": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "7_RegimeSwitch": {
+      "id": "Regi7",
+      "timestamp": "2026-02-11T20:22:57.363249+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 12,
+      "buy_price": 0.125,
+      "bet_amount": 1.0,
+      "historical_wr": 0.1739,
+      "confidence": 0.6026,
+      "edge": 0.0489,
+      "entry_minute": 7,
+      "window_start": "2026-02-11T20:15:00+00:00",
+      "window_end": "2026-02-11T20:30:00+00:00",
+      "btc_entry": 67511.56,
+      "btc_open": 67656.99,
+      "strategy": "RegimeSwitch",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "UP",
+          "conf": 0.735,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VWAPCross": {
+          "dir": "DOWN",
+          "conf": 0.8795,
+          "mode": "active"
+        },
+        "EMACross": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSISignal": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerBreak": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MeanReversion": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "active"
+        },
+        "MomentumROC": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "CandlePattern": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingContrarian": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.695,
+          "mode": "active"
+        },
+        "CheapVolSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSIOversoldCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "NightSession": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MidVolValue": {
+          "dir": "UP",
+          "conf": 0.72,
+          "mode": "active"
+        },
+        "RSINeutralVol": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MLXGBoost": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v6": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "CheapEntry": {
+          "dir": "DOWN",
+          "conf": 0.72,
+          "mode": "active"
+        },
+        "ConsensusPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "DOWN",
+          "conf": 0.6589,
+          "mode": "active"
+        },
+        "SmallMoveValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumDownBias": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PrimeHoursPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "OverboughtPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TripleConfirmDown": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "RegimeSwitch": {
+          "dir": "UP",
+          "conf": 0.6026,
+          "mode": "shadow"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CorrelationBreakETHBTC": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "8_TakerBuyRatio_UP": {
+      "id": "Take8",
+      "timestamp": "2026-02-11T20:23:23.572289+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 12,
+      "buy_price": 0.115,
+      "bet_amount": 1.0,
+      "historical_wr": 0.53,
+      "confidence": 0.88,
+      "edge": 0.415,
+      "entry_minute": 8,
+      "window_start": "2026-02-11T20:15:00+00:00",
+      "window_end": "2026-02-11T20:30:00+00:00",
+      "btc_entry": 67491.87,
+      "btc_open": 67656.99,
+      "strategy": "TakerBuyRatio_UP",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VWAPCross": {
+          "dir": "DOWN",
+          "conf": 0.9,
+          "mode": "active"
+        },
+        "EMACross": {
+          "dir": "DOWN",
+          "conf": 0.6142,
+          "mode": "active"
+        },
+        "RSISignal": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerBreak": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MeanReversion": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "active"
+        },
+        "MomentumROC": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "CandlePattern": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingContrarian": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.6465,
+          "mode": "active"
+        },
+        "CheapVolSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSIOversoldCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "NightSession": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MidVolValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSINeutralVol": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MLXGBoost": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v6": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "CheapEntry": {
+          "dir": "DOWN",
+          "conf": 0.72,
+          "mode": "active"
+        },
+        "ConsensusPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "DOWN",
+          "conf": 0.6589,
+          "mode": "active"
+        },
+        "SmallMoveValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumDownBias": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PrimeHoursPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "OverboughtPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TripleConfirmDown": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "RegimeSwitch": {
+          "dir": "UP",
+          "conf": 0.6022,
+          "mode": "shadow"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CorrelationBreakETHBTC": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "8_VWAPCross": {
+      "id": "VWAP8",
+      "timestamp": "2026-02-11T20:23:23.572289+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 88,
+      "buy_price": 0.885,
+      "bet_amount": 1.0,
+      "historical_wr": 0.5474,
+      "confidence": 0.9,
+      "edge": -0.3376,
+      "entry_minute": 8,
+      "window_start": "2026-02-11T20:15:00+00:00",
+      "window_end": "2026-02-11T20:30:00+00:00",
+      "btc_entry": 67491.87,
+      "btc_open": 67656.99,
+      "strategy": "VWAPCross",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VWAPCross": {
+          "dir": "DOWN",
+          "conf": 0.9,
+          "mode": "active"
+        },
+        "EMACross": {
+          "dir": "DOWN",
+          "conf": 0.6142,
+          "mode": "active"
+        },
+        "RSISignal": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerBreak": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MeanReversion": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "active"
+        },
+        "MomentumROC": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "CandlePattern": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingContrarian": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.6465,
+          "mode": "active"
+        },
+        "CheapVolSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSIOversoldCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "NightSession": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MidVolValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSINeutralVol": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MLXGBoost": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v6": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "CheapEntry": {
+          "dir": "DOWN",
+          "conf": 0.72,
+          "mode": "active"
+        },
+        "ConsensusPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "DOWN",
+          "conf": 0.6589,
+          "mode": "active"
+        },
+        "SmallMoveValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumDownBias": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PrimeHoursPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "OverboughtPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TripleConfirmDown": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "RegimeSwitch": {
+          "dir": "UP",
+          "conf": 0.6022,
+          "mode": "shadow"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CorrelationBreakETHBTC": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "8_EMACross": {
+      "id": "EMAC8",
+      "timestamp": "2026-02-11T20:23:23.572289+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 88,
+      "buy_price": 0.885,
+      "bet_amount": 1.0,
+      "historical_wr": 0.5441,
+      "confidence": 0.6142,
+      "edge": -0.3409,
+      "entry_minute": 8,
+      "window_start": "2026-02-11T20:15:00+00:00",
+      "window_end": "2026-02-11T20:30:00+00:00",
+      "btc_entry": 67491.87,
+      "btc_open": 67656.99,
+      "strategy": "EMACross",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VWAPCross": {
+          "dir": "DOWN",
+          "conf": 0.9,
+          "mode": "active"
+        },
+        "EMACross": {
+          "dir": "DOWN",
+          "conf": 0.6142,
+          "mode": "active"
+        },
+        "RSISignal": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerBreak": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MeanReversion": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "active"
+        },
+        "MomentumROC": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "CandlePattern": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingContrarian": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.6465,
+          "mode": "active"
+        },
+        "CheapVolSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSIOversoldCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "NightSession": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MidVolValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSINeutralVol": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MLXGBoost": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v6": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "CheapEntry": {
+          "dir": "DOWN",
+          "conf": 0.72,
+          "mode": "active"
+        },
+        "ConsensusPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "DOWN",
+          "conf": 0.6589,
+          "mode": "active"
+        },
+        "SmallMoveValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumDownBias": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PrimeHoursPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "OverboughtPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TripleConfirmDown": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "RegimeSwitch": {
+          "dir": "UP",
+          "conf": 0.6022,
+          "mode": "shadow"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CorrelationBreakETHBTC": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "8_MeanReversion": {
+      "id": "Mean8",
+      "timestamp": "2026-02-11T20:23:23.572289+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 12,
+      "buy_price": 0.115,
+      "bet_amount": 1.0,
+      "historical_wr": 0.1855,
+      "confidence": 0.85,
+      "edge": 0.0705,
+      "entry_minute": 8,
+      "window_start": "2026-02-11T20:15:00+00:00",
+      "window_end": "2026-02-11T20:30:00+00:00",
+      "btc_entry": 67491.87,
+      "btc_open": 67656.99,
+      "strategy": "MeanReversion",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VWAPCross": {
+          "dir": "DOWN",
+          "conf": 0.9,
+          "mode": "active"
+        },
+        "EMACross": {
+          "dir": "DOWN",
+          "conf": 0.6142,
+          "mode": "active"
+        },
+        "RSISignal": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerBreak": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MeanReversion": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "active"
+        },
+        "MomentumROC": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "CandlePattern": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingContrarian": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.6465,
+          "mode": "active"
+        },
+        "CheapVolSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSIOversoldCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "NightSession": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MidVolValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSINeutralVol": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MLXGBoost": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v6": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "CheapEntry": {
+          "dir": "DOWN",
+          "conf": 0.72,
+          "mode": "active"
+        },
+        "ConsensusPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "DOWN",
+          "conf": 0.6589,
+          "mode": "active"
+        },
+        "SmallMoveValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumDownBias": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PrimeHoursPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "OverboughtPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TripleConfirmDown": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "RegimeSwitch": {
+          "dir": "UP",
+          "conf": 0.6022,
+          "mode": "shadow"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CorrelationBreakETHBTC": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "8_MomentumROC": {
+      "id": "Mome8",
+      "timestamp": "2026-02-11T20:23:23.572289+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 88,
+      "buy_price": 0.885,
+      "bet_amount": 1.0,
+      "historical_wr": 0.5839,
+      "confidence": 0.88,
+      "edge": -0.3011,
+      "entry_minute": 8,
+      "window_start": "2026-02-11T20:15:00+00:00",
+      "window_end": "2026-02-11T20:30:00+00:00",
+      "btc_entry": 67491.87,
+      "btc_open": 67656.99,
+      "strategy": "MomentumROC",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VWAPCross": {
+          "dir": "DOWN",
+          "conf": 0.9,
+          "mode": "active"
+        },
+        "EMACross": {
+          "dir": "DOWN",
+          "conf": 0.6142,
+          "mode": "active"
+        },
+        "RSISignal": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerBreak": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MeanReversion": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "active"
+        },
+        "MomentumROC": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "CandlePattern": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingContrarian": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.6465,
+          "mode": "active"
+        },
+        "CheapVolSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSIOversoldCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "NightSession": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MidVolValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSINeutralVol": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MLXGBoost": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v6": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "CheapEntry": {
+          "dir": "DOWN",
+          "conf": 0.72,
+          "mode": "active"
+        },
+        "ConsensusPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "DOWN",
+          "conf": 0.6589,
+          "mode": "active"
+        },
+        "SmallMoveValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumDownBias": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PrimeHoursPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "OverboughtPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TripleConfirmDown": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "RegimeSwitch": {
+          "dir": "UP",
+          "conf": 0.6022,
+          "mode": "shadow"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CorrelationBreakETHBTC": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "8_SpreadMomentum": {
+      "id": "Spre8",
+      "timestamp": "2026-02-11T20:23:23.572289+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 88,
+      "buy_price": 0.885,
+      "bet_amount": 1.0,
+      "historical_wr": 0.5147,
+      "confidence": 0.6465,
+      "edge": -0.3703,
+      "entry_minute": 8,
+      "window_start": "2026-02-11T20:15:00+00:00",
+      "window_end": "2026-02-11T20:30:00+00:00",
+      "btc_entry": 67491.87,
+      "btc_open": 67656.99,
+      "strategy": "SpreadMomentum",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VWAPCross": {
+          "dir": "DOWN",
+          "conf": 0.9,
+          "mode": "active"
+        },
+        "EMACross": {
+          "dir": "DOWN",
+          "conf": 0.6142,
+          "mode": "active"
+        },
+        "RSISignal": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerBreak": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MeanReversion": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "active"
+        },
+        "MomentumROC": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "CandlePattern": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingContrarian": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.6465,
+          "mode": "active"
+        },
+        "CheapVolSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSIOversoldCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "NightSession": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MidVolValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSINeutralVol": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MLXGBoost": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v6": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "CheapEntry": {
+          "dir": "DOWN",
+          "conf": 0.72,
+          "mode": "active"
+        },
+        "ConsensusPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "DOWN",
+          "conf": 0.6589,
+          "mode": "active"
+        },
+        "SmallMoveValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumDownBias": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PrimeHoursPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "OverboughtPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TripleConfirmDown": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "RegimeSwitch": {
+          "dir": "UP",
+          "conf": 0.6022,
+          "mode": "shadow"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CorrelationBreakETHBTC": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "8_MLProfit_v5": {
+      "id": "MLPr8",
+      "timestamp": "2026-02-11T20:23:23.572289+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 88,
+      "buy_price": 0.885,
+      "bet_amount": 1.0,
+      "historical_wr": 0.6087,
+      "confidence": 0.9965,
+      "edge": -0.2763,
+      "entry_minute": 8,
+      "window_start": "2026-02-11T20:15:00+00:00",
+      "window_end": "2026-02-11T20:30:00+00:00",
+      "btc_entry": 67491.87,
+      "btc_open": 67656.99,
+      "strategy": "MLProfit_v5",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VWAPCross": {
+          "dir": "DOWN",
+          "conf": 0.9,
+          "mode": "active"
+        },
+        "EMACross": {
+          "dir": "DOWN",
+          "conf": 0.6142,
+          "mode": "active"
+        },
+        "RSISignal": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerBreak": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MeanReversion": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "active"
+        },
+        "MomentumROC": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "CandlePattern": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingContrarian": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.6465,
+          "mode": "active"
+        },
+        "CheapVolSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSIOversoldCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "NightSession": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MidVolValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSINeutralVol": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MLXGBoost": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v6": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "CheapEntry": {
+          "dir": "DOWN",
+          "conf": 0.72,
+          "mode": "active"
+        },
+        "ConsensusPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "DOWN",
+          "conf": 0.6589,
+          "mode": "active"
+        },
+        "SmallMoveValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumDownBias": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PrimeHoursPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "OverboughtPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TripleConfirmDown": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "RegimeSwitch": {
+          "dir": "UP",
+          "conf": 0.6022,
+          "mode": "shadow"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CorrelationBreakETHBTC": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "8_MLProfit_v6": {
+      "id": "MLPr8",
+      "timestamp": "2026-02-11T20:23:23.572289+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 88,
+      "buy_price": 0.885,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.5085,
+      "edge": -0.335,
+      "entry_minute": 8,
+      "window_start": "2026-02-11T20:15:00+00:00",
+      "window_end": "2026-02-11T20:30:00+00:00",
+      "btc_entry": 67491.87,
+      "btc_open": 67656.99,
+      "strategy": "MLProfit_v6",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VWAPCross": {
+          "dir": "DOWN",
+          "conf": 0.9,
+          "mode": "active"
+        },
+        "EMACross": {
+          "dir": "DOWN",
+          "conf": 0.6142,
+          "mode": "active"
+        },
+        "RSISignal": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerBreak": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MeanReversion": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "active"
+        },
+        "MomentumROC": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "CandlePattern": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingContrarian": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.6465,
+          "mode": "active"
+        },
+        "CheapVolSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSIOversoldCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "NightSession": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MidVolValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSINeutralVol": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MLXGBoost": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v6": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "CheapEntry": {
+          "dir": "DOWN",
+          "conf": 0.72,
+          "mode": "active"
+        },
+        "ConsensusPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "DOWN",
+          "conf": 0.6589,
+          "mode": "active"
+        },
+        "SmallMoveValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumDownBias": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PrimeHoursPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "OverboughtPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TripleConfirmDown": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "RegimeSwitch": {
+          "dir": "UP",
+          "conf": 0.6022,
+          "mode": "shadow"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CorrelationBreakETHBTC": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "8_CheapEntry": {
+      "id": "Chea8",
+      "timestamp": "2026-02-11T20:23:23.572289+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 88,
+      "buy_price": 0.885,
+      "bet_amount": 1.0,
+      "historical_wr": 0.7143,
+      "confidence": 0.72,
+      "edge": -0.1707,
+      "entry_minute": 8,
+      "window_start": "2026-02-11T20:15:00+00:00",
+      "window_end": "2026-02-11T20:30:00+00:00",
+      "btc_entry": 67491.87,
+      "btc_open": 67656.99,
+      "strategy": "CheapEntry",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VWAPCross": {
+          "dir": "DOWN",
+          "conf": 0.9,
+          "mode": "active"
+        },
+        "EMACross": {
+          "dir": "DOWN",
+          "conf": 0.6142,
+          "mode": "active"
+        },
+        "RSISignal": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerBreak": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MeanReversion": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "active"
+        },
+        "MomentumROC": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "CandlePattern": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingContrarian": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.6465,
+          "mode": "active"
+        },
+        "CheapVolSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSIOversoldCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "NightSession": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MidVolValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSINeutralVol": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MLXGBoost": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v6": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "CheapEntry": {
+          "dir": "DOWN",
+          "conf": 0.72,
+          "mode": "active"
+        },
+        "ConsensusPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "DOWN",
+          "conf": 0.6589,
+          "mode": "active"
+        },
+        "SmallMoveValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumDownBias": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PrimeHoursPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "OverboughtPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TripleConfirmDown": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "RegimeSwitch": {
+          "dir": "UP",
+          "conf": 0.6022,
+          "mode": "shadow"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CorrelationBreakETHBTC": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "8_EntropyReversion": {
+      "id": "Entr8",
+      "timestamp": "2026-02-11T20:23:23.572289+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 88,
+      "buy_price": 0.885,
+      "bet_amount": 1.0,
+      "historical_wr": 0.88,
+      "confidence": 0.6589,
+      "edge": -0.005,
+      "entry_minute": 8,
+      "window_start": "2026-02-11T20:15:00+00:00",
+      "window_end": "2026-02-11T20:30:00+00:00",
+      "btc_entry": 67491.87,
+      "btc_open": 67656.99,
+      "strategy": "EntropyReversion",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VWAPCross": {
+          "dir": "DOWN",
+          "conf": 0.9,
+          "mode": "active"
+        },
+        "EMACross": {
+          "dir": "DOWN",
+          "conf": 0.6142,
+          "mode": "active"
+        },
+        "RSISignal": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerBreak": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MeanReversion": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "active"
+        },
+        "MomentumROC": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "CandlePattern": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingContrarian": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.6465,
+          "mode": "active"
+        },
+        "CheapVolSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSIOversoldCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "NightSession": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MidVolValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSINeutralVol": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MLXGBoost": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v6": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "CheapEntry": {
+          "dir": "DOWN",
+          "conf": 0.72,
+          "mode": "active"
+        },
+        "ConsensusPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "DOWN",
+          "conf": 0.6589,
+          "mode": "active"
+        },
+        "SmallMoveValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumDownBias": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PrimeHoursPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "OverboughtPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TripleConfirmDown": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "RegimeSwitch": {
+          "dir": "UP",
+          "conf": 0.6022,
+          "mode": "shadow"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CorrelationBreakETHBTC": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "8_RegimeSwitch": {
+      "id": "Regi8",
+      "timestamp": "2026-02-11T20:23:23.572289+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 12,
+      "buy_price": 0.115,
+      "bet_amount": 1.0,
+      "historical_wr": 0.1739,
+      "confidence": 0.6022,
+      "edge": 0.0589,
+      "entry_minute": 8,
+      "window_start": "2026-02-11T20:15:00+00:00",
+      "window_end": "2026-02-11T20:30:00+00:00",
+      "btc_entry": 67491.87,
+      "btc_open": 67656.99,
+      "strategy": "RegimeSwitch",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VWAPCross": {
+          "dir": "DOWN",
+          "conf": 0.9,
+          "mode": "active"
+        },
+        "EMACross": {
+          "dir": "DOWN",
+          "conf": 0.6142,
+          "mode": "active"
+        },
+        "RSISignal": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerBreak": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MeanReversion": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "active"
+        },
+        "MomentumROC": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "CandlePattern": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingContrarian": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.6465,
+          "mode": "active"
+        },
+        "CheapVolSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSIOversoldCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "NightSession": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MidVolValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSINeutralVol": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MLXGBoost": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v6": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "CheapEntry": {
+          "dir": "DOWN",
+          "conf": 0.72,
+          "mode": "active"
+        },
+        "ConsensusPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "DOWN",
+          "conf": 0.6589,
+          "mode": "active"
+        },
+        "SmallMoveValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumDownBias": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PrimeHoursPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "OverboughtPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TripleConfirmDown": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "RegimeSwitch": {
+          "dir": "UP",
+          "conf": 0.6022,
+          "mode": "shadow"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CorrelationBreakETHBTC": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "8_FuturesBasisSpread": {
+      "id": "Futu8",
+      "timestamp": "2026-02-11T20:23:54.972116+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 12,
+      "buy_price": 0.115,
+      "bet_amount": 1.0,
+      "historical_wr": 0.4938,
+      "confidence": 0.88,
+      "edge": 0.3788,
+      "entry_minute": 8,
+      "window_start": "2026-02-11T20:15:00+00:00",
+      "window_end": "2026-02-11T20:30:00+00:00",
+      "btc_entry": 67526.08,
+      "btc_open": 67656.99,
+      "strategy": "FuturesBasisSpread",
+      "ml_pred_profit": 0,
+      "signals": {
+        "TakerBuyRatio_UP": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesOIDelta": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FuturesBasisSpread": {
+          "dir": "UP",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "TopTraderSentiment": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VWAPCross": {
+          "dir": "DOWN",
+          "conf": 0.825,
+          "mode": "active"
+        },
+        "EMACross": {
+          "dir": "DOWN",
+          "conf": 0.5826,
+          "mode": "active"
+        },
+        "RSISignal": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerBreak": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MeanReversion": {
+          "dir": "UP",
+          "conf": 0.8402,
+          "mode": "active"
+        },
+        "MomentumROC": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "CandlePattern": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingContrarian": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.7356,
+          "mode": "active"
+        },
+        "CheapVolSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSIOversoldCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "BollingerCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "NightSession": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MidVolValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "RSINeutralVol": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MLXGBoost": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MLProfit_v6": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "CheapEntry": {
+          "dir": "DOWN",
+          "conf": 0.72,
+          "mode": "active"
+        },
+        "ConsensusPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SmallMoveValue": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumDownBias": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PrimeHoursPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "OverboughtPremium": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "TripleConfirmDown": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "RegimeSwitch": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CorrelationBreakETHBTC": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
     }
   },
   "gate_status": {
-    "atr_pct": 0.0676,
+    "atr_pct": 0.0756,
     "threshold": 0.03,
     "is_open": true
   }

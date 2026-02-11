@@ -142,20 +142,27 @@ export async function GET(request: Request) {
       last_export: new Date().toISOString(),
     };
 
-    // Compute edge analysis from recent trades
-    const edgeBuckets: Record<string, { wins: number; total: number }> = {
-      '0-5¢': { wins: 0, total: 0 },
-      '5-10¢': { wins: 0, total: 0 },
-      '10-15¢': { wins: 0, total: 0 },
-      '15¢+': { wins: 0, total: 0 },
-    };
-
+    // Use edge analysis from data server (computed from ALL trades)
+    // Fallback to computing from recent trades if not provided
+    let edgeBuckets = liveData?.edge_analysis || statsData?.edge_analysis;
+    
+    // Filter completed trades once for both edge analysis and minute stats
     const completed = recentTrades.filter((t: any) => t.result === 'WIN' || t.result === 'LOSS');
-    for (const t of completed) {
-      const edge = Math.abs((t.buy_price || 0) - 0.5);
-      const bucket = edge < 0.05 ? '0-5¢' : edge < 0.10 ? '5-10¢' : edge < 0.15 ? '10-15¢' : '15¢+';
-      edgeBuckets[bucket].total++;
-      if (t.result === 'WIN') edgeBuckets[bucket].wins++;
+    
+    if (!edgeBuckets) {
+      edgeBuckets = {
+        '0-5¢': { wins: 0, total: 0 },
+        '5-10¢': { wins: 0, total: 0 },
+        '10-15¢': { wins: 0, total: 0 },
+        '15¢+': { wins: 0, total: 0 },
+      };
+
+      for (const t of completed) {
+        const edge = Math.abs((t.buy_price || 0) - 0.5);
+        const bucket = edge < 0.05 ? '0-5¢' : edge < 0.10 ? '5-10¢' : edge < 0.15 ? '10-15¢' : '15¢+';
+        edgeBuckets[bucket].total++;
+        if (t.result === 'WIN') edgeBuckets[bucket].wins++;
+      }
     }
 
     // Compute minute stats

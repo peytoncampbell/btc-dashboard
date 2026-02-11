@@ -1,237 +1,335 @@
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
+import Database from 'better-sqlite3';
+
+const DB_PATH = 'C:\\Users\\campb\\.openclaw\\workspace\\skills\\polymarket-trader\\data\\trades.db';
 const BOT_API = 'https://desktop-5ghsjh6.tail05872a.ts.net';
 const BOT_API_KEY = process.env.BOT_API_KEY || '94e355f69fe2a76fcc0faf239d2fdc46fa61de6d5cfe1249';
 
-export async function GET() {
-  // Fetch all live data from the bot's data server
-  let botData: {
-    trades: { balance: number; initial_balance?: number; trades: Array<Record<string, unknown>> };
-    signal: Record<string, unknown> | null;
-    rankings: Array<Record<string, unknown>>;
-    gate_status?: { atr_pct: number; threshold: number; is_open: boolean };
-    gate_stats?: { windows_checked: number; windows_traded: number; windows_skipped: number; windows_passed_gate: number };
-    funding_rate?: { direction: string; confidence: number } | null;
-    orderbook_imbalance?: number;
-    strategies_config?: Record<string, number>;
-  } | null = null;
+interface QueryParams {
+  range?: string;
+  include?: string;
+}
 
-  // Try Tailscale funnel first, fall back to local data files
-  try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 5000);
-    const res = await fetch(`${BOT_API}/api/live`, { 
-      cache: 'no-store', 
-      headers: { 'Authorization': `Bearer ${BOT_API_KEY}` },
-      signal: controller.signal,
-    });
-    clearTimeout(timeout);
-    if (res.ok) {
-      botData = await res.json();
-    } else {
-      console.error(`Bot API returned ${res.status}`);
-    }
-  } catch (err) {
-    console.error('Bot API fetch error (will use local files):', err);
+function parseDateRange(range: string = '7d'): { start: Date; end: Date } {
+  const end = new Date();
+  const start = new Date();
+  
+  switch (range) {
+    case 'today':
+      start.setHours(0, 0, 0, 0);
+      break;
+    case '7d':
+      start.setDate(start.getDate() - 7);
+      break;
+    case '30d':
+      start.setDate(start.getDate() - 30);
+      break;
+    case 'all':
+    default:
+      start.setFullYear(2020);
+      break;
   }
+  
+  return { start, end };
+}
 
-  // Fallback: read from local data files (pushed via git)
-  if (!botData) {
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const range = searchParams.get('range') || '7d';
+  const include = searchParams.get('include')?.split(',') || [];
+  
+  const { start, end } = parseDateRange(range);
+  const startStr = start.toISOString();
+  const endStr = end.toISOString();
+
+  let db: Database.Database | null = null;
+  let liveSignal: Record<string, unknown> | null = null;
+  let gateStatus: Record<string, unknown> | null = null;
+  let gateStats: Record<string, unknown> | null = null;
+  let fundingRate: Record<string, unknown> | null = null;
+  let obImbalance = 0;
+  let strategiesConfig: Record<string, number> = {};
+
+  try {
+    // Try to fetch live signal data from bot API (Tailscale)
     try {
-      const fs = await import('fs/promises');
-      const path = await import('path');
-      const dataDir = path.join(process.cwd(), 'data');
-      const [tradesRaw, signalRaw] = await Promise.all([
-        fs.readFile(path.join(dataDir, 'trades.json'), 'utf-8').catch(() => '{}'),
-        fs.readFile(path.join(dataDir, 'live_signal.json'), 'utf-8').catch(() => 'null'),
-      ]);
-      const localTrades = JSON.parse(tradesRaw);
-      const localSignal = JSON.parse(signalRaw);
-      if (localTrades.trades) {
-        botData = {
-          trades: localTrades,
-          signal: localSignal,
-          rankings: [],
-        };
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 3000);
+      const res = await fetch(`${BOT_API}/api/live`, {
+        cache: 'no-store',
+        headers: { 'Authorization': `Bearer ${BOT_API_KEY}` },
+        signal: controller.signal,
+      });
+      clearTimeout(timeout);
+      if (res.ok) {
+        const botData = await res.json();
+        liveSignal = botData.signal || null;
+        gateStatus = botData.gate_status || null;
+        gateStats = botData.gate_stats || null;
+        fundingRate = botData.funding_rate || null;
+        obImbalance = botData.orderbook_imbalance || 0;
+        strategiesConfig = botData.strategies_config || {};
       }
-    } catch (fsErr) {
-      console.error('Local file fallback error:', fsErr);
+    } catch (err) {
+      console.error('Bot API fetch error (using DB only):', err);
     }
-  }
 
-  const trades = botData?.trades || { balance: 100, initial_balance: 100, trades: [] };
-  const liveSignal = botData?.signal || null;
-  const strategyRankings = botData?.rankings || [];
+    // Open SQLite database
+    db = new Database(DB_PATH, { readonly: true });
 
-  // Fetch live BTC price
-  let btcPrice = 0;
-  try {
-    const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd', { cache: 'no-store' });
-    const priceData = await res.json();
-    btcPrice = priceData.bitcoin?.usd || 0;
-  } catch {
-    btcPrice = liveSignal ? Number((liveSignal as Record<string, unknown>).btc_price) || 0 : 0;
-  }
+    // Fetch all trades in range
+    const trades = db.prepare(`
+      SELECT * FROM trades
+      WHERE timestamp >= ? AND timestamp <= ?
+      ORDER BY timestamp DESC
+    `).all(startStr, endStr) as any[];
 
-  // Fetch live Polymarket prices for current window
-  let polyData: { yes_price: number; no_price: number; liquidity: number; volume: number; question: string } | null = null;
-  try {
-    const now = new Date();
-    const minute = Math.floor(now.getUTCMinutes() / 15) * 15;
-    const ws = new Date(now);
-    ws.setUTCMinutes(minute, 0, 0);
-    const ts = Math.floor(ws.getTime() / 1000);
-    const polyRes = await fetch(`https://gamma-api.polymarket.com/markets?slug=btc-updown-15m-${ts}`, { cache: 'no-store' });
-    const markets = await polyRes.json();
-    if (markets?.length > 0) {
-      const m = markets[0];
-      const prices = typeof m.outcomePrices === 'string' ? JSON.parse(m.outcomePrices) : m.outcomePrices;
-      polyData = {
-        yes_price: parseFloat(prices?.[0] || '0.5'),
-        no_price: parseFloat(prices?.[1] || '0.5'),
-        liquidity: parseFloat(m.liquidity || '0'),
-        volume: parseFloat(m.volume || '0'),
-        question: m.question || '',
-      };
-    }
-  } catch { /* ignore */ }
+    // Compute performance metrics
+    const completed = trades.filter((t) => t.result !== 'PENDING');
+    const wins = completed.filter((t) => t.result === 'WIN').length;
+    const losses = completed.filter((t) => t.result === 'LOSS').length;
+    const totalPnl = completed.reduce((s: number, t) => s + (t.profit || 0), 0);
+    const winRate = completed.length > 0 ? (wins / completed.length) * 100 : 0;
 
-  // Compute performance
-  const allTrades = trades.trades || [];
-  const completed = allTrades.filter((t: Record<string, unknown>) => t.result !== 'PENDING');
-  const wins = completed.filter((t: Record<string, unknown>) => t.result === 'WIN').length;
-  const losses = completed.filter((t: Record<string, unknown>) => t.result === 'LOSS').length;
-  const totalPnl = completed.reduce((s: number, t: Record<string, unknown>) => s + Number(t.profit || 0), 0);
-  const winRate = completed.length > 0 ? (wins / completed.length) * 100 : 0;
+    // Current balance (from most recent trade)
+    const lastTrade = db.prepare('SELECT balance_after FROM trades WHERE balance_after IS NOT NULL ORDER BY timestamp DESC LIMIT 1').get() as any;
+    const balance = lastTrade?.balance_after || 100;
 
-  // Streak
-  let currentStreak = 0;
-  let bestStreak = 0;
-  const sorted = [...completed].sort((a: Record<string, unknown>, b: Record<string, unknown>) =>
-    new Date(String(a.timestamp)).getTime() - new Date(String(b.timestamp)).getTime()
-  );
-  let temp = 0;
-  for (const t of sorted) {
-    if (t.result === 'WIN') { temp = temp >= 0 ? temp + 1 : 1; }
-    else { temp = temp <= 0 ? temp - 1 : -1; }
-    if (temp > bestStreak) bestStreak = temp;
-  }
-  currentStreak = temp;
+    // Initial balance (assumed)
+    const initialBalance = 100;
 
-  // Today's P&L
-  const today = new Date().toDateString();
-  const todayPnl = completed
-    .filter((t: Record<string, unknown>) => new Date(String(t.timestamp)).toDateString() === today)
-    .reduce((s: number, t: Record<string, unknown>) => s + Number(t.profit || 0), 0);
+    // Today's P&L
+    const todayStart = new Date();
+    todayStart.setHours(0, 0, 0, 0);
+    const todayPnl = completed
+      .filter((t) => new Date(t.timestamp) >= todayStart)
+      .reduce((s: number, t) => s + (t.profit || 0), 0);
 
-  // Daily P&L
-  const dailyMap: Record<string, number> = {};
-  for (const t of completed) {
-    const d = new Date(String(t.timestamp)).toLocaleDateString();
-    dailyMap[d] = (dailyMap[d] || 0) + Number(t.profit || 0);
-  }
-  const dailyPnl = Object.entries(dailyMap)
-    .sort((a, b) => new Date(a[0]).getTime() - new Date(b[0]).getTime())
-    .slice(-7)
-    .map(([date, pnl]) => ({ date, pnl }));
-
-  // Edge analysis
-  const edgeBuckets: Record<string, { wins: number; total: number }> = {
-    '0-5¢': { wins: 0, total: 0 }, '5-10¢': { wins: 0, total: 0 },
-    '10-15¢': { wins: 0, total: 0 }, '15¢+': { wins: 0, total: 0 },
-  };
-  for (const t of completed) {
-    const edge = Number(t.edge || 0);
-    const bucket = edge < 0.05 ? '0-5¢' : edge < 0.10 ? '5-10¢' : edge < 0.15 ? '10-15¢' : '15¢+';
-    edgeBuckets[bucket].total++;
-    if (t.result === 'WIN') edgeBuckets[bucket].wins++;
-  }
-
-  // Minute stats
-  const minuteStats: Record<number, { wins: number; total: number }> = {};
-  for (const t of completed) {
-    const min = Number(t.entry_minute);
-    if (!isNaN(min)) {
-      if (!minuteStats[min]) minuteStats[min] = { wins: 0, total: 0 };
-      minuteStats[min].total++;
-      if (t.result === 'WIN') minuteStats[min].wins++;
-    }
-  }
-
-  // Per-strategy live performance
-  const stratPerf: Record<string, { wins: number; losses: number; pnl: number }> = {};
-  for (const t of completed) {
-    const indicators = (t.indicators || {}) as Record<string, string>;
-    const direction = String(t.direction);
-    for (const [name, dir] of Object.entries(indicators)) {
-      if (!stratPerf[name]) stratPerf[name] = { wins: 0, losses: 0, pnl: 0 };
-      if (dir === direction) {
-        if (t.result === 'WIN') {
-          stratPerf[name].wins++;
-          stratPerf[name].pnl += Number(t.profit || 0);
-        } else {
-          stratPerf[name].losses++;
-          stratPerf[name].pnl += Number(t.profit || 0);
-        }
+    // Streak calculation
+    let currentStreak = 0;
+    let bestStreak = 0;
+    const sorted = [...completed].sort((a, b) =>
+      new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
+    );
+    let temp = 0;
+    for (const t of sorted) {
+      if (t.result === 'WIN') {
+        temp = temp >= 0 ? temp + 1 : 1;
+      } else {
+        temp = temp <= 0 ? temp - 1 : -1;
       }
+      if (temp > bestStreak) bestStreak = temp;
     }
-  }
+    currentStreak = temp;
 
-  const enrichedRankings = strategyRankings.map((s: Record<string, unknown>) => {
-    const name = String(s.name);
-    const perf = stratPerf[name];
-    const lt = perf ? perf.wins + perf.losses : 0;
-    return {
-      ...s,
-      live_trades: lt,
-      live_win_rate: lt > 0 ? (perf!.wins / lt) * 100 : 0,
-      live_pnl: perf ? perf.pnl : 0,
-      live_wins: perf ? perf.wins : 0,
-      live_losses: perf ? perf.losses : 0,
+    // Daily P&L (last 7 days)
+    const dailyMap: Record<string, number> = {};
+    for (const t of completed) {
+      const d = new Date(String(t.timestamp)).toLocaleDateString();
+      dailyMap[d] = (dailyMap[d] || 0) + (Number(t.profit) || 0);
+    }
+    const dailyPnl = Object.entries(dailyMap)
+      .sort((a, b) => new Date(a[0]).getTime() - new Date(b[0]).getTime())
+      .slice(-7)
+      .map(([date, pnl]) => ({ date, pnl }));
+
+    // Edge analysis
+    const edgeBuckets: Record<string, { wins: number; total: number }> = {
+      '0-5¢': { wins: 0, total: 0 },
+      '5-10¢': { wins: 0, total: 0 },
+      '10-15¢': { wins: 0, total: 0 },
+      '15¢+': { wins: 0, total: 0 },
     };
-  });
+    for (const t of completed) {
+      const edge = Math.abs((t.buy_price || 0) - 0.5);
+      const bucket = edge < 0.05 ? '0-5¢' : edge < 0.10 ? '5-10¢' : edge < 0.15 ? '10-15¢' : '15¢+';
+      edgeBuckets[bucket].total++;
+      if (t.result === 'WIN') edgeBuckets[bucket].wins++;
+    }
 
-  // Use bot's market data (CLOB midpoint, real-time) — only fall back to Gamma if no bot data
-  const enrichedSignal = liveSignal ? {
-    ...liveSignal,
-    market: liveSignal.market || (polyData ? { yes_price: polyData.yes_price, no_price: polyData.no_price } : { yes_price: 0.5, no_price: 0.5 }),
-  } : (polyData ? { market: { yes_price: polyData.yes_price, no_price: polyData.no_price }, action: 'WAITING' } : null);
+    // Minute stats
+    const minuteStats: Record<number, { wins: number; total: number }> = {};
+    for (const t of completed) {
+      const min = t.entry_minute;
+      if (min != null) {
+        if (!minuteStats[min]) minuteStats[min] = { wins: 0, total: 0 };
+        minuteStats[min].total++;
+        if (t.result === 'WIN') minuteStats[min].wins++;
+      }
+    }
 
-  const recentTrades = [...allTrades]
-    .sort((a: Record<string, unknown>, b: Record<string, unknown>) =>
-      new Date(String(b.timestamp)).getTime() - new Date(String(a.timestamp)).getTime()
-    )
-    .slice(0, 20);
+    // Hourly stats (24x7 grid for heatmap)
+    const hourlyStats: Record<string, { wins: number; losses: number; pnl: number }> = {};
+    for (const t of completed) {
+      const d = new Date(String(t.timestamp));
+      const hour = d.getUTCHours();
+      const dow = d.getUTCDay();
+      const key = `${dow}-${hour}`;
+      if (!hourlyStats[key]) hourlyStats[key] = { wins: 0, losses: 0, pnl: 0 };
+      hourlyStats[key].pnl += Number(t.profit) || 0;
+      if (t.result === 'WIN') hourlyStats[key].wins++;
+      else hourlyStats[key].losses++;
+    }
 
-  return new Response(JSON.stringify({
-    btc_price: btcPrice,
-    last_updated: new Date().toISOString(),
-    performance: {
-      balance: trades.balance || 100,
-      initial_balance: trades.initial_balance || 100,
-      total_pnl: totalPnl, today_pnl: todayPnl,
-      total_trades: completed.length, wins, losses,
-      win_rate: winRate, current_streak: currentStreak, best_streak: bestStreak,
-    },
-    live_signal: enrichedSignal,
-    strategy_rankings: enrichedRankings,
-    recent_trades: recentTrades,
-    edge_analysis: edgeBuckets,
-    minute_stats: minuteStats,
-    daily_pnl: dailyPnl,
-    gate_status: botData?.gate_status || { atr_pct: 0, threshold: 0.15, is_open: true },
-    gate_stats: botData?.gate_stats || { windows_checked: 0, windows_traded: 0, windows_skipped: 0, windows_passed_gate: 0 },
-    funding_rate: botData?.funding_rate || null,
-    orderbook_imbalance: botData?.orderbook_imbalance || 0,
-    strategies_config: botData?.strategies_config || {},
-  }), {
-    headers: {
-      'Content-Type': 'application/json',
-      'Cache-Control': 'no-store, no-cache, must-revalidate',
-      'Access-Control-Allow-Origin': '*',
-    },
-  });
+    // Strategy performance (from shadow_signals)
+    const strategyPerf: Record<string, { wins: number; losses: number; pnl: number; trades: number }> = {};
+    for (const t of completed) {
+      try {
+        const signals = JSON.parse(String(t.shadow_signals || '{}'));
+        for (const [name, sig] of Object.entries(signals as Record<string, any>)) {
+          if (!strategyPerf[name]) strategyPerf[name] = { wins: 0, losses: 0, pnl: 0, trades: 0 };
+          if (sig.dir === t.direction) {
+            strategyPerf[name].trades++;
+            strategyPerf[name].pnl += Number(t.profit) || 0;
+            if (t.result === 'WIN') strategyPerf[name].wins++;
+            else strategyPerf[name].losses++;
+          }
+        }
+      } catch { /* ignore */ }
+    }
+
+    const strategyRankings = Object.entries(strategyPerf).map(([name, stats]) => ({
+      name,
+      live_trades: stats.trades,
+      live_win_rate: stats.trades > 0 ? (stats.wins / stats.trades) * 100 : 0,
+      live_pnl: stats.pnl,
+      live_wins: stats.wins,
+      live_losses: stats.losses,
+    })).sort((a, b) => b.live_pnl - a.live_pnl);
+
+    // Regime breakdown (strategy WR by market regime)
+    const regimeBreakdown: Record<string, Record<string, { wins: number; total: number }>> = {};
+    for (const t of completed) {
+      const regime = String(t.market_regime || 'unknown');
+      const strat = String(t.strategy || 'Unknown');
+      if (!regimeBreakdown[strat]) regimeBreakdown[strat] = {};
+      if (!regimeBreakdown[strat][regime]) regimeBreakdown[strat][regime] = { wins: 0, total: 0 };
+      regimeBreakdown[strat][regime].total++;
+      if (t.result === 'WIN') regimeBreakdown[strat][regime].wins++;
+    }
+
+    // Data quality metrics
+    const dataQuality = {
+      total_trades: trades.length,
+      trades_with_volatility_regime: trades.filter((t) => t.volatility_regime != null).length,
+      trades_with_market_regime: trades.filter((t) => t.market_regime != null).length,
+      trades_with_orderbook_data: trades.filter((t) => t.orderbook_imbalance != null).length,
+      near_miss_count: 0,
+      last_export: new Date().toISOString(),
+    };
+
+    // Near misses (if requested)
+    let nearMisses: any[] = [];
+    if (include.includes('near_misses')) {
+      nearMisses = db.prepare(`
+        SELECT * FROM near_misses
+        WHERE timestamp >= ? AND timestamp <= ?
+        ORDER BY timestamp DESC
+        LIMIT 50
+      `).all(startStr, endStr) as any[];
+      dataQuality.near_miss_count = nearMisses.length;
+    }
+
+    // Drawdown data (cumulative P&L over time)
+    const cumulativePnl: Array<{ timestamp: string; pnl: number }> = [];
+    let runningPnl = 0;
+    for (const t of sorted) {
+      runningPnl += Number(t.profit) || 0;
+      cumulativePnl.push({ timestamp: String(t.timestamp), pnl: runningPnl });
+    }
+    const maxDrawdown = calculateMaxDrawdown(cumulativePnl.map(p => p.pnl));
+
+    // Current regime (from most recent trade)
+    const recentTrade = trades[0];
+    const currentRegime = {
+      volatility: String(recentTrade?.volatility_regime || 'unknown'),
+      market: String(recentTrade?.market_regime || 'unknown'),
+      volume: getVolumeRegime(Number(recentTrade?.btc_volume_1m) || 0),
+    };
+
+    // Fetch live BTC price
+    let btcPrice = 0;
+    try {
+      const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd', { cache: 'no-store' });
+      const priceData = await res.json();
+      btcPrice = priceData.bitcoin?.usd || 0;
+    } catch {
+      btcPrice = liveSignal ? Number(liveSignal.btc_price) || 0 : 0;
+    }
+
+    // Return comprehensive data
+    return new Response(JSON.stringify({
+      btc_price: btcPrice,
+      last_updated: new Date().toISOString(),
+      performance: {
+        balance,
+        initial_balance: initialBalance,
+        total_pnl: totalPnl,
+        today_pnl: todayPnl,
+        total_trades: completed.length,
+        wins,
+        losses,
+        win_rate: winRate,
+        current_streak: currentStreak,
+        best_streak: bestStreak,
+      },
+      live_signal: liveSignal,
+      strategy_rankings: strategyRankings,
+      recent_trades: trades.slice(0, 20),
+      edge_analysis: edgeBuckets,
+      minute_stats: minuteStats,
+      hourly_stats: hourlyStats,
+      daily_pnl: dailyPnl,
+      gate_status: gateStatus || { atr_pct: 0, threshold: 0.15, is_open: true },
+      gate_stats: gateStats || { windows_checked: 0, windows_traded: 0, windows_skipped: 0, windows_passed_gate: 0 },
+      funding_rate: fundingRate,
+      orderbook_imbalance: obImbalance,
+      strategies_config: strategiesConfig,
+      regime_breakdown: regimeBreakdown,
+      current_regime: currentRegime,
+      near_misses: nearMisses,
+      data_quality: dataQuality,
+      drawdown: {
+        cumulative_pnl: cumulativePnl,
+        max_drawdown: maxDrawdown,
+      },
+    }), {
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
+        'Access-Control-Allow-Origin': '*',
+      },
+    });
+
+  } catch (error) {
+    console.error('Database error:', error);
+    return new Response(JSON.stringify({ error: 'Database error' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  } finally {
+    if (db) db.close();
+  }
+}
+
+function calculateMaxDrawdown(pnls: number[]): number {
+  let maxDrawdown = 0;
+  let peak = -Infinity;
+  for (const pnl of pnls) {
+    if (pnl > peak) peak = pnl;
+    const drawdown = peak - pnl;
+    if (drawdown > maxDrawdown) maxDrawdown = drawdown;
+  }
+  return maxDrawdown;
+}
+
+function getVolumeRegime(volume: number): string {
+  if (volume < 0.001) return 'quiet';
+  if (volume < 0.01) return 'normal';
+  if (volume < 0.1) return 'active';
+  return 'surge';
 }
 
 export async function OPTIONS() {

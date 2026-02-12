@@ -33,9 +33,9 @@ export async function GET(request: Request) {
   try {
     // Fetch data from all endpoints in parallel
     const [liveRes, statsRes, nearMissesRes, btcPriceRes] = await Promise.allSettled([
-      fetchWithTimeout(`${BOT_API}/api/live`, 5000),
-      fetchWithTimeout(`${BOT_API}/api/stats?range=${range}`, 5000),
-      fetchWithTimeout(`${BOT_API}/api/near-misses?limit=20`, 5000),
+      fetchWithTimeout(`${BOT_API}/api/live`, 3000),
+      fetchWithTimeout(`${BOT_API}/api/stats?range=${range}`, 3000),
+      fetchWithTimeout(`${BOT_API}/api/near-misses?limit=20`, 3000),
       fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd', {
         cache: 'no-store',
       }),

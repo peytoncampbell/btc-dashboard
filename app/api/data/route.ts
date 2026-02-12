@@ -220,6 +220,42 @@ export async function GET(request: Request) {
   } catch (error) {
     console.error('API error:', error);
     
+    // Try static snapshot fallback
+    try {
+      const snapshotUrl = new URL('/data/snapshot.json', request.url).toString().replace('/api/data/data/', '/data/');
+      const origin = new URL(request.url).origin;
+      const snapRes = await fetch(`${origin}/data/snapshot.json`, { cache: 'no-store' });
+      if (snapRes.ok) {
+        const snapshot = await snapRes.json();
+        return new Response(JSON.stringify({
+          ...snapshot,
+          btc_price: snapshot.live_signal?.btc_price || 0,
+          last_updated: snapshot.generated_at || new Date().toISOString(),
+          _source: 'snapshot_fallback',
+          strategy_rankings: snapshot.strategy_rankings || [],
+          recent_trades: snapshot.recent_trades || [],
+          hourly_stats: {},
+          regime_breakdown: {},
+          current_regime: snapshot.current_regime || { volatility: 'unknown', market: 'unknown' },
+          near_misses: [],
+          data_quality: { total_trades: 0, last_export: snapshot.generated_at },
+          drawdown: { cumulative_pnl: [], max_drawdown: 0 },
+          edge_analysis: {},
+          minute_stats: {},
+          daily_pnl: [],
+          gate_status: snapshot.gate_status || { atr_pct: 0, threshold: 0.15, is_open: true },
+          gate_stats: { windows_checked: 0, windows_traded: 0, windows_skipped: 0, windows_passed_gate: 0 },
+          funding_rate: snapshot.funding_rate || null,
+          orderbook_imbalance: 0,
+          strategies_config: {},
+        }), {
+          headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' },
+        });
+      }
+    } catch (snapError) {
+      console.error('Snapshot fallback also failed:', snapError);
+    }
+
     // Return minimal fallback response
     return new Response(JSON.stringify({
       error: 'Failed to fetch data from bot server',

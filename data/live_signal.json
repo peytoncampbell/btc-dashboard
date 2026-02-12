@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-02-12T23:48:41.911689+00:00",
+  "timestamp": "2026-02-12T23:50:53.139681+00:00",
   "window_start": "2026-02-12T23:45:00+00:00",
   "window_end": "2026-02-13T00:00:00+00:00",
-  "minute": 3,
-  "btc_price": 66217.87,
+  "minute": 5,
+  "btc_price": 66180.81,
   "window_open": 66215.4,
-  "change_pct": 0.0037,
+  "change_pct": -0.0522,
   "strategies": {
     "MLProfit_v5": {
       "direction": "UP",
@@ -19,7 +19,7 @@
     },
     "SpreadMomentum": {
       "direction": "DOWN",
-      "confidence": 0.6541,
+      "confidence": 0.6093,
       "mode": "active"
     },
     "MultiTimeframeBreakout": {
@@ -34,7 +34,7 @@
     },
     "EarlyEntryDown": {
       "direction": "DOWN",
-      "confidence": 0.75,
+      "confidence": 0.7,
       "mode": "active"
     },
     "EntropyReversion": {
@@ -118,13 +118,13 @@
       "mode": "shadow"
     },
     "Gen_buyers_dominate_cheap_buy_UP": {
-      "direction": "SKIP",
-      "confidence": 0.0,
+      "direction": "UP",
+      "confidence": 0.85,
       "mode": "shadow"
     },
     "Gen_low_volume_cheap_buy_UP": {
-      "direction": "SKIP",
-      "confidence": 0.0,
+      "direction": "UP",
+      "confidence": 0.636,
       "mode": "shadow"
     },
     "Gen_neutral_rsi_cheap_buy_UP": {
@@ -139,7 +139,7 @@
     },
     "Gen_low_vol_cheap_buy_UP": {
       "direction": "UP",
-      "confidence": 0.6273,
+      "confidence": 0.6238,
       "mode": "shadow"
     },
     "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -153,34 +153,34 @@
     "historical_wr": 0.5
   },
   "market": {
-    "yes_price": 0.405,
-    "no_price": 0.595
+    "yes_price": 0.325,
+    "no_price": 0.675
   },
-  "polymarket_yes_price": 0.405,
-  "polymarket_no_price": 0.595,
+  "polymarket_yes_price": 0.325,
+  "polymarket_no_price": 0.675,
   "polymarket_liquidity": 19604.4,
   "polymarket_volume": 129.14,
-  "orderbook_imbalance": -0.8534,
+  "orderbook_imbalance": -0.8728,
   "price_source": "POLY",
   "edge": 0.0,
   "action": "HOLD - no strategy signals",
   "current_trade": {
-    "id": "Take3",
-    "timestamp": "2026-02-12T23:48:20.813466+00:00",
+    "id": "Spre5",
+    "timestamp": "2026-02-12T23:50:11.324510+00:00",
     "direction": "DOWN",
     "side": "NO",
-    "buy_price_cents": 50,
-    "buy_price": 0.505,
+    "buy_price_cents": 64,
+    "buy_price": 0.635,
     "bet_amount": 1.0,
-    "historical_wr": 0.5435,
-    "confidence": 0.88,
-    "edge": 0.0385,
-    "entry_minute": 3,
+    "historical_wr": 0.521,
+    "confidence": 0.686,
+    "edge": -0.114,
+    "entry_minute": 5,
     "window_start": "2026-02-12T23:45:00+00:00",
     "window_end": "2026-02-13T00:00:00+00:00",
-    "btc_entry": 66224.59,
+    "btc_entry": 66215.64,
     "btc_open": 66215.4,
-    "strategy": "TakerBuyRatio_DOWN",
+    "strategy": "SpreadMomentum",
     "ml_pred_profit": 0,
     "signals": {
       "MLProfit_v5": {
@@ -195,7 +195,7 @@
       },
       "SpreadMomentum": {
         "dir": "DOWN",
-        "conf": 0.6095,
+        "conf": 0.686,
         "mode": "active"
       },
       "MultiTimeframeBreakout": {
@@ -210,7 +210,7 @@
       },
       "EarlyEntryDown": {
         "dir": "DOWN",
-        "conf": 0.75,
+        "conf": 0.7,
         "mode": "active"
       },
       "EntropyReversion": {
@@ -219,8 +219,8 @@
         "mode": "active"
       },
       "TakerBuyRatio_DOWN": {
-        "dir": "DOWN",
-        "conf": 0.88,
+        "dir": "SKIP",
+        "conf": 0.0,
         "mode": "active"
       },
       "DownMomentumConfirm": {
@@ -294,13 +294,13 @@
         "mode": "shadow"
       },
       "Gen_buyers_dominate_cheap_buy_UP": {
-        "dir": "SKIP",
-        "conf": 0.0,
+        "dir": "UP",
+        "conf": 0.85,
         "mode": "shadow"
       },
       "Gen_low_volume_cheap_buy_UP": {
         "dir": "UP",
-        "conf": 0.6345,
+        "conf": 0.8,
         "mode": "shadow"
       },
       "Gen_neutral_rsi_cheap_buy_UP": {
@@ -315,7 +315,7 @@
       },
       "Gen_low_vol_cheap_buy_UP": {
         "dir": "UP",
-        "conf": 0.6273,
+        "conf": 0.6314,
         "mode": "shadow"
       },
       "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -328,15 +328,15 @@
   "current_trades": {
     "0_MLProfit_v5": {
       "id": "MLPr0",
-      "timestamp": "2026-02-12T23:45:07.322973+00:00",
+      "timestamp": "2026-02-12T23:45:08.119505+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 57,
-      "buy_price": 0.575,
+      "buy_price_cents": 58,
+      "buy_price": 0.585,
       "bet_amount": 1.0,
-      "historical_wr": 0.6202,
-      "confidence": 0.7293,
-      "edge": 0.0452,
+      "historical_wr": 0.6124,
+      "confidence": 0.767,
+      "edge": 0.0274,
       "entry_minute": 0,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
@@ -357,7 +357,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6158,
+          "conf": 0.653,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -371,8 +371,8 @@
           "mode": "active"
         },
         "EarlyEntryDown": {
-          "dir": "SKIP",
-          "conf": 0.0,
+          "dir": "DOWN",
+          "conf": 0.75,
           "mode": "active"
         },
         "EntropyReversion": {
@@ -476,8 +476,8 @@
           "mode": "shadow"
         },
         "Gen_low_vol_cheap_buy_UP": {
-          "dir": "SKIP",
-          "conf": 0.0,
+          "dir": "UP",
+          "conf": 0.6244,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -489,15 +489,15 @@
     },
     "0_SpreadMomentum": {
       "id": "Spre0",
-      "timestamp": "2026-02-12T23:45:07.322973+00:00",
+      "timestamp": "2026-02-12T23:45:08.119505+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 57,
-      "buy_price": 0.575,
+      "buy_price_cents": 58,
+      "buy_price": 0.585,
       "bet_amount": 1.0,
-      "historical_wr": 0.5168,
-      "confidence": 0.6158,
-      "edge": -0.0582,
+      "historical_wr": 0.521,
+      "confidence": 0.653,
+      "edge": -0.064,
       "entry_minute": 0,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
@@ -518,7 +518,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6158,
+          "conf": 0.653,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -532,8 +532,8 @@
           "mode": "active"
         },
         "EarlyEntryDown": {
-          "dir": "SKIP",
-          "conf": 0.0,
+          "dir": "DOWN",
+          "conf": 0.75,
           "mode": "active"
         },
         "EntropyReversion": {
@@ -637,8 +637,169 @@
           "mode": "shadow"
         },
         "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6244,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
           "dir": "SKIP",
           "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "0_EarlyEntryDown": {
+      "id": "Earl0",
+      "timestamp": "2026-02-12T23:45:08.119505+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 58,
+      "buy_price": 0.585,
+      "bet_amount": 1.0,
+      "historical_wr": 0.5385,
+      "confidence": 0.75,
+      "edge": -0.0465,
+      "entry_minute": 0,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66215.4,
+      "btc_open": 66215.4,
+      "strategy": "EarlyEntryDown",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.653,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.8,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6244,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -650,15 +811,15 @@
     },
     "0_Gen_buyers_dominate_cheap_buy_UP": {
       "id": "Gen_0",
-      "timestamp": "2026-02-12T23:45:07.322973+00:00",
+      "timestamp": "2026-02-12T23:45:08.119505+00:00",
       "direction": "UP",
       "side": "YES",
       "buy_price_cents": 42,
-      "buy_price": 0.425,
+      "buy_price": 0.415,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
       "confidence": 0.85,
-      "edge": 0.125,
+      "edge": 0.135,
       "entry_minute": 0,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
@@ -679,7 +840,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6158,
+          "conf": 0.653,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -693,8 +854,8 @@
           "mode": "active"
         },
         "EarlyEntryDown": {
-          "dir": "SKIP",
-          "conf": 0.0,
+          "dir": "DOWN",
+          "conf": 0.75,
           "mode": "active"
         },
         "EntropyReversion": {
@@ -798,8 +959,8 @@
           "mode": "shadow"
         },
         "Gen_low_vol_cheap_buy_UP": {
-          "dir": "SKIP",
-          "conf": 0.0,
+          "dir": "UP",
+          "conf": 0.6244,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -811,15 +972,15 @@
     },
     "0_Gen_low_volume_cheap_buy_UP": {
       "id": "Gen_0",
-      "timestamp": "2026-02-12T23:45:07.322973+00:00",
+      "timestamp": "2026-02-12T23:45:08.119505+00:00",
       "direction": "UP",
       "side": "YES",
       "buy_price_cents": 42,
-      "buy_price": 0.425,
+      "buy_price": 0.415,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
       "confidence": 0.8,
-      "edge": 0.125,
+      "edge": 0.135,
       "entry_minute": 0,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
@@ -840,7 +1001,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6158,
+          "conf": 0.653,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -854,8 +1015,8 @@
           "mode": "active"
         },
         "EarlyEntryDown": {
-          "dir": "SKIP",
-          "conf": 0.0,
+          "dir": "DOWN",
+          "conf": 0.75,
           "mode": "active"
         },
         "EntropyReversion": {
@@ -959,8 +1120,8 @@
           "mode": "shadow"
         },
         "Gen_low_vol_cheap_buy_UP": {
-          "dir": "SKIP",
-          "conf": 0.0,
+          "dir": "UP",
+          "conf": 0.6244,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -972,15 +1133,15 @@
     },
     "0_Gen_cheap_buy_UP": {
       "id": "Gen_0",
-      "timestamp": "2026-02-12T23:45:07.322973+00:00",
+      "timestamp": "2026-02-12T23:45:08.119505+00:00",
       "direction": "UP",
       "side": "YES",
       "buy_price_cents": 42,
-      "buy_price": 0.425,
+      "buy_price": 0.415,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
       "confidence": 0.58,
-      "edge": 0.125,
+      "edge": 0.135,
       "entry_minute": 0,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
@@ -1001,7 +1162,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6158,
+          "conf": 0.653,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -1015,8 +1176,8 @@
           "mode": "active"
         },
         "EarlyEntryDown": {
-          "dir": "SKIP",
-          "conf": 0.0,
+          "dir": "DOWN",
+          "conf": 0.75,
           "mode": "active"
         },
         "EntropyReversion": {
@@ -1120,8 +1281,169 @@
           "mode": "shadow"
         },
         "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6244,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
           "dir": "SKIP",
           "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "0_Gen_low_vol_cheap_buy_UP": {
+      "id": "Gen_0",
+      "timestamp": "2026-02-12T23:45:08.119505+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 42,
+      "buy_price": 0.415,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.6244,
+      "edge": 0.135,
+      "entry_minute": 0,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66215.4,
+      "btc_open": 66215.4,
+      "strategy": "Gen_low_vol_cheap_buy_UP",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.653,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.8,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6244,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -1133,15 +1455,15 @@
     },
     "1_MLProfit_v5": {
       "id": "MLPr1",
-      "timestamp": "2026-02-12T23:46:17.281928+00:00",
+      "timestamp": "2026-02-12T23:46:22.124153+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 56,
-      "buy_price": 0.555,
+      "buy_price_cents": 48,
+      "buy_price": 0.485,
       "bet_amount": 1.0,
-      "historical_wr": 0.6202,
-      "confidence": 0.6176,
-      "edge": 0.0652,
+      "historical_wr": 0.6124,
+      "confidence": 0.6168,
+      "edge": 0.1274,
       "entry_minute": 1,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
@@ -1162,7 +1484,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6285,
+          "conf": 0.6122,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -1294,15 +1616,15 @@
     },
     "1_SpreadMomentum": {
       "id": "Spre1",
-      "timestamp": "2026-02-12T23:46:17.281928+00:00",
+      "timestamp": "2026-02-12T23:46:22.124153+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 56,
-      "buy_price": 0.555,
+      "buy_price_cents": 48,
+      "buy_price": 0.485,
       "bet_amount": 1.0,
-      "historical_wr": 0.5168,
-      "confidence": 0.6285,
-      "edge": -0.0382,
+      "historical_wr": 0.521,
+      "confidence": 0.6122,
+      "edge": 0.036,
       "entry_minute": 1,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
@@ -1323,7 +1645,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6285,
+          "conf": 0.6122,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -1455,15 +1777,15 @@
     },
     "1_EarlyEntryDown": {
       "id": "Earl1",
-      "timestamp": "2026-02-12T23:46:17.281928+00:00",
+      "timestamp": "2026-02-12T23:46:22.124153+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 56,
-      "buy_price": 0.555,
+      "buy_price_cents": 48,
+      "buy_price": 0.485,
       "bet_amount": 1.0,
       "historical_wr": 0.5385,
       "confidence": 0.75,
-      "edge": -0.0165,
+      "edge": 0.0535,
       "entry_minute": 1,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
@@ -1484,7 +1806,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6285,
+          "conf": 0.6122,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -1616,15 +1938,15 @@
     },
     "1_Gen_buyers_dominate_cheap_buy_UP": {
       "id": "Gen_1",
-      "timestamp": "2026-02-12T23:46:17.281928+00:00",
+      "timestamp": "2026-02-12T23:46:22.124153+00:00",
       "direction": "UP",
       "side": "YES",
-      "buy_price_cents": 44,
-      "buy_price": 0.445,
+      "buy_price_cents": 52,
+      "buy_price": 0.515,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
       "confidence": 0.85,
-      "edge": 0.105,
+      "edge": 0.035,
       "entry_minute": 1,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
@@ -1645,7 +1967,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6285,
+          "conf": 0.6122,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -1777,15 +2099,15 @@
     },
     "1_Gen_low_volume_cheap_buy_UP": {
       "id": "Gen_1",
-      "timestamp": "2026-02-12T23:46:17.281928+00:00",
+      "timestamp": "2026-02-12T23:46:22.124153+00:00",
       "direction": "UP",
       "side": "YES",
-      "buy_price_cents": 44,
-      "buy_price": 0.445,
+      "buy_price_cents": 52,
+      "buy_price": 0.515,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
       "confidence": 0.8,
-      "edge": 0.105,
+      "edge": 0.035,
       "entry_minute": 1,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
@@ -1806,7 +2128,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6285,
+          "conf": 0.6122,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -1938,15 +2260,15 @@
     },
     "1_Gen_cheap_buy_UP": {
       "id": "Gen_1",
-      "timestamp": "2026-02-12T23:46:17.281928+00:00",
+      "timestamp": "2026-02-12T23:46:22.124153+00:00",
       "direction": "UP",
       "side": "YES",
-      "buy_price_cents": 44,
-      "buy_price": 0.445,
+      "buy_price_cents": 52,
+      "buy_price": 0.515,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
       "confidence": 0.58,
-      "edge": 0.105,
+      "edge": 0.035,
       "entry_minute": 1,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
@@ -1967,7 +2289,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6285,
+          "conf": 0.6122,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -2099,15 +2421,15 @@
     },
     "1_Gen_low_vol_cheap_buy_UP": {
       "id": "Gen_1",
-      "timestamp": "2026-02-12T23:46:17.281928+00:00",
+      "timestamp": "2026-02-12T23:46:22.124153+00:00",
       "direction": "UP",
       "side": "YES",
-      "buy_price_cents": 44,
-      "buy_price": 0.445,
+      "buy_price_cents": 52,
+      "buy_price": 0.515,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
       "confidence": 0.6244,
-      "edge": 0.105,
+      "edge": 0.035,
       "entry_minute": 1,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
@@ -2128,7 +2450,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6285,
+          "conf": 0.6122,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -2258,23 +2580,23 @@
         }
       }
     },
-    "1_TakerBuyRatio_DOWN": {
-      "id": "Take1",
-      "timestamp": "2026-02-12T23:46:57.539606+00:00",
+    "2_MLProfit_v5": {
+      "id": "MLPr2",
+      "timestamp": "2026-02-12T23:47:02.258740+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 56,
-      "buy_price": 0.565,
+      "buy_price_cents": 55,
+      "buy_price": 0.545,
       "bet_amount": 1.0,
-      "historical_wr": 0.5435,
-      "confidence": 0.88,
-      "edge": -0.0215,
-      "entry_minute": 1,
+      "historical_wr": 0.6124,
+      "confidence": 0.5576,
+      "edge": 0.0674,
+      "entry_minute": 2,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
       "btc_entry": 66215.4,
       "btc_open": 66215.4,
-      "strategy": "TakerBuyRatio_DOWN",
+      "strategy": "MLProfit_v5",
       "ml_pred_profit": 0,
       "signals": {
         "MLProfit_v5": {
@@ -2289,7 +2611,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6032,
+          "conf": 0.6183,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -2314,7 +2636,7 @@
         },
         "TakerBuyRatio_DOWN": {
           "dir": "DOWN",
-          "conf": 0.88,
+          "conf": 0.8215,
           "mode": "active"
         },
         "DownMomentumConfirm": {
@@ -2409,168 +2731,7 @@
         },
         "Gen_low_vol_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.6244,
-          "mode": "shadow"
-        },
-        "Gen_neutral_rsi_strong_up_momentum_UP": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "shadow"
-        }
-      }
-    },
-    "2_MLProfit_v5": {
-      "id": "MLPr2",
-      "timestamp": "2026-02-12T23:47:18.083467+00:00",
-      "direction": "DOWN",
-      "side": "NO",
-      "buy_price_cents": 60,
-      "buy_price": 0.605,
-      "bet_amount": 1.0,
-      "historical_wr": 0.6202,
-      "confidence": 0.6336,
-      "edge": 0.0152,
-      "entry_minute": 2,
-      "window_start": "2026-02-12T23:45:00+00:00",
-      "window_end": "2026-02-13T00:00:00+00:00",
-      "btc_entry": 66235.06,
-      "btc_open": 66215.4,
-      "strategy": "MLProfit_v5",
-      "ml_pred_profit": 0,
-      "signals": {
-        "MLProfit_v5": {
-          "dir": "UP",
-          "conf": 0.75,
-          "mode": "active"
-        },
-        "MorningCheap": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "active"
-        },
-        "SpreadMomentum": {
-          "dir": "DOWN",
-          "conf": 0.6978,
-          "mode": "active"
-        },
-        "MultiTimeframeBreakout": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "active"
-        },
-        "VolumeSpike": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "active"
-        },
-        "EarlyEntryDown": {
-          "dir": "DOWN",
-          "conf": 0.75,
-          "mode": "active"
-        },
-        "EntropyReversion": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "active"
-        },
-        "TakerBuyRatio_DOWN": {
-          "dir": "DOWN",
-          "conf": 0.88,
-          "mode": "active"
-        },
-        "DownMomentumConfirm": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "active"
-        },
-        "DownPeakHours": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "active"
-        },
-        "UltraSelective": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "shadow"
-        },
-        "PremiumOnly": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "shadow"
-        },
-        "PremiumVolumeConfirm": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "active"
-        },
-        "FundingMomentumDivergence": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "shadow"
-        },
-        "LiquidationCascadePredictor": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "shadow"
-        },
-        "CompositeDownsideCheap": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "shadow"
-        },
-        "MLF_v11_XGB": {
-          "dir": "UP",
-          "conf": 0.75,
-          "mode": "shadow"
-        },
-        "MLF_v11_LGBM": {
-          "dir": "UP",
-          "conf": 0.75,
-          "mode": "shadow"
-        },
-        "MLF_v11_RF": {
-          "dir": "UP",
-          "conf": 0.75,
-          "mode": "shadow"
-        },
-        "MLProfit_v5_clean": {
-          "dir": "UP",
-          "conf": 0.75,
-          "mode": "shadow"
-        },
-        "Gen_cheap_buy_strong_down_momentum_DOWN": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "shadow"
-        },
-        "Gen_cheap_buy_strong_up_momentum_UP": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "shadow"
-        },
-        "Gen_buyers_dominate_cheap_buy_UP": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "shadow"
-        },
-        "Gen_low_volume_cheap_buy_UP": {
-          "dir": "UP",
-          "conf": 0.7985,
-          "mode": "shadow"
-        },
-        "Gen_neutral_rsi_cheap_buy_UP": {
-          "dir": "SKIP",
-          "conf": 0.0,
-          "mode": "shadow"
-        },
-        "Gen_cheap_buy_UP": {
-          "dir": "UP",
-          "conf": 0.58,
-          "mode": "shadow"
-        },
-        "Gen_low_vol_cheap_buy_UP": {
-          "dir": "UP",
-          "conf": 0.631,
+          "conf": 0.6352,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -2582,19 +2743,19 @@
     },
     "2_SpreadMomentum": {
       "id": "Spre2",
-      "timestamp": "2026-02-12T23:47:18.083467+00:00",
+      "timestamp": "2026-02-12T23:47:02.258740+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 60,
-      "buy_price": 0.605,
+      "buy_price_cents": 55,
+      "buy_price": 0.545,
       "bet_amount": 1.0,
-      "historical_wr": 0.5168,
-      "confidence": 0.6978,
-      "edge": -0.0882,
+      "historical_wr": 0.521,
+      "confidence": 0.6183,
+      "edge": -0.024,
       "entry_minute": 2,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
-      "btc_entry": 66235.06,
+      "btc_entry": 66215.4,
       "btc_open": 66215.4,
       "strategy": "SpreadMomentum",
       "ml_pred_profit": 0,
@@ -2611,7 +2772,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6978,
+          "conf": 0.6183,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -2636,7 +2797,7 @@
         },
         "TakerBuyRatio_DOWN": {
           "dir": "DOWN",
-          "conf": 0.88,
+          "conf": 0.8215,
           "mode": "active"
         },
         "DownMomentumConfirm": {
@@ -2716,7 +2877,7 @@
         },
         "Gen_low_volume_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.7985,
+          "conf": 0.8,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_cheap_buy_UP": {
@@ -2731,7 +2892,7 @@
         },
         "Gen_low_vol_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.631,
+          "conf": 0.6352,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -2743,19 +2904,19 @@
     },
     "2_EarlyEntryDown": {
       "id": "Earl2",
-      "timestamp": "2026-02-12T23:47:18.083467+00:00",
+      "timestamp": "2026-02-12T23:47:02.258740+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 60,
-      "buy_price": 0.605,
+      "buy_price_cents": 55,
+      "buy_price": 0.545,
       "bet_amount": 1.0,
       "historical_wr": 0.5385,
       "confidence": 0.75,
-      "edge": -0.0665,
+      "edge": -0.0065,
       "entry_minute": 2,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
-      "btc_entry": 66235.06,
+      "btc_entry": 66215.4,
       "btc_open": 66215.4,
       "strategy": "EarlyEntryDown",
       "ml_pred_profit": 0,
@@ -2772,7 +2933,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6978,
+          "conf": 0.6183,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -2797,7 +2958,7 @@
         },
         "TakerBuyRatio_DOWN": {
           "dir": "DOWN",
-          "conf": 0.88,
+          "conf": 0.8215,
           "mode": "active"
         },
         "DownMomentumConfirm": {
@@ -2877,7 +3038,7 @@
         },
         "Gen_low_volume_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.7985,
+          "conf": 0.8,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_cheap_buy_UP": {
@@ -2892,7 +3053,7 @@
         },
         "Gen_low_vol_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.631,
+          "conf": 0.6352,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -2904,19 +3065,19 @@
     },
     "2_TakerBuyRatio_DOWN": {
       "id": "Take2",
-      "timestamp": "2026-02-12T23:47:18.083467+00:00",
+      "timestamp": "2026-02-12T23:47:02.258740+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 60,
-      "buy_price": 0.605,
+      "buy_price_cents": 55,
+      "buy_price": 0.545,
       "bet_amount": 1.0,
       "historical_wr": 0.5435,
-      "confidence": 0.88,
-      "edge": -0.0615,
+      "confidence": 0.8215,
+      "edge": -0.0015,
       "entry_minute": 2,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
-      "btc_entry": 66235.06,
+      "btc_entry": 66215.4,
       "btc_open": 66215.4,
       "strategy": "TakerBuyRatio_DOWN",
       "ml_pred_profit": 0,
@@ -2933,7 +3094,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6978,
+          "conf": 0.6183,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -2958,7 +3119,7 @@
         },
         "TakerBuyRatio_DOWN": {
           "dir": "DOWN",
-          "conf": 0.88,
+          "conf": 0.8215,
           "mode": "active"
         },
         "DownMomentumConfirm": {
@@ -3038,7 +3199,7 @@
         },
         "Gen_low_volume_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.7985,
+          "conf": 0.8,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_cheap_buy_UP": {
@@ -3053,7 +3214,7 @@
         },
         "Gen_low_vol_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.631,
+          "conf": 0.6352,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -3065,19 +3226,19 @@
     },
     "2_Gen_low_volume_cheap_buy_UP": {
       "id": "Gen_2",
-      "timestamp": "2026-02-12T23:47:18.083467+00:00",
+      "timestamp": "2026-02-12T23:47:02.258740+00:00",
       "direction": "UP",
       "side": "YES",
-      "buy_price_cents": 40,
-      "buy_price": 0.395,
+      "buy_price_cents": 46,
+      "buy_price": 0.455,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
-      "confidence": 0.7985,
-      "edge": 0.155,
+      "confidence": 0.8,
+      "edge": 0.095,
       "entry_minute": 2,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
-      "btc_entry": 66235.06,
+      "btc_entry": 66215.4,
       "btc_open": 66215.4,
       "strategy": "Gen_low_volume_cheap_buy_UP",
       "ml_pred_profit": 0,
@@ -3094,7 +3255,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6978,
+          "conf": 0.6183,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -3119,7 +3280,7 @@
         },
         "TakerBuyRatio_DOWN": {
           "dir": "DOWN",
-          "conf": 0.88,
+          "conf": 0.8215,
           "mode": "active"
         },
         "DownMomentumConfirm": {
@@ -3199,7 +3360,7 @@
         },
         "Gen_low_volume_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.7985,
+          "conf": 0.8,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_cheap_buy_UP": {
@@ -3214,7 +3375,7 @@
         },
         "Gen_low_vol_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.631,
+          "conf": 0.6352,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -3226,19 +3387,19 @@
     },
     "2_Gen_cheap_buy_UP": {
       "id": "Gen_2",
-      "timestamp": "2026-02-12T23:47:18.083467+00:00",
+      "timestamp": "2026-02-12T23:47:02.258740+00:00",
       "direction": "UP",
       "side": "YES",
-      "buy_price_cents": 40,
-      "buy_price": 0.395,
+      "buy_price_cents": 46,
+      "buy_price": 0.455,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
       "confidence": 0.58,
-      "edge": 0.155,
+      "edge": 0.095,
       "entry_minute": 2,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
-      "btc_entry": 66235.06,
+      "btc_entry": 66215.4,
       "btc_open": 66215.4,
       "strategy": "Gen_cheap_buy_UP",
       "ml_pred_profit": 0,
@@ -3255,7 +3416,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6978,
+          "conf": 0.6183,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -3280,7 +3441,7 @@
         },
         "TakerBuyRatio_DOWN": {
           "dir": "DOWN",
-          "conf": 0.88,
+          "conf": 0.8215,
           "mode": "active"
         },
         "DownMomentumConfirm": {
@@ -3360,7 +3521,7 @@
         },
         "Gen_low_volume_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.7985,
+          "conf": 0.8,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_cheap_buy_UP": {
@@ -3375,7 +3536,7 @@
         },
         "Gen_low_vol_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.631,
+          "conf": 0.6352,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -3387,19 +3548,19 @@
     },
     "2_Gen_low_vol_cheap_buy_UP": {
       "id": "Gen_2",
-      "timestamp": "2026-02-12T23:47:18.083467+00:00",
+      "timestamp": "2026-02-12T23:47:02.258740+00:00",
       "direction": "UP",
       "side": "YES",
-      "buy_price_cents": 40,
-      "buy_price": 0.395,
+      "buy_price_cents": 46,
+      "buy_price": 0.455,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
-      "confidence": 0.631,
-      "edge": 0.155,
+      "confidence": 0.6352,
+      "edge": 0.095,
       "entry_minute": 2,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
-      "btc_entry": 66235.06,
+      "btc_entry": 66215.4,
       "btc_open": 66215.4,
       "strategy": "Gen_low_vol_cheap_buy_UP",
       "ml_pred_profit": 0,
@@ -3416,7 +3577,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6978,
+          "conf": 0.6183,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -3441,7 +3602,7 @@
         },
         "TakerBuyRatio_DOWN": {
           "dir": "DOWN",
-          "conf": 0.88,
+          "conf": 0.8215,
           "mode": "active"
         },
         "DownMomentumConfirm": {
@@ -3521,7 +3682,7 @@
         },
         "Gen_low_volume_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.7985,
+          "conf": 0.8,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_cheap_buy_UP": {
@@ -3536,7 +3697,7 @@
         },
         "Gen_low_vol_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.631,
+          "conf": 0.6352,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -3548,7 +3709,7 @@
     },
     "2_VolumeSpike": {
       "id": "Volu2",
-      "timestamp": "2026-02-12T23:47:38.695150+00:00",
+      "timestamp": "2026-02-12T23:47:43.385497+00:00",
       "direction": "DOWN",
       "side": "NO",
       "buy_price_cents": 56,
@@ -3709,7 +3870,7 @@
     },
     "2_Gen_cheap_buy_strong_down_momentum_DOWN": {
       "id": "Gen_2",
-      "timestamp": "2026-02-12T23:47:38.695150+00:00",
+      "timestamp": "2026-02-12T23:47:43.385497+00:00",
       "direction": "DOWN",
       "side": "NO",
       "buy_price_cents": 56,
@@ -3870,19 +4031,19 @@
     },
     "3_MLProfit_v5": {
       "id": "MLPr3",
-      "timestamp": "2026-02-12T23:48:20.813466+00:00",
-      "direction": "UP",
-      "side": "YES",
-      "buy_price_cents": 50,
-      "buy_price": 0.495,
+      "timestamp": "2026-02-12T23:48:04.382937+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 51,
+      "buy_price": 0.51,
       "bet_amount": 1.0,
-      "historical_wr": 0.6202,
-      "confidence": 0.4975,
-      "edge": 0.1252,
+      "historical_wr": 0.6124,
+      "confidence": 0.4049,
+      "edge": 0.1024,
       "entry_minute": 3,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
-      "btc_entry": 66224.59,
+      "btc_entry": 66194.85,
       "btc_open": 66215.4,
       "strategy": "MLProfit_v5",
       "ml_pred_profit": 0,
@@ -3898,8 +4059,8 @@
           "mode": "active"
         },
         "SpreadMomentum": {
-          "dir": "DOWN",
-          "conf": 0.6095,
+          "dir": "SKIP",
+          "conf": 0.0,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -4004,7 +4165,7 @@
         },
         "Gen_low_volume_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.6345,
+          "conf": 0.8,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_cheap_buy_UP": {
@@ -4019,7 +4180,812 @@
         },
         "Gen_low_vol_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.6273,
+          "conf": 0.6337,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "3_EarlyEntryDown": {
+      "id": "Earl3",
+      "timestamp": "2026-02-12T23:48:04.382937+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 51,
+      "buy_price": 0.51,
+      "bet_amount": 1.0,
+      "historical_wr": 0.5385,
+      "confidence": 0.75,
+      "edge": 0.0285,
+      "entry_minute": 3,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66194.85,
+      "btc_open": 66215.4,
+      "strategy": "EarlyEntryDown",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.8,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6337,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "3_TakerBuyRatio_DOWN": {
+      "id": "Take3",
+      "timestamp": "2026-02-12T23:48:04.382937+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 51,
+      "buy_price": 0.51,
+      "bet_amount": 1.0,
+      "historical_wr": 0.5435,
+      "confidence": 0.88,
+      "edge": 0.0335,
+      "entry_minute": 3,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66194.85,
+      "btc_open": 66215.4,
+      "strategy": "TakerBuyRatio_DOWN",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.8,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6337,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "3_Gen_low_volume_cheap_buy_UP": {
+      "id": "Gen_3",
+      "timestamp": "2026-02-12T23:48:04.382937+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 49,
+      "buy_price": 0.49,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.8,
+      "edge": 0.06,
+      "entry_minute": 3,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66194.85,
+      "btc_open": 66215.4,
+      "strategy": "Gen_low_volume_cheap_buy_UP",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.8,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6337,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "3_Gen_cheap_buy_UP": {
+      "id": "Gen_3",
+      "timestamp": "2026-02-12T23:48:04.382937+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 49,
+      "buy_price": 0.49,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.58,
+      "edge": 0.06,
+      "entry_minute": 3,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66194.85,
+      "btc_open": 66215.4,
+      "strategy": "Gen_cheap_buy_UP",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.8,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6337,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "3_Gen_low_vol_cheap_buy_UP": {
+      "id": "Gen_3",
+      "timestamp": "2026-02-12T23:48:04.382937+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 49,
+      "buy_price": 0.49,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.6337,
+      "edge": 0.06,
+      "entry_minute": 3,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66194.85,
+      "btc_open": 66215.4,
+      "strategy": "Gen_low_vol_cheap_buy_UP",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "DOWN",
+          "conf": 0.88,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.8,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6337,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -4031,15 +4997,15 @@
     },
     "3_SpreadMomentum": {
       "id": "Spre3",
-      "timestamp": "2026-02-12T23:48:20.813466+00:00",
+      "timestamp": "2026-02-12T23:48:25.211247+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 50,
-      "buy_price": 0.505,
+      "buy_price_cents": 55,
+      "buy_price": 0.545,
       "bet_amount": 1.0,
-      "historical_wr": 0.5168,
-      "confidence": 0.6095,
-      "edge": 0.0118,
+      "historical_wr": 0.521,
+      "confidence": 0.5811,
+      "edge": -0.024,
       "entry_minute": 3,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
@@ -4060,7 +5026,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6095,
+          "conf": 0.5811,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -4190,21 +5156,504 @@
         }
       }
     },
-    "3_EarlyEntryDown": {
-      "id": "Earl3",
-      "timestamp": "2026-02-12T23:48:20.813466+00:00",
+    "3_VolumeSpike": {
+      "id": "Volu3",
+      "timestamp": "2026-02-12T23:48:45.031568+00:00",
       "direction": "DOWN",
       "side": "NO",
-      "buy_price_cents": 50,
-      "buy_price": 0.505,
+      "buy_price_cents": 60,
+      "buy_price": 0.595,
       "bet_amount": 1.0,
-      "historical_wr": 0.5385,
-      "confidence": 0.75,
-      "edge": 0.0335,
+      "historical_wr": 0.7459,
+      "confidence": 0.5916,
+      "edge": 0.1509,
       "entry_minute": 3,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
-      "btc_entry": 66224.59,
+      "btc_entry": 66199.64,
+      "btc_open": 66215.4,
+      "strategy": "VolumeSpike",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.6021,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "DOWN",
+          "conf": 0.5916,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6273,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "4_MLProfit_v5": {
+      "id": "MLPr4",
+      "timestamp": "2026-02-12T23:49:06.806128+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 56,
+      "buy_price": 0.565,
+      "bet_amount": 1.0,
+      "historical_wr": 0.6124,
+      "confidence": 0.7211,
+      "edge": 0.0474,
+      "entry_minute": 4,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66199.64,
+      "btc_open": 66215.4,
+      "strategy": "MLProfit_v5",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.5785,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.7,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6578,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.8,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6379,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "4_SpreadMomentum": {
+      "id": "Spre4",
+      "timestamp": "2026-02-12T23:49:06.806128+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 56,
+      "buy_price": 0.565,
+      "bet_amount": 1.0,
+      "historical_wr": 0.521,
+      "confidence": 0.5785,
+      "edge": -0.044,
+      "entry_minute": 4,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66199.64,
+      "btc_open": 66215.4,
+      "strategy": "SpreadMomentum",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.5785,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.7,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6578,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.8,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6379,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "4_EarlyEntryDown": {
+      "id": "Earl4",
+      "timestamp": "2026-02-12T23:49:06.806128+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 56,
+      "buy_price": 0.565,
+      "bet_amount": 1.0,
+      "historical_wr": 0.5385,
+      "confidence": 0.7,
+      "edge": -0.0265,
+      "entry_minute": 4,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66199.64,
       "btc_open": 66215.4,
       "strategy": "EarlyEntryDown",
       "ml_pred_profit": 0,
@@ -4221,7 +5670,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6095,
+          "conf": 0.5785,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -4236,7 +5685,7 @@
         },
         "EarlyEntryDown": {
           "dir": "DOWN",
-          "conf": 0.75,
+          "conf": 0.7,
           "mode": "active"
         },
         "EntropyReversion": {
@@ -4245,8 +5694,8 @@
           "mode": "active"
         },
         "TakerBuyRatio_DOWN": {
-          "dir": "DOWN",
-          "conf": 0.88,
+          "dir": "SKIP",
+          "conf": 0.0,
           "mode": "active"
         },
         "DownMomentumConfirm": {
@@ -4320,13 +5769,13 @@
           "mode": "shadow"
         },
         "Gen_buyers_dominate_cheap_buy_UP": {
-          "dir": "SKIP",
-          "conf": 0.0,
+          "dir": "UP",
+          "conf": 0.6578,
           "mode": "shadow"
         },
         "Gen_low_volume_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.6345,
+          "conf": 0.8,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_cheap_buy_UP": {
@@ -4341,7 +5790,7 @@
         },
         "Gen_low_vol_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.6273,
+          "conf": 0.6379,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -4351,23 +5800,23 @@
         }
       }
     },
-    "3_TakerBuyRatio_DOWN": {
-      "id": "Take3",
-      "timestamp": "2026-02-12T23:48:20.813466+00:00",
-      "direction": "DOWN",
-      "side": "NO",
-      "buy_price_cents": 50,
-      "buy_price": 0.505,
+    "4_Gen_buyers_dominate_cheap_buy_UP": {
+      "id": "Gen_4",
+      "timestamp": "2026-02-12T23:49:06.806128+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 44,
+      "buy_price": 0.435,
       "bet_amount": 1.0,
-      "historical_wr": 0.5435,
-      "confidence": 0.88,
-      "edge": 0.0385,
-      "entry_minute": 3,
+      "historical_wr": 0.55,
+      "confidence": 0.6578,
+      "edge": 0.115,
+      "entry_minute": 4,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
-      "btc_entry": 66224.59,
+      "btc_entry": 66199.64,
       "btc_open": 66215.4,
-      "strategy": "TakerBuyRatio_DOWN",
+      "strategy": "Gen_buyers_dominate_cheap_buy_UP",
       "ml_pred_profit": 0,
       "signals": {
         "MLProfit_v5": {
@@ -4382,7 +5831,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6095,
+          "conf": 0.5785,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -4397,7 +5846,7 @@
         },
         "EarlyEntryDown": {
           "dir": "DOWN",
-          "conf": 0.75,
+          "conf": 0.7,
           "mode": "active"
         },
         "EntropyReversion": {
@@ -4406,8 +5855,8 @@
           "mode": "active"
         },
         "TakerBuyRatio_DOWN": {
-          "dir": "DOWN",
-          "conf": 0.88,
+          "dir": "SKIP",
+          "conf": 0.0,
           "mode": "active"
         },
         "DownMomentumConfirm": {
@@ -4481,13 +5930,13 @@
           "mode": "shadow"
         },
         "Gen_buyers_dominate_cheap_buy_UP": {
-          "dir": "SKIP",
-          "conf": 0.0,
+          "dir": "UP",
+          "conf": 0.6578,
           "mode": "shadow"
         },
         "Gen_low_volume_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.6345,
+          "conf": 0.8,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_cheap_buy_UP": {
@@ -4502,7 +5951,7 @@
         },
         "Gen_low_vol_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.6273,
+          "conf": 0.6379,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -4512,21 +5961,21 @@
         }
       }
     },
-    "3_Gen_low_volume_cheap_buy_UP": {
-      "id": "Gen_3",
-      "timestamp": "2026-02-12T23:48:20.813466+00:00",
+    "4_Gen_low_volume_cheap_buy_UP": {
+      "id": "Gen_4",
+      "timestamp": "2026-02-12T23:49:06.806128+00:00",
       "direction": "UP",
       "side": "YES",
-      "buy_price_cents": 50,
-      "buy_price": 0.495,
+      "buy_price_cents": 44,
+      "buy_price": 0.435,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
-      "confidence": 0.6345,
-      "edge": 0.055,
-      "entry_minute": 3,
+      "confidence": 0.8,
+      "edge": 0.115,
+      "entry_minute": 4,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
-      "btc_entry": 66224.59,
+      "btc_entry": 66199.64,
       "btc_open": 66215.4,
       "strategy": "Gen_low_volume_cheap_buy_UP",
       "ml_pred_profit": 0,
@@ -4543,7 +5992,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6095,
+          "conf": 0.5785,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -4558,7 +6007,7 @@
         },
         "EarlyEntryDown": {
           "dir": "DOWN",
-          "conf": 0.75,
+          "conf": 0.7,
           "mode": "active"
         },
         "EntropyReversion": {
@@ -4567,8 +6016,8 @@
           "mode": "active"
         },
         "TakerBuyRatio_DOWN": {
-          "dir": "DOWN",
-          "conf": 0.88,
+          "dir": "SKIP",
+          "conf": 0.0,
           "mode": "active"
         },
         "DownMomentumConfirm": {
@@ -4642,13 +6091,13 @@
           "mode": "shadow"
         },
         "Gen_buyers_dominate_cheap_buy_UP": {
-          "dir": "SKIP",
-          "conf": 0.0,
+          "dir": "UP",
+          "conf": 0.6578,
           "mode": "shadow"
         },
         "Gen_low_volume_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.6345,
+          "conf": 0.8,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_cheap_buy_UP": {
@@ -4663,7 +6112,7 @@
         },
         "Gen_low_vol_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.6273,
+          "conf": 0.6379,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -4673,21 +6122,21 @@
         }
       }
     },
-    "3_Gen_cheap_buy_UP": {
-      "id": "Gen_3",
-      "timestamp": "2026-02-12T23:48:20.813466+00:00",
+    "4_Gen_cheap_buy_UP": {
+      "id": "Gen_4",
+      "timestamp": "2026-02-12T23:49:06.806128+00:00",
       "direction": "UP",
       "side": "YES",
-      "buy_price_cents": 50,
-      "buy_price": 0.495,
+      "buy_price_cents": 44,
+      "buy_price": 0.435,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
       "confidence": 0.58,
-      "edge": 0.055,
-      "entry_minute": 3,
+      "edge": 0.115,
+      "entry_minute": 4,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
-      "btc_entry": 66224.59,
+      "btc_entry": 66199.64,
       "btc_open": 66215.4,
       "strategy": "Gen_cheap_buy_UP",
       "ml_pred_profit": 0,
@@ -4704,7 +6153,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6095,
+          "conf": 0.5785,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -4719,7 +6168,7 @@
         },
         "EarlyEntryDown": {
           "dir": "DOWN",
-          "conf": 0.75,
+          "conf": 0.7,
           "mode": "active"
         },
         "EntropyReversion": {
@@ -4728,8 +6177,8 @@
           "mode": "active"
         },
         "TakerBuyRatio_DOWN": {
-          "dir": "DOWN",
-          "conf": 0.88,
+          "dir": "SKIP",
+          "conf": 0.0,
           "mode": "active"
         },
         "DownMomentumConfirm": {
@@ -4803,13 +6252,13 @@
           "mode": "shadow"
         },
         "Gen_buyers_dominate_cheap_buy_UP": {
-          "dir": "SKIP",
-          "conf": 0.0,
+          "dir": "UP",
+          "conf": 0.6578,
           "mode": "shadow"
         },
         "Gen_low_volume_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.6345,
+          "conf": 0.8,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_cheap_buy_UP": {
@@ -4824,7 +6273,7 @@
         },
         "Gen_low_vol_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.6273,
+          "conf": 0.6379,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -4834,21 +6283,21 @@
         }
       }
     },
-    "3_Gen_low_vol_cheap_buy_UP": {
-      "id": "Gen_3",
-      "timestamp": "2026-02-12T23:48:20.813466+00:00",
+    "4_Gen_low_vol_cheap_buy_UP": {
+      "id": "Gen_4",
+      "timestamp": "2026-02-12T23:49:06.806128+00:00",
       "direction": "UP",
       "side": "YES",
-      "buy_price_cents": 50,
-      "buy_price": 0.495,
+      "buy_price_cents": 44,
+      "buy_price": 0.435,
       "bet_amount": 1.0,
       "historical_wr": 0.55,
-      "confidence": 0.6273,
-      "edge": 0.055,
-      "entry_minute": 3,
+      "confidence": 0.6379,
+      "edge": 0.115,
+      "entry_minute": 4,
       "window_start": "2026-02-12T23:45:00+00:00",
       "window_end": "2026-02-13T00:00:00+00:00",
-      "btc_entry": 66224.59,
+      "btc_entry": 66199.64,
       "btc_open": 66215.4,
       "strategy": "Gen_low_vol_cheap_buy_UP",
       "ml_pred_profit": 0,
@@ -4865,7 +6314,7 @@
         },
         "SpreadMomentum": {
           "dir": "DOWN",
-          "conf": 0.6095,
+          "conf": 0.5785,
           "mode": "active"
         },
         "MultiTimeframeBreakout": {
@@ -4880,7 +6329,7 @@
         },
         "EarlyEntryDown": {
           "dir": "DOWN",
-          "conf": 0.75,
+          "conf": 0.7,
           "mode": "active"
         },
         "EntropyReversion": {
@@ -4889,8 +6338,8 @@
           "mode": "active"
         },
         "TakerBuyRatio_DOWN": {
-          "dir": "DOWN",
-          "conf": 0.88,
+          "dir": "SKIP",
+          "conf": 0.0,
           "mode": "active"
         },
         "DownMomentumConfirm": {
@@ -4964,13 +6413,13 @@
           "mode": "shadow"
         },
         "Gen_buyers_dominate_cheap_buy_UP": {
-          "dir": "SKIP",
-          "conf": 0.0,
+          "dir": "UP",
+          "conf": 0.6578,
           "mode": "shadow"
         },
         "Gen_low_volume_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.6345,
+          "conf": 0.8,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_cheap_buy_UP": {
@@ -4985,7 +6434,1134 @@
         },
         "Gen_low_vol_cheap_buy_UP": {
           "dir": "UP",
-          "conf": 0.6273,
+          "conf": 0.6379,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "5_MLProfit_v5": {
+      "id": "MLPr5",
+      "timestamp": "2026-02-12T23:50:11.324510+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 64,
+      "buy_price": 0.635,
+      "bet_amount": 1.0,
+      "historical_wr": 0.6124,
+      "confidence": 0.878,
+      "edge": -0.0226,
+      "entry_minute": 5,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66215.64,
+      "btc_open": 66215.4,
+      "strategy": "MLProfit_v5",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.686,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.7,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.8,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6314,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "5_SpreadMomentum": {
+      "id": "Spre5",
+      "timestamp": "2026-02-12T23:50:11.324510+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 64,
+      "buy_price": 0.635,
+      "bet_amount": 1.0,
+      "historical_wr": 0.521,
+      "confidence": 0.686,
+      "edge": -0.114,
+      "entry_minute": 5,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66215.64,
+      "btc_open": 66215.4,
+      "strategy": "SpreadMomentum",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.686,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.7,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.8,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6314,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "5_EarlyEntryDown": {
+      "id": "Earl5",
+      "timestamp": "2026-02-12T23:50:11.324510+00:00",
+      "direction": "DOWN",
+      "side": "NO",
+      "buy_price_cents": 64,
+      "buy_price": 0.635,
+      "bet_amount": 1.0,
+      "historical_wr": 0.5385,
+      "confidence": 0.7,
+      "edge": -0.0965,
+      "entry_minute": 5,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66215.64,
+      "btc_open": 66215.4,
+      "strategy": "EarlyEntryDown",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.686,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.7,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.8,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6314,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "5_Gen_buyers_dominate_cheap_buy_UP": {
+      "id": "Gen_5",
+      "timestamp": "2026-02-12T23:50:11.324510+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 36,
+      "buy_price": 0.365,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.85,
+      "edge": 0.185,
+      "entry_minute": 5,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66215.64,
+      "btc_open": 66215.4,
+      "strategy": "Gen_buyers_dominate_cheap_buy_UP",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.686,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.7,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.8,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6314,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "5_Gen_low_volume_cheap_buy_UP": {
+      "id": "Gen_5",
+      "timestamp": "2026-02-12T23:50:11.324510+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 36,
+      "buy_price": 0.365,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.8,
+      "edge": 0.185,
+      "entry_minute": 5,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66215.64,
+      "btc_open": 66215.4,
+      "strategy": "Gen_low_volume_cheap_buy_UP",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.686,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.7,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.8,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6314,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "5_Gen_cheap_buy_UP": {
+      "id": "Gen_5",
+      "timestamp": "2026-02-12T23:50:11.324510+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 36,
+      "buy_price": 0.365,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.58,
+      "edge": 0.185,
+      "entry_minute": 5,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66215.64,
+      "btc_open": 66215.4,
+      "strategy": "Gen_cheap_buy_UP",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.686,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.7,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.8,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6314,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        }
+      }
+    },
+    "5_Gen_low_vol_cheap_buy_UP": {
+      "id": "Gen_5",
+      "timestamp": "2026-02-12T23:50:11.324510+00:00",
+      "direction": "UP",
+      "side": "YES",
+      "buy_price_cents": 36,
+      "buy_price": 0.365,
+      "bet_amount": 1.0,
+      "historical_wr": 0.55,
+      "confidence": 0.6314,
+      "edge": 0.185,
+      "entry_minute": 5,
+      "window_start": "2026-02-12T23:45:00+00:00",
+      "window_end": "2026-02-13T00:00:00+00:00",
+      "btc_entry": 66215.64,
+      "btc_open": 66215.4,
+      "strategy": "Gen_low_vol_cheap_buy_UP",
+      "ml_pred_profit": 0,
+      "signals": {
+        "MLProfit_v5": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "active"
+        },
+        "MorningCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "SpreadMomentum": {
+          "dir": "DOWN",
+          "conf": 0.686,
+          "mode": "active"
+        },
+        "MultiTimeframeBreakout": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "VolumeSpike": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "EarlyEntryDown": {
+          "dir": "DOWN",
+          "conf": 0.7,
+          "mode": "active"
+        },
+        "EntropyReversion": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "TakerBuyRatio_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownMomentumConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "DownPeakHours": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "UltraSelective": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumOnly": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "PremiumVolumeConfirm": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "active"
+        },
+        "FundingMomentumDivergence": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "LiquidationCascadePredictor": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "CompositeDownsideCheap": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "MLF_v11_XGB": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_LGBM": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLF_v11_RF": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "MLProfit_v5_clean": {
+          "dir": "UP",
+          "conf": 0.75,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_down_momentum_DOWN": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_strong_up_momentum_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_buyers_dominate_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.85,
+          "mode": "shadow"
+        },
+        "Gen_low_volume_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.8,
+          "mode": "shadow"
+        },
+        "Gen_neutral_rsi_cheap_buy_UP": {
+          "dir": "SKIP",
+          "conf": 0.0,
+          "mode": "shadow"
+        },
+        "Gen_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.58,
+          "mode": "shadow"
+        },
+        "Gen_low_vol_cheap_buy_UP": {
+          "dir": "UP",
+          "conf": 0.6314,
           "mode": "shadow"
         },
         "Gen_neutral_rsi_strong_up_momentum_UP": {
@@ -4997,7 +7573,7 @@
     }
   },
   "gate_status": {
-    "atr_pct": 0.0463,
+    "atr_pct": 0.0481,
     "threshold": 0.03,
     "is_open": true
   }

@@ -72,12 +72,49 @@ export default function Home() {
   const fetchData = useCallback(async () => {
     try {
       const include = dateRange === '7d' ? 'near_misses' : '';
-      const res = await fetch(`/api/data?range=${dateRange}&include=${include}`);
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 8000);
+      const res = await fetch(`/api/data?range=${dateRange}&include=${include}`, {
+        signal: controller.signal,
+      });
+      clearTimeout(timeout);
       const newData = await res.json();
       setData(newData);
       setLastUpdate(new Date());
     } catch (e) {
-      console.error(e);
+      console.error('API failed, trying snapshot fallback:', e);
+      // Fallback: load static snapshot directly
+      try {
+        const snapRes = await fetch('/data/snapshot.json');
+        if (snapRes.ok) {
+          const snap = await snapRes.json();
+          setData({
+            ...snap,
+            btc_price: snap.live_signal?.btc_price || 0,
+            last_updated: snap.generated_at || new Date().toISOString(),
+            _source: 'snapshot_fallback',
+            strategy_rankings: snap.strategy_rankings || [],
+            recent_trades: snap.recent_trades || [],
+            hourly_stats: {},
+            regime_breakdown: {},
+            current_regime: snap.current_regime || { volatility: 'unknown', market: 'unknown' },
+            near_misses: [],
+            data_quality: { total_trades: 0, last_export: snap.generated_at },
+            drawdown: { cumulative_pnl: [], max_drawdown: 0 },
+            edge_analysis: {},
+            minute_stats: {},
+            daily_pnl: [],
+            gate_status: snap.gate_status || { atr_pct: 0, threshold: 0.15, is_open: true },
+            gate_stats: { windows_checked: 0, windows_traded: 0, windows_skipped: 0, windows_passed_gate: 0 },
+            funding_rate: snap.funding_rate || null,
+            orderbook_imbalance: 0,
+            strategies_config: {},
+          });
+          setLastUpdate(new Date(snap.generated_at || Date.now()));
+        }
+      } catch (snapErr) {
+        console.error('Snapshot fallback also failed:', snapErr);
+      }
     } finally {
       setLoading(false);
     }

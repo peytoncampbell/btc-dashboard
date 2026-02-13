@@ -14,6 +14,7 @@ import EdgeAnalysis from './components/EdgeAnalysis';
 import StrategyHeatmap from './components/StrategyHeatmap';
 
 interface DashboardData {
+  mode?: 'live' | 'paper';
   btc_price: number;
   last_updated: string;
   performance: {
@@ -66,6 +67,7 @@ export default function Home() {
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
   const [dateRange, setDateRange] = useState<'today' | '7d' | '30d' | 'all'>('7d');
+  const [tradingMode, setTradingMode] = useState<'paper' | 'live'>('paper');
   const [howOpen, setHowOpen] = useState(false);
   const [lastUpdate, setLastUpdate] = useState<Date>(new Date());
 
@@ -74,7 +76,7 @@ export default function Home() {
       const include = dateRange === '7d' ? 'near_misses' : '';
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 8000);
-      const res = await fetch(`/api/data?range=${dateRange}&include=${include}`, {
+      const res = await fetch(`/api/data?range=${dateRange}&include=${include}&mode=${tradingMode}`, {
         signal: controller.signal,
       });
       clearTimeout(timeout);
@@ -119,7 +121,7 @@ export default function Home() {
     } finally {
       setLoading(false);
     }
-  }, [dateRange]);
+  }, [dateRange, tradingMode]);
 
   useEffect(() => {
     fetchData();
@@ -166,10 +168,34 @@ export default function Home() {
             🤖 BTC Scalper{' '}
             <span className="text-xs text-blue-400 font-normal">v9 · Enriched ML</span>
           </h1>
+          <div className={`px-2 py-1 rounded text-xs font-medium ${
+            tradingMode === 'live' ? 'bg-green-600 text-white' : 'bg-blue-600 text-white'
+          }`}>
+            {tradingMode === 'live' ? '💰 LIVE' : '📊 PAPER'}
+          </div>
           <div className={`w-2 h-2 rounded-full ${sigActive ? 'bg-green-500 animate-pulse' : 'bg-gray-600'}`} />
           <span className="text-xs text-gray-400">{sigActive ? 'Active' : 'Idle'}</span>
         </div>
         <div className="flex items-center gap-3 text-xs">
+          {/* Trading mode toggle */}
+          <div className="flex gap-1 border border-gray-600 rounded">
+            <button
+              onClick={() => setTradingMode('paper')}
+              className={`px-3 py-1 rounded-l ${
+                tradingMode === 'paper' ? 'bg-blue-600 text-white' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
+              }`}
+            >
+              📊 Paper
+            </button>
+            <button
+              onClick={() => setTradingMode('live')}
+              className={`px-3 py-1 rounded-r ${
+                tradingMode === 'live' ? 'bg-green-600 text-white' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
+              }`}
+            >
+              💰 Live
+            </button>
+          </div>
           {/* Date range filter */}
           <div className="flex gap-1">
             {(['today', '7d', '30d', 'all'] as const).map((r) => (

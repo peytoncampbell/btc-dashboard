@@ -92,6 +92,7 @@ function buildFromSnapshot(snapshot: any, range: string) {
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const range = searchParams.get('range') || '7d';
+  const mode = searchParams.get('mode') || 'paper';
 
   let liveData: any = null;
   let statsData: any = null;
@@ -114,8 +115,8 @@ export async function GET(request: Request) {
     const deadline = new Promise((_, reject) => setTimeout(() => reject(new Error('deadline')), 6000));
     const apiResults = await Promise.race([
       Promise.allSettled([
-        fetchWithTimeout(`${BOT_API}/api/live`, 5000),
-        fetchWithTimeout(`${BOT_API}/api/stats?range=${range}`, 5000),
+        fetchWithTimeout(`${BOT_API}/api/live?mode=${mode}`, 5000),
+        fetchWithTimeout(`${BOT_API}/api/stats?range=${range}&mode=${mode}`, 5000),
         fetchWithTimeout(`${BOT_API}/api/near-misses?limit=20`, 5000),
       ]),
       deadline,
@@ -145,11 +146,13 @@ export async function GET(request: Request) {
       if (btcPrice) data.btc_price = btcPrice;
       return buildResponse(data);
     }
+    const initialBalance = mode === 'live' ? 72.66 : 100;
     return buildResponse({
       error: 'No data available',
+      mode: mode,
       btc_price: btcPrice,
       last_updated: new Date().toISOString(),
-      performance: { balance: 100, total_pnl: 0, win_rate: 0, total_trades: 0, wins: 0, losses: 0 },
+      performance: { balance: initialBalance, initial_balance: initialBalance, total_pnl: 0, win_rate: 0, total_trades: 0, wins: 0, losses: 0, current_streak: 0, best_streak: 0, today_pnl: 0 },
       live_signal: null, strategy_rankings: [], recent_trades: [], hourly_stats: {},
       regime_breakdown: {}, current_regime: { volatility: 'unknown', market: 'unknown' },
       near_misses: [], data_quality: { total_trades: 0, last_export: new Date().toISOString() },
@@ -165,8 +168,9 @@ export async function GET(request: Request) {
     btcPrice = liveData.signal.btc_price;
   }
 
-  const rawPerformance = liveData?.performance || { balance: 100, total_pnl: 0, win_rate: 0, total_trades: 0, wins: 0, losses: 0, current_streak: 0, best_streak: 0, today_pnl: 0, initial_balance: 100 };
-  const initialBalance = rawPerformance.initial_balance ?? 100;
+  const defaultInitialBalance = mode === 'live' ? 72.66 : 100;
+  const rawPerformance = liveData?.performance || { balance: defaultInitialBalance, total_pnl: 0, win_rate: 0, total_trades: 0, wins: 0, losses: 0, current_streak: 0, best_streak: 0, today_pnl: 0, initial_balance: defaultInitialBalance };
+  const initialBalance = rawPerformance.initial_balance ?? defaultInitialBalance;
   const totalPnl = rawPerformance.total_pnl ?? 0;
   const performance = { ...rawPerformance, initial_balance: initialBalance, balance: rawPerformance.balance ?? (initialBalance + totalPnl) };
 
@@ -206,6 +210,7 @@ export async function GET(request: Request) {
   const dailyPnl = Object.entries(dailyMap).sort((a, b) => new Date(a[0]).getTime() - new Date(b[0]).getTime()).slice(-7).map(([date, pnl]) => ({ date, pnl }));
 
   return buildResponse({
+    mode: mode,
     btc_price: btcPrice,
     last_updated: new Date().toISOString(),
     performance,

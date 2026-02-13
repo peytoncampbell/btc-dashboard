@@ -2,8 +2,8 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 export const maxDuration = 10;
 
-const BOT_API = process.env.BOT_API_URL || 'https://btc-scalper-api.loca.lt';
-const BOT_API_KEY = process.env.BOT_API_KEY || '94e355f69fe2a76fcc0faf239d2fdc46fa61de6d5cfe1249';
+const BOT_API = process.env.BOT_API_URL || 'https://dashboard.peytoncampbell.ca';
+const BOT_API_KEY = process.env.BOT_API_KEY || '65bc4d4ad01756a528c74480067c330da9461584b3b7347e';
 const GITHUB_SNAPSHOT_URL = 'https://raw.githubusercontent.com/peytoncampbell/btc-dashboard/master/public/data/snapshot.json';
 
 async function fetchWithTimeout(url: string, timeoutMs: number): Promise<Response> {

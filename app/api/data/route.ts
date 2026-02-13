@@ -111,12 +111,12 @@ export async function GET(request: Request) {
 
   // Try live API with a tight 2s deadline (non-blocking — if it fails, snapshot is ready)
   try {
-    const deadline = new Promise((_, reject) => setTimeout(() => reject(new Error('deadline')), 2000));
+    const deadline = new Promise((_, reject) => setTimeout(() => reject(new Error('deadline')), 6000));
     const apiResults = await Promise.race([
       Promise.allSettled([
-        fetchWithTimeout(`${BOT_API}/api/live`, 1800),
-        fetchWithTimeout(`${BOT_API}/api/stats?range=${range}`, 1800),
-        fetchWithTimeout(`${BOT_API}/api/near-misses?limit=20`, 1800),
+        fetchWithTimeout(`${BOT_API}/api/live`, 5000),
+        fetchWithTimeout(`${BOT_API}/api/stats?range=${range}`, 5000),
+        fetchWithTimeout(`${BOT_API}/api/near-misses?limit=20`, 5000),
       ]),
       deadline,
     ]) as PromiseSettledResult<Response>[];

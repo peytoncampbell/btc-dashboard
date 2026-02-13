@@ -79,15 +79,9 @@ export default function Home() {
       });
       clearTimeout(timeout);
       const newData = await res.json();
-      // Only update if we got real data — never overwrite good data with empty
-      if (newData && newData.performance && newData.performance.total_trades > 0) {
-        setData(newData);
-        setLastUpdate(new Date());
-      } else if (newData && newData.strategy_rankings && newData.strategy_rankings.length > 0) {
-        setData(newData);
-        setLastUpdate(new Date());
-      }
-      // If response has 0 trades and no rankings, silently ignore it (stale/empty)
+      // Always update — the API route now guarantees real data (live or snapshot fallback)
+      setData(newData);
+      setLastUpdate(new Date());
     } catch (e) {
       console.error('API failed, trying snapshot fallback:', e);
       // Fallback: load static snapshot directly

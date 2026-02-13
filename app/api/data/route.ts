@@ -1,17 +1,13 @@
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
+export const maxDuration = 10;
 
 const BOT_API = 'https://desktop-5ghsjh6.tail05872a.ts.net';
 const BOT_API_KEY = process.env.BOT_API_KEY || '94e355f69fe2a76fcc0faf239d2fdc46fa61de6d5cfe1249';
 
-interface QueryParams {
-  range?: string;
-}
-
-async function fetchWithTimeout(url: string, timeoutMs: number = 5000): Promise<Response> {
+async function fetchWithTimeout(url: string, timeoutMs: number): Promise<Response> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
-  
   try {
     const response = await fetch(url, {
       cache: 'no-store',
@@ -26,249 +22,120 @@ async function fetchWithTimeout(url: string, timeoutMs: number = 5000): Promise<
   }
 }
 
+async function loadSnapshot(): Promise<any> {
+  try {
+    const fs = await import('fs');
+    const path = await import('path');
+    const snapPath = path.join(process.cwd(), 'public', 'data', 'snapshot.json');
+    const raw = fs.readFileSync(snapPath, 'utf-8');
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
+function buildResponse(data: any) {
+  return new Response(JSON.stringify(data), {
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-store, no-cache, must-revalidate',
+      'Access-Control-Allow-Origin': '*',
+    },
+  });
+}
+
+function buildFromSnapshot(snapshot: any) {
+  return {
+    btc_price: snapshot.live_signal?.btc_price || 0,
+    last_updated: snapshot.generated_at || new Date().toISOString(),
+    _source: 'snapshot',
+    performance: snapshot.performance || { balance: 100, total_pnl: 0, win_rate: 0, total_trades: 0, wins: 0, losses: 0 },
+    live_signal: snapshot.live_signal || null,
+    strategy_rankings: snapshot.strategy_rankings || [],
+    recent_trades: snapshot.recent_trades || [],
+    hourly_stats: {},
+    regime_breakdown: {},
+    current_regime: snapshot.current_regime || { volatility: 'unknown', market: 'unknown' },
+    near_misses: [],
+    data_quality: { total_trades: snapshot.performance?.total_trades || 0, last_export: snapshot.generated_at },
+    drawdown: { cumulative_pnl: [], max_drawdown: 0 },
+    edge_analysis: {},
+    minute_stats: {},
+    daily_pnl: [],
+    gate_status: snapshot.gate_status || { atr_pct: 0, threshold: 0.15, is_open: true },
+    gate_stats: { windows_checked: 0, windows_traded: 0, windows_skipped: 0, windows_passed_gate: 0 },
+    funding_rate: snapshot.funding_rate || null,
+    orderbook_imbalance: 0,
+    strategies_config: {},
+  };
+}
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const range = searchParams.get('range') || '7d';
 
+  // Try live API first with aggressive timeout
+  let liveData: any = null;
+  let statsData: any = null;
+  let nearMissesData: any = null;
+  let btcPrice = 0;
+  let apiWorked = false;
+
   try {
-    // Fetch data from all endpoints in parallel
-    const [liveRes, statsRes, nearMissesRes, btcPriceRes] = await Promise.allSettled([
-      fetchWithTimeout(`${BOT_API}/api/live`, 3000),
-      fetchWithTimeout(`${BOT_API}/api/stats?range=${range}`, 3000),
-      fetchWithTimeout(`${BOT_API}/api/near-misses?limit=20`, 3000),
-      fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd', {
-        cache: 'no-store',
-      }),
-    ]);
+    // Race all API calls against a single 4s deadline
+    const deadline = new Promise((_, reject) => setTimeout(() => reject(new Error('deadline')), 4000));
+    
+    const apiResults = await Promise.race([
+      Promise.allSettled([
+        fetchWithTimeout(`${BOT_API}/api/live`, 3500),
+        fetchWithTimeout(`${BOT_API}/api/stats?range=${range}`, 3500),
+        fetchWithTimeout(`${BOT_API}/api/near-misses?limit=20`, 3500),
+      ]),
+      deadline,
+    ]) as PromiseSettledResult<Response>[];
 
-    // Parse responses
-    let liveData: any = null;
-    let statsData: any = null;
-    let nearMissesData: any = null;
-    let btcPrice = 0;
-
-    // Live endpoint
-    if (liveRes.status === 'fulfilled' && liveRes.value.ok) {
-      liveData = await liveRes.value.json();
+    if (Array.isArray(apiResults)) {
+      if (apiResults[0]?.status === 'fulfilled' && (apiResults[0] as any).value?.ok) {
+        liveData = await (apiResults[0] as any).value.json();
+        apiWorked = true;
+      }
+      if (apiResults[1]?.status === 'fulfilled' && (apiResults[1] as any).value?.ok) {
+        statsData = await (apiResults[1] as any).value.json();
+        apiWorked = true;
+      }
+      if (apiResults[2]?.status === 'fulfilled' && (apiResults[2] as any).value?.ok) {
+        nearMissesData = await (apiResults[2] as any).value.json();
+      }
     }
+  } catch {
+    // API timed out or failed — fall through to snapshot
+  }
 
-    // Stats endpoint
-    if (statsRes.status === 'fulfilled' && statsRes.value.ok) {
-      statsData = await statsRes.value.json();
-    }
-
-    // Near misses endpoint
-    if (nearMissesRes.status === 'fulfilled' && nearMissesRes.value.ok) {
-      nearMissesData = await nearMissesRes.value.json();
-    }
-
-    // BTC price
-    if (btcPriceRes.status === 'fulfilled' && btcPriceRes.value.ok) {
-      const priceData = await btcPriceRes.value.json();
+  // Get BTC price from CoinGecko (fast, reliable)
+  try {
+    const priceRes = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd', {
+      cache: 'no-store',
+    });
+    if (priceRes.ok) {
+      const priceData = await priceRes.json();
       btcPrice = priceData.bitcoin?.usd || 0;
     }
+  } catch {}
 
-    // Fallback to signal price if CoinGecko fails
-    if (!btcPrice && liveData?.signal?.btc_price) {
-      btcPrice = liveData.signal.btc_price;
+  // If API didn't work, use snapshot
+  if (!apiWorked) {
+    const snapshot = await loadSnapshot();
+    if (snapshot) {
+      const data = buildFromSnapshot(snapshot);
+      if (btcPrice) data.btc_price = btcPrice;
+      return buildResponse(data);
     }
-
-    // Extract data from live endpoint
-    const rawPerformance = liveData?.performance || {
-      balance: 100,
-      total_pnl: 0,
-      win_rate: 0,
-      total_trades: 0,
-      wins: 0,
-      losses: 0,
-      current_streak: 0,
-      best_streak: 0,
-      today_pnl: 0,
-      initial_balance: 100,
-    };
-    
-    // Compute balance if null: initial_balance + total_pnl
-    // Default initial_balance to 100 if not provided
-    const initialBalance = rawPerformance.initial_balance ?? 100;
-    const totalPnl = rawPerformance.total_pnl ?? 0;
-    const computedBalance = rawPerformance.balance ?? (initialBalance + totalPnl);
-    
-    const performance = {
-      ...rawPerformance,
-      initial_balance: initialBalance,
-      balance: computedBalance,
-    };
-
-    const liveSignal = liveData?.signal || null;
-    const recentTrades = liveData?.recent_trades || [];
-    const currentRegime = liveData?.current_regime || {
-      volatility: 'unknown',
-      market: 'unknown',
-    };
-    const gateStatus = liveData?.gate_status || {
-      atr_pct: 0,
-      threshold: 0.15,
-      is_open: true,
-    };
-    const gateStats = liveData?.gate_stats || {
-      windows_checked: 0,
-      windows_traded: 0,
-      windows_skipped: 0,
-      windows_passed_gate: 0,
-    };
-    const fundingRate = liveData?.funding_rate || null;
-    const obImbalance = liveData?.orderbook_imbalance || 0;
-    const strategiesConfig = liveData?.strategies_config || {};
-
-    // Extract stats data
-    const hourlyStats = statsData?.hourly_stats || {};
-    const regimeBreakdown = statsData?.regime_breakdown || {};
-    const drawdown = statsData?.drawdown || {
-      cumulative_pnl: [],
-      max_drawdown: 0,
-    };
-    const strategyRankings = statsData?.strategy_rankings || liveData?.rankings || [];
-
-    // Near misses
-    const nearMisses = nearMissesData?.near_misses || liveData?.near_misses_recent || [];
-
-    // Data quality
-    const dataQuality = liveData?.data_quality || {
-      total_trades: recentTrades.length,
-      trades_with_volatility_regime: 0,
-      trades_with_market_regime: 0,
-      trades_with_orderbook_data: 0,
-      near_miss_count: nearMisses.length,
-      last_export: new Date().toISOString(),
-    };
-
-    // Use edge analysis from data server (computed from ALL trades)
-    // Fallback to computing from recent trades if not provided
-    let edgeBuckets = liveData?.edge_analysis || statsData?.edge_analysis;
-    
-    // Filter completed trades once for both edge analysis and minute stats
-    const completed = recentTrades.filter((t: any) => t.result === 'WIN' || t.result === 'LOSS');
-    
-    if (!edgeBuckets) {
-      edgeBuckets = {
-        '0-5¢': { wins: 0, total: 0 },
-        '5-10¢': { wins: 0, total: 0 },
-        '10-15¢': { wins: 0, total: 0 },
-        '15¢+': { wins: 0, total: 0 },
-      };
-
-      for (const t of completed) {
-        const edge = Math.abs((t.buy_price || 0) - 0.5);
-        const bucket = edge < 0.05 ? '0-5¢' : edge < 0.10 ? '5-10¢' : edge < 0.15 ? '10-15¢' : '15¢+';
-        edgeBuckets[bucket].total++;
-        if (t.result === 'WIN') edgeBuckets[bucket].wins++;
-      }
-    }
-
-    // Compute minute stats
-    const minuteStats: Record<number, { wins: number; total: number }> = {};
-    for (const t of completed) {
-      const min = t.entry_minute;
-      if (min != null) {
-        if (!minuteStats[min]) minuteStats[min] = { wins: 0, total: 0 };
-        minuteStats[min].total++;
-        if (t.result === 'WIN') minuteStats[min].wins++;
-      }
-    }
-
-    // Compute daily P&L (last 7 days)
-    const dailyMap: Record<string, number> = {};
-    for (const t of completed) {
-      const d = new Date(String(t.timestamp)).toLocaleDateString();
-      dailyMap[d] = (dailyMap[d] || 0) + (Number(t.profit) || 0);
-    }
-    const dailyPnl = Object.entries(dailyMap)
-      .sort((a, b) => new Date(a[0]).getTime() - new Date(b[0]).getTime())
-      .slice(-7)
-      .map(([date, pnl]) => ({ date, pnl }));
-
-    // Return comprehensive unified response
-    return new Response(JSON.stringify({
+    // No snapshot either — return minimal
+    return buildResponse({
+      error: 'No data available',
       btc_price: btcPrice,
       last_updated: new Date().toISOString(),
-      performance,
-      live_signal: liveSignal,
-      strategy_rankings: strategyRankings,
-      recent_trades: recentTrades.slice(0, 20),
-      hourly_stats: hourlyStats,
-      regime_breakdown: regimeBreakdown,
-      current_regime: currentRegime,
-      near_misses: nearMisses,
-      data_quality: dataQuality,
-      drawdown,
-      edge_analysis: edgeBuckets,
-      minute_stats: minuteStats,
-      daily_pnl: dailyPnl,
-      gate_status: gateStatus,
-      gate_stats: gateStats,
-      funding_rate: fundingRate,
-      orderbook_imbalance: obImbalance,
-      strategies_config: strategiesConfig,
-    }), {
-      headers: {
-        'Content-Type': 'application/json',
-        'Cache-Control': 'no-store, no-cache, must-revalidate',
-        'Access-Control-Allow-Origin': '*',
-      },
-    });
-
-  } catch (error) {
-    console.error('API error:', error);
-    
-    // Try static snapshot fallback
-    try {
-      const snapshotUrl = new URL('/data/snapshot.json', request.url).toString().replace('/api/data/data/', '/data/');
-      const origin = new URL(request.url).origin;
-      const snapRes = await fetch(`${origin}/data/snapshot.json`, { cache: 'no-store' });
-      if (snapRes.ok) {
-        const snapshot = await snapRes.json();
-        return new Response(JSON.stringify({
-          ...snapshot,
-          btc_price: snapshot.live_signal?.btc_price || 0,
-          last_updated: snapshot.generated_at || new Date().toISOString(),
-          _source: 'snapshot_fallback',
-          strategy_rankings: snapshot.strategy_rankings || [],
-          recent_trades: snapshot.recent_trades || [],
-          hourly_stats: {},
-          regime_breakdown: {},
-          current_regime: snapshot.current_regime || { volatility: 'unknown', market: 'unknown' },
-          near_misses: [],
-          data_quality: { total_trades: 0, last_export: snapshot.generated_at },
-          drawdown: { cumulative_pnl: [], max_drawdown: 0 },
-          edge_analysis: {},
-          minute_stats: {},
-          daily_pnl: [],
-          gate_status: snapshot.gate_status || { atr_pct: 0, threshold: 0.15, is_open: true },
-          gate_stats: { windows_checked: 0, windows_traded: 0, windows_skipped: 0, windows_passed_gate: 0 },
-          funding_rate: snapshot.funding_rate || null,
-          orderbook_imbalance: 0,
-          strategies_config: {},
-        }), {
-          headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' },
-        });
-      }
-    } catch (snapError) {
-      console.error('Snapshot fallback also failed:', snapError);
-    }
-
-    // Return minimal fallback response
-    return new Response(JSON.stringify({
-      error: 'Failed to fetch data from bot server',
-      btc_price: 0,
-      last_updated: new Date().toISOString(),
-      performance: {
-        balance: 100,
-        total_pnl: 0,
-        win_rate: 0,
-        total_trades: 0,
-        wins: 0,
-        losses: 0,
-      },
+      performance: { balance: 100, total_pnl: 0, win_rate: 0, total_trades: 0, wins: 0, losses: 0 },
       live_signal: null,
       strategy_rankings: [],
       recent_trades: [],
@@ -276,36 +143,86 @@ export async function GET(request: Request) {
       regime_breakdown: {},
       current_regime: { volatility: 'unknown', market: 'unknown' },
       near_misses: [],
-      data_quality: {
-        total_trades: 0,
-        trades_with_volatility_regime: 0,
-        trades_with_market_regime: 0,
-        trades_with_orderbook_data: 0,
-        near_miss_count: 0,
-        last_export: new Date().toISOString(),
-      },
+      data_quality: { total_trades: 0, last_export: new Date().toISOString() },
       drawdown: { cumulative_pnl: [], max_drawdown: 0 },
       edge_analysis: {},
       minute_stats: {},
       daily_pnl: [],
       gate_status: { atr_pct: 0, threshold: 0.15, is_open: true },
-      gate_stats: {
-        windows_checked: 0,
-        windows_traded: 0,
-        windows_skipped: 0,
-        windows_passed_gate: 0,
-      },
+      gate_stats: { windows_checked: 0, windows_traded: 0, windows_skipped: 0, windows_passed_gate: 0 },
       funding_rate: null,
       orderbook_imbalance: 0,
       strategies_config: {},
-    }), {
-      status: 500,
-      headers: {
-        'Content-Type': 'application/json',
-        'Cache-Control': 'no-store',
-      },
     });
   }
+
+  // API worked — build full response
+  if (!btcPrice && liveData?.signal?.btc_price) {
+    btcPrice = liveData.signal.btc_price;
+  }
+
+  const rawPerformance = liveData?.performance || { balance: 100, total_pnl: 0, win_rate: 0, total_trades: 0, wins: 0, losses: 0, current_streak: 0, best_streak: 0, today_pnl: 0, initial_balance: 100 };
+  const initialBalance = rawPerformance.initial_balance ?? 100;
+  const totalPnl = rawPerformance.total_pnl ?? 0;
+  const performance = { ...rawPerformance, initial_balance: initialBalance, balance: rawPerformance.balance ?? (initialBalance + totalPnl) };
+
+  const recentTrades = liveData?.recent_trades || [];
+  const strategyRankings = statsData?.strategy_rankings || liveData?.rankings || [];
+  const completed = recentTrades.filter((t: any) => t.result === 'WIN' || t.result === 'LOSS');
+
+  // Edge analysis
+  let edgeBuckets = liveData?.edge_analysis || statsData?.edge_analysis;
+  if (!edgeBuckets) {
+    edgeBuckets = { '0-5¢': { wins: 0, total: 0 }, '5-10¢': { wins: 0, total: 0 }, '10-15¢': { wins: 0, total: 0 }, '15¢+': { wins: 0, total: 0 } };
+    for (const t of completed) {
+      const edge = Math.abs((t.buy_price || 0) - 0.5);
+      const bucket = edge < 0.05 ? '0-5¢' : edge < 0.10 ? '5-10¢' : edge < 0.15 ? '10-15¢' : '15¢+';
+      edgeBuckets[bucket].total++;
+      if (t.result === 'WIN') edgeBuckets[bucket].wins++;
+    }
+  }
+
+  // Minute stats
+  const minuteStats: Record<number, { wins: number; total: number }> = {};
+  for (const t of completed) {
+    const min = t.entry_minute;
+    if (min != null) {
+      if (!minuteStats[min]) minuteStats[min] = { wins: 0, total: 0 };
+      minuteStats[min].total++;
+      if (t.result === 'WIN') minuteStats[min].wins++;
+    }
+  }
+
+  // Daily P&L
+  const dailyMap: Record<string, number> = {};
+  for (const t of completed) {
+    const d = new Date(String(t.timestamp)).toLocaleDateString();
+    dailyMap[d] = (dailyMap[d] || 0) + (Number(t.profit) || 0);
+  }
+  const dailyPnl = Object.entries(dailyMap).sort((a, b) => new Date(a[0]).getTime() - new Date(b[0]).getTime()).slice(-7).map(([date, pnl]) => ({ date, pnl }));
+
+  return buildResponse({
+    btc_price: btcPrice,
+    last_updated: new Date().toISOString(),
+    performance,
+    live_signal: liveData?.signal || null,
+    strategy_rankings: strategyRankings,
+    recent_trades: recentTrades.slice(0, 20),
+    hourly_stats: statsData?.hourly_stats || {},
+    regime_breakdown: statsData?.regime_breakdown || {},
+    current_regime: liveData?.current_regime || { volatility: 'unknown', market: 'unknown' },
+    near_misses: nearMissesData?.near_misses || liveData?.near_misses_recent || [],
+    data_quality: liveData?.data_quality || { total_trades: recentTrades.length, last_export: new Date().toISOString() },
+    drawdown: statsData?.drawdown || { cumulative_pnl: [], max_drawdown: 0 },
+    edge_analysis: edgeBuckets,
+    minute_stats: minuteStats,
+    daily_pnl: dailyPnl,
+    gate_status: liveData?.gate_status || { atr_pct: 0, threshold: 0.15, is_open: true },
+    gate_stats: liveData?.gate_stats || { windows_checked: 0, windows_traded: 0, windows_skipped: 0, windows_passed_gate: 0 },
+    funding_rate: liveData?.funding_rate || null,
+    orderbook_imbalance: liveData?.orderbook_imbalance || 0,
+    strategies_config: liveData?.strategies_config || {},
+  });
 }
 
 export async function OPTIONS() {

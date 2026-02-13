@@ -62,22 +62,23 @@ function buildResponse(data: any) {
   });
 }
 
-function buildFromSnapshot(snapshot: any) {
+function buildFromSnapshot(snapshot: any, range: string) {
+  const rangeData = snapshot.ranges?.[range] || snapshot.ranges?.['all'] || {};
   return {
     btc_price: snapshot.live_signal?.btc_price || 0,
     last_updated: snapshot.generated_at || new Date().toISOString(),
     _source: 'snapshot',
     performance: snapshot.performance || { balance: 100, total_pnl: 0, win_rate: 0, total_trades: 0, wins: 0, losses: 0 },
     live_signal: snapshot.live_signal || null,
-    strategy_rankings: snapshot.strategy_rankings || [],
+    strategy_rankings: rangeData.strategy_rankings || snapshot.strategy_rankings || [],
     recent_trades: snapshot.recent_trades || [],
-    hourly_stats: {},
-    regime_breakdown: {},
+    hourly_stats: rangeData.hourly_stats || {},
+    regime_breakdown: rangeData.regime_breakdown || {},
     current_regime: snapshot.current_regime || { volatility: 'unknown', market: 'unknown' },
-    near_misses: [],
-    data_quality: { total_trades: snapshot.performance?.total_trades || 0, last_export: snapshot.generated_at },
-    drawdown: { cumulative_pnl: [], max_drawdown: 0 },
-    edge_analysis: {},
+    near_misses: snapshot.near_misses || [],
+    data_quality: snapshot.data_quality || { total_trades: snapshot.performance?.total_trades || 0, last_export: snapshot.generated_at },
+    drawdown: rangeData.drawdown || { cumulative_pnl: [], max_drawdown: 0 },
+    edge_analysis: snapshot.edge_analysis || {},
     minute_stats: {},
     daily_pnl: [],
     gate_status: snapshot.gate_status || { atr_pct: 0, threshold: 0.15, is_open: true },
@@ -144,7 +145,7 @@ export async function GET(request: Request) {
   if (!apiWorked) {
     const snapshot = await loadSnapshot();
     if (snapshot) {
-      const data = buildFromSnapshot(snapshot);
+      const data = buildFromSnapshot(snapshot, range);
       if (btcPrice) data.btc_price = btcPrice;
       return buildResponse(data);
     }

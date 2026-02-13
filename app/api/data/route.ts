@@ -4,8 +4,7 @@ export const maxDuration = 10;
 
 const BOT_API = process.env.BOT_API_URL || 'https://btc-scalper-api.loca.lt';
 const BOT_API_KEY = process.env.BOT_API_KEY || '94e355f69fe2a76fcc0faf239d2fdc46fa61de6d5cfe1249';
-const GITHUB_TOKEN = process.env.GITHUB_SNAPSHOT_TOKEN || '';
-const GITHUB_SNAPSHOT_URL = 'https://api.github.com/repos/peytoncampbell/btc-dashboard/contents/public/data/snapshot.json?ref=master';
+const GITHUB_SNAPSHOT_URL = 'https://raw.githubusercontent.com/peytoncampbell/btc-dashboard/master/public/data/snapshot.json';
 
 async function fetchWithTimeout(url: string, timeoutMs: number): Promise<Response> {
   const controller = new AbortController();
@@ -39,22 +38,16 @@ async function loadSnapshot(): Promise<any> {
     if (data && data.performance) return data;
   } catch {}
 
-  // Try GitHub API (works from Vercel, gets latest committed snapshot)
-  if (GITHUB_TOKEN) {
-    try {
-      const res = await fetch(GITHUB_SNAPSHOT_URL, {
-        headers: {
-          'Authorization': `token ${GITHUB_TOKEN}`,
-          'Accept': 'application/vnd.github.v3.raw',
-          'User-Agent': 'BTC-Dashboard/1.0',
-        },
-        cache: 'no-store',
-      });
-      if (res.ok) {
-        return await res.json();
-      }
-    } catch {}
-  }
+  // Fetch from GitHub raw (public repo, no token needed)
+  try {
+    const res = await fetch(GITHUB_SNAPSHOT_URL, {
+      cache: 'no-store',
+      headers: { 'User-Agent': 'BTC-Dashboard/1.0' },
+    });
+    if (res.ok) {
+      return await res.json();
+    }
+  } catch {}
 
   return null;
 }

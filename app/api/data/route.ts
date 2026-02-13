@@ -2,7 +2,7 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 export const maxDuration = 10;
 
-const BOT_API = 'https://desktop-5ghsjh6.tail05872a.ts.net';
+const BOT_API = process.env.BOT_API_URL || 'https://shiny-baths-make.loca.lt';
 const BOT_API_KEY = process.env.BOT_API_KEY || '94e355f69fe2a76fcc0faf239d2fdc46fa61de6d5cfe1249';
 
 async function fetchWithTimeout(url: string, timeoutMs: number): Promise<Response> {
@@ -11,7 +11,11 @@ async function fetchWithTimeout(url: string, timeoutMs: number): Promise<Respons
   try {
     const response = await fetch(url, {
       cache: 'no-store',
-      headers: { 'Authorization': `Bearer ${BOT_API_KEY}` },
+      headers: {
+        'Authorization': `Bearer ${BOT_API_KEY}`,
+        'bypass-tunnel-reminder': 'true',
+        'User-Agent': 'BTC-Dashboard/1.0',
+      },
       signal: controller.signal,
     });
     clearTimeout(timeout);

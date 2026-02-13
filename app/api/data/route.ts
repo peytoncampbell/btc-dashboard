@@ -2,8 +2,10 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 export const maxDuration = 10;
 
-const BOT_API = process.env.BOT_API_URL || 'https://shiny-baths-make.loca.lt';
+const BOT_API = process.env.BOT_API_URL || 'https://btc-scalper-api.loca.lt';
 const BOT_API_KEY = process.env.BOT_API_KEY || '94e355f69fe2a76fcc0faf239d2fdc46fa61de6d5cfe1249';
+const GITHUB_TOKEN = process.env.GITHUB_SNAPSHOT_TOKEN || '';
+const GITHUB_SNAPSHOT_URL = 'https://api.github.com/repos/peytoncampbell/btc-dashboard/contents/public/data/snapshot.json?ref=master';
 
 async function fetchWithTimeout(url: string, timeoutMs: number): Promise<Response> {
   const controller = new AbortController();
@@ -27,15 +29,34 @@ async function fetchWithTimeout(url: string, timeoutMs: number): Promise<Respons
 }
 
 async function loadSnapshot(): Promise<any> {
+  // Try local file first (works during build / local dev)
   try {
     const fs = await import('fs');
     const path = await import('path');
     const snapPath = path.join(process.cwd(), 'public', 'data', 'snapshot.json');
     const raw = fs.readFileSync(snapPath, 'utf-8');
-    return JSON.parse(raw);
-  } catch {
-    return null;
+    const data = JSON.parse(raw);
+    if (data && data.performance) return data;
+  } catch {}
+
+  // Try GitHub API (works from Vercel, gets latest committed snapshot)
+  if (GITHUB_TOKEN) {
+    try {
+      const res = await fetch(GITHUB_SNAPSHOT_URL, {
+        headers: {
+          'Authorization': `token ${GITHUB_TOKEN}`,
+          'Accept': 'application/vnd.github.v3.raw',
+          'User-Agent': 'BTC-Dashboard/1.0',
+        },
+        cache: 'no-store',
+      });
+      if (res.ok) {
+        return await res.json();
+      }
+    } catch {}
   }
+
+  return null;
 }
 
 function buildResponse(data: any) {

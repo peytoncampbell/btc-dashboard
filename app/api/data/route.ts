@@ -93,22 +93,30 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const range = searchParams.get('range') || '7d';
 
-  // Try live API first with aggressive timeout
   let liveData: any = null;
   let statsData: any = null;
   let nearMissesData: any = null;
   let btcPrice = 0;
   let apiWorked = false;
 
+  // Fetch snapshot (fast, reliable) and BTC price in parallel
+  // Live API is attempted but snapshot wins if API is slow
+  const [snapshot, btcPriceResult] = await Promise.all([
+    loadSnapshot(),
+    fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd', { cache: 'no-store' })
+      .then(r => r.ok ? r.json() : null).catch(() => null),
+  ]);
+
+  btcPrice = btcPriceResult?.bitcoin?.usd || 0;
+
+  // Try live API with a tight 2s deadline (non-blocking — if it fails, snapshot is ready)
   try {
-    // Race all API calls against a single 4s deadline
-    const deadline = new Promise((_, reject) => setTimeout(() => reject(new Error('deadline')), 4000));
-    
+    const deadline = new Promise((_, reject) => setTimeout(() => reject(new Error('deadline')), 2000));
     const apiResults = await Promise.race([
       Promise.allSettled([
-        fetchWithTimeout(`${BOT_API}/api/live`, 3500),
-        fetchWithTimeout(`${BOT_API}/api/stats?range=${range}`, 3500),
-        fetchWithTimeout(`${BOT_API}/api/near-misses?limit=20`, 3500),
+        fetchWithTimeout(`${BOT_API}/api/live`, 1800),
+        fetchWithTimeout(`${BOT_API}/api/stats?range=${range}`, 1800),
+        fetchWithTimeout(`${BOT_API}/api/near-misses?limit=20`, 1800),
       ]),
       deadline,
     ]) as PromiseSettledResult<Response>[];
@@ -127,51 +135,28 @@ export async function GET(request: Request) {
       }
     }
   } catch {
-    // API timed out or failed — fall through to snapshot
+    // API timed out — use snapshot
   }
-
-  // Get BTC price from CoinGecko (fast, reliable)
-  try {
-    const priceRes = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd', {
-      cache: 'no-store',
-    });
-    if (priceRes.ok) {
-      const priceData = await priceRes.json();
-      btcPrice = priceData.bitcoin?.usd || 0;
-    }
-  } catch {}
 
   // If API didn't work, use snapshot
   if (!apiWorked) {
-    const snapshot = await loadSnapshot();
     if (snapshot) {
       const data = buildFromSnapshot(snapshot, range);
       if (btcPrice) data.btc_price = btcPrice;
       return buildResponse(data);
     }
-    // No snapshot either — return minimal
     return buildResponse({
       error: 'No data available',
       btc_price: btcPrice,
       last_updated: new Date().toISOString(),
       performance: { balance: 100, total_pnl: 0, win_rate: 0, total_trades: 0, wins: 0, losses: 0 },
-      live_signal: null,
-      strategy_rankings: [],
-      recent_trades: [],
-      hourly_stats: {},
-      regime_breakdown: {},
-      current_regime: { volatility: 'unknown', market: 'unknown' },
-      near_misses: [],
-      data_quality: { total_trades: 0, last_export: new Date().toISOString() },
-      drawdown: { cumulative_pnl: [], max_drawdown: 0 },
-      edge_analysis: {},
-      minute_stats: {},
-      daily_pnl: [],
-      gate_status: { atr_pct: 0, threshold: 0.15, is_open: true },
+      live_signal: null, strategy_rankings: [], recent_trades: [], hourly_stats: {},
+      regime_breakdown: {}, current_regime: { volatility: 'unknown', market: 'unknown' },
+      near_misses: [], data_quality: { total_trades: 0, last_export: new Date().toISOString() },
+      drawdown: { cumulative_pnl: [], max_drawdown: 0 }, edge_analysis: {}, minute_stats: {},
+      daily_pnl: [], gate_status: { atr_pct: 0, threshold: 0.15, is_open: true },
       gate_stats: { windows_checked: 0, windows_traded: 0, windows_skipped: 0, windows_passed_gate: 0 },
-      funding_rate: null,
-      orderbook_imbalance: 0,
-      strategies_config: {},
+      funding_rate: null, orderbook_imbalance: 0, strategies_config: {},
     });
   }
 

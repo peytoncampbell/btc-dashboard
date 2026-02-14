@@ -1,21 +1,32 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "BTC Scalper 🤖 | Live Trading Dashboard",
-  description: "Real-time Bitcoin scalping performance dashboard powered by Polymarket",
+  title: "BTC Dashboard",
+  description: "Real-time Bitcoin trading performance",
+  manifest: "/dashboard/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "BTC Dashboard",
+  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: "#0d1117",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="antialiased">
-        {children}
-      </body>
+      <head>
+        <link rel="apple-touch-icon" href="/dashboard/icon-192.png" />
+      </head>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

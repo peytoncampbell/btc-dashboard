@@ -1,10 +1,10 @@
 'use client';
 import { n } from './utils';
-
 import { useState } from 'react';
 
 interface Strategy {
   name: string;
+  status?: string; // LIVE, SHADOW, etc.
   live_trades: number;
   live_win_rate: number;
   live_pnl: number;
@@ -85,134 +85,156 @@ export default function StrategyTable({ strategies }: StrategyTableProps) {
   });
 
   return (
-    <div className="bg-gray-900 rounded-xl p-3 border border-gray-700">
-      <h2 className="text-xs font-bold text-gray-400 mb-2">⚙️ STRATEGY PERFORMANCE</h2>
+    <div className="bg-gray-900/40 backdrop-blur-sm rounded-xl border border-gray-800 p-4">
+      <div className="flex items-center gap-2 mb-4">
+        <span className="text-lg">⚙️</span>
+        <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Strategy Performance</h3>
+      </div>
+      
       {strategies.length === 0 ? (
-        <div className="text-center py-4 text-gray-500 text-xs">No strategy data yet</div>
+        <div className="text-center py-8 text-gray-500">No strategy data available</div>
       ) : (
         <div className="overflow-x-auto">
-          <table className="w-full text-xs">
+          <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-gray-700">
                 <th
-                  className="text-left py-1.5 px-1.5 cursor-pointer hover:bg-gray-800 sticky left-0 bg-gray-900"
+                  className="text-left py-3 px-3 cursor-pointer hover:bg-gray-700/30 rounded-md transition-colors"
                   onClick={() => handleSort('name')}
                 >
-                  Strategy {sortBy === 'name' && (sortDir === 'asc' ? '↑' : '↓')}
+                  <div className="flex items-center gap-1">
+                    Strategy 
+                    {sortBy === 'name' && <span className="text-blue-400">{sortDir === 'asc' ? '↑' : '↓'}</span>}
+                  </div>
                 </th>
                 <th
-                  className="text-center py-1.5 px-1.5 cursor-pointer hover:bg-gray-800"
+                  className="text-center py-3 px-3 cursor-pointer hover:bg-gray-700/30 rounded-md transition-colors"
                   onClick={() => handleSort('trades')}
                 >
-                  Trades {sortBy === 'trades' && (sortDir === 'asc' ? '↑' : '↓')}
+                  <div className="flex items-center justify-center gap-1">
+                    Trades
+                    {sortBy === 'trades' && <span className="text-blue-400">{sortDir === 'asc' ? '↑' : '↓'}</span>}
+                  </div>
                 </th>
                 <th
-                  className="text-center py-1.5 px-1.5 cursor-pointer hover:bg-gray-800"
+                  className="text-center py-3 px-3 cursor-pointer hover:bg-gray-700/30 rounded-md transition-colors"
                   onClick={() => handleSort('wr')}
                 >
-                  WR {sortBy === 'wr' && (sortDir === 'asc' ? '↑' : '↓')}
+                  <div className="flex items-center justify-center gap-1">
+                    Win Rate
+                    {sortBy === 'wr' && <span className="text-blue-400">{sortDir === 'asc' ? '↑' : '↓'}</span>}
+                  </div>
                 </th>
                 <th
-                  className="text-center py-1.5 px-1.5 cursor-pointer hover:bg-gray-800"
+                  className="text-center py-3 px-3 cursor-pointer hover:bg-gray-700/30 rounded-md transition-colors"
                   onClick={() => handleSort('pnl')}
                 >
-                  P&L {sortBy === 'pnl' && (sortDir === 'asc' ? '↑' : '↓')}
+                  <div className="flex items-center justify-center gap-1">
+                    P&L
+                    {sortBy === 'pnl' && <span className="text-blue-400">{sortDir === 'asc' ? '↑' : '↓'}</span>}
+                  </div>
                 </th>
                 <th
-                  className="text-center py-1.5 px-1.5 cursor-pointer hover:bg-gray-800"
-                  onClick={() => handleSort('ev')}
-                >
-                  EV {sortBy === 'ev' && (sortDir === 'asc' ? '↑' : '↓')}
-                </th>
-                <th
-                  className="text-center py-1.5 px-1.5 cursor-pointer hover:bg-gray-800"
-                  onClick={() => handleSort('sortino')}
-                >
-                  Sortino {sortBy === 'sortino' && (sortDir === 'asc' ? '↑' : '↓')}
-                </th>
-                <th
-                  className="text-center py-1.5 px-1.5 cursor-pointer hover:bg-gray-800"
-                  onClick={() => handleSort('max_dd')}
-                >
-                  Max DD {sortBy === 'max_dd' && (sortDir === 'asc' ? '↑' : '↓')}
-                </th>
-                <th
-                  className="text-center py-1.5 px-1.5 cursor-pointer hover:bg-gray-800"
+                  className="text-center py-3 px-3 cursor-pointer hover:bg-gray-700/30 rounded-md transition-colors"
                   onClick={() => handleSort('p_dd')}
                 >
-                  P/DD {sortBy === 'p_dd' && (sortDir === 'asc' ? '↑' : '↓')}
+                  <div className="flex items-center justify-center gap-1">
+                    P/DD Ratio
+                    {sortBy === 'p_dd' && <span className="text-blue-400">{sortDir === 'asc' ? '↑' : '↓'}</span>}
+                  </div>
                 </th>
                 <th
-                  className="text-center py-1.5 px-1.5 cursor-pointer hover:bg-gray-800"
+                  className="text-center py-3 px-3 cursor-pointer hover:bg-gray-700/30 rounded-md transition-colors"
                   onClick={() => handleSort('avg_conf')}
                 >
-                  Conf {sortBy === 'avg_conf' && (sortDir === 'asc' ? '↑' : '↓')}
+                  <div className="flex items-center justify-center gap-1">
+                    Confidence
+                    {sortBy === 'avg_conf' && <span className="text-blue-400">{sortDir === 'asc' ? '↑' : '↓'}</span>}
+                  </div>
                 </th>
                 <th
-                  className="text-center py-1.5 px-1.5 cursor-pointer hover:bg-gray-800"
+                  className="text-center py-3 px-3 cursor-pointer hover:bg-gray-700/30 rounded-md transition-colors"
                   onClick={() => handleSort('streak')}
                 >
-                  Streak {sortBy === 'streak' && (sortDir === 'asc' ? '↑' : '↓')}
+                  <div className="flex items-center justify-center gap-1">
+                    Streak
+                    {sortBy === 'streak' && <span className="text-blue-400">{sortDir === 'asc' ? '↑' : '↓'}</span>}
+                  </div>
                 </th>
               </tr>
             </thead>
             <tbody>
-              {sorted.map((s) => (
-                <tr key={s.name} className="border-b border-gray-800/50 hover:bg-gray-800/30">
-                  <td className="py-1.5 px-1.5 text-gray-300 truncate max-w-[120px] sticky left-0 bg-gray-900">{s.name}</td>
-                  <td className="py-1.5 px-1.5 text-center text-gray-400">{n(s.live_trades)}</td>
-                  <td className="py-1.5 px-1.5 text-center">
-                    <span
-                      className={`font-bold ${
+              {sorted.map((s, index) => {
+                const isLive = s.status === 'LIVE';
+                const isShadow = s.status === 'SHADOW';
+                
+                return (
+                  <tr 
+                    key={s.name} 
+                    className={`border-b border-gray-800/30 hover:bg-gray-700/20 transition-colors ${
+                      isLive ? 'bg-green-900/10 border-green-800/30' : 
+                      isShadow ? 'bg-gray-800/10 border-gray-700/30' : ''
+                    }`}
+                  >
+                    <td className="py-3 px-3">
+                      <div className="flex items-center gap-2">
+                        <span className={`text-sm font-medium ${
+                          isLive ? 'text-green-400' : 
+                          isShadow ? 'text-gray-500' : 'text-white'
+                        }`}>
+                          {s.name}
+                        </span>
+                        {isLive && (
+                          <span className="px-2 py-1 text-xs font-medium bg-green-600/20 text-green-400 border border-green-600/30 rounded">
+                            LIVE
+                          </span>
+                        )}
+                        {isShadow && (
+                          <span className="px-2 py-1 text-xs font-medium bg-gray-600/20 text-gray-400 border border-gray-600/30 rounded">
+                            SHADOW
+                          </span>
+                        )}
+                      </div>
+                    </td>
+                    <td className="py-3 px-3 text-center text-gray-400">{n(s.live_trades)}</td>
+                    <td className="py-3 px-3 text-center">
+                      <span className={`font-semibold ${
                         n(s.live_win_rate) >= 60
                           ? 'text-green-400'
                           : n(s.live_win_rate) >= 40
                           ? 'text-yellow-400'
                           : 'text-red-400'
-                      }`}
-                    >
-                      {n(s.live_win_rate).toFixed(0)}%
-                    </span>
-                  </td>
-                  <td className="py-1.5 px-1.5 text-center">
-                    <span className={`font-bold ${n(s.live_pnl) >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-                      {n(s.live_pnl) >= 0 ? '+' : ''}${n(s.live_pnl).toFixed(2)}
-                    </span>
-                  </td>
-                  <td className="py-1.5 px-1.5 text-center">
-                    <span className={n(s.ev) >= 0 ? 'text-green-400' : 'text-red-400'}>
-                      ${n(s.ev).toFixed(2)}
-                    </span>
-                  </td>
-                  <td className="py-1.5 px-1.5 text-center">
-                    <span className={n(s.sortino) >= 1 ? 'text-green-400' : 'text-yellow-400'}>
-                      {n(s.sortino) >= 999 ? '∞' : n(s.sortino).toFixed(2)}
-                    </span>
-                  </td>
-                  <td className="py-1.5 px-1.5 text-center">
-                    <span className="text-red-400">
-                      ${n(s.max_dd).toFixed(2)}
-                    </span>
-                  </td>
-                  <td className="py-1.5 px-1.5 text-center">
-                    <span className={n(s.p_dd) >= 2 ? 'text-green-400' : 'text-yellow-400'}>
-                      {n(s.p_dd) >= 999 ? '∞' : n(s.p_dd).toFixed(1)}
-                    </span>
-                  </td>
-                  <td className="py-1.5 px-1.5 text-center text-gray-400">
-                    {n(s.avg_confidence).toFixed(0)}%
-                  </td>
-                  <td className="py-1.5 px-1.5 text-center">
-                    {n(s.streak) > 0 ? (
-                      <span className="text-green-400">+{n(s.streak)} 🔥</span>
-                    ) : n(s.streak) < 0 ? (
-                      <span className="text-red-400">{n(s.streak)}</span>
-                    ) : (
-                      <span className="text-gray-500">0</span>
-                    )}
-                  </td>
-                </tr>
-              ))}
+                      }`}>
+                        {n(s.live_win_rate).toFixed(0)}%
+                      </span>
+                    </td>
+                    <td className="py-3 px-3 text-center">
+                      <span className={`font-semibold ${n(s.live_pnl) >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+                        {n(s.live_pnl) >= 0 ? '+' : ''}${n(s.live_pnl).toFixed(2)}
+                      </span>
+                    </td>
+                    <td className="py-3 px-3 text-center">
+                      <span className={`font-semibold ${n(s.p_dd) >= 2 ? 'text-green-400' : 'text-yellow-400'}`}>
+                        {n(s.p_dd) >= 999 ? '∞' : n(s.p_dd).toFixed(1)}
+                      </span>
+                    </td>
+                    <td className="py-3 px-3 text-center text-gray-400">
+                      {n(s.avg_confidence).toFixed(0)}%
+                    </td>
+                    <td className="py-3 px-3 text-center">
+                      {n(s.streak) > 0 ? (
+                        <span className="text-green-400 font-semibold">
+                          +{n(s.streak)} {n(s.streak) >= 3 ? '🔥' : ''}
+                        </span>
+                      ) : n(s.streak) < 0 ? (
+                        <span className="text-red-400 font-semibold">{n(s.streak)}</span>
+                      ) : (
+                        <span className="text-gray-500">0</span>
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
@@ -220,7 +242,3 @@ export default function StrategyTable({ strategies }: StrategyTableProps) {
     </div>
   );
 }
-
-
-
-

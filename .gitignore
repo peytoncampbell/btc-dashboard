@@ -42,3 +42,5 @@ next-env.d.ts
 data/trades.json
 data/trades.json.bak
 data/live_signal.json
+
+.vercel

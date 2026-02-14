@@ -2,39 +2,31 @@
 
 ## Architecture
 
-Single-origin setup: the Python data server serves **both** the API and the static frontend on port 18801.
+The dashboard is a Next.js client-side app deployed on **Vercel**, fetching data from **Supabase**.
 
 ```
-Browser → Cloudflare Tunnel (dashboard.peytoncampbell.ca) → localhost:18801
-  ├── /api/*        → Python API handlers (live, trades, stats, signal, health, near-misses)
-  └── /*            → Static files from btc-dashboard/out/ (Next.js static export)
+Browser → Vercel (btc-dashboard-amber.vercel.app)
+  └→ Client-side fetch → Supabase REST API (dashboard_data table)
 ```
 
-No Vercel, no cross-origin, no CORS issues, no latency from chained requests.
+Data is synced to Supabase every 30s by the BTC bot's data sync script.
 
-## How It Works
+## Supabase Data Source
 
-1. **Next.js static export** — `output: 'export'` in `next.config.ts` builds to `btc-dashboard/out/`
-2. **Python data server** — `btc_data_server.py` serves API endpoints at `/api/*` and falls through to static files for everything else
-3. **Frontend fetches** — The dashboard calls `/api/live` and `/api/stats` directly (same origin, relative URLs)
-4. **Cloudflare tunnel** — Routes `dashboard.peytoncampbell.ca` → `localhost:18801` (unchanged)
+- Table: `dashboard_data` (single row, id=1)
+- Columns: `live_data` (jsonb), `stats_7d` (jsonb), `updated_at`
+- REST endpoint: `https://rwewjbofwqvukvxrlybj.supabase.co/rest/v1/dashboard_data?id=eq.1&select=*`
+- Dashboard polls every 30 seconds
 
-## Rebuilding the Frontend
+## Deploying
 
 ```bash
 cd btc-dashboard
-npx next build
+npx vercel --prod --yes
 ```
 
-Output goes to `btc-dashboard/out/`. The Python server serves it immediately — no restart needed.
+Or push to GitHub (master branch) and deploy manually.
 
-## Restarting the Data Server
+## Production URL
 
-```bash
-cd C:\Users\campb\.openclaw\workspace
-python -u skills/polymarket-trader/scripts/btc_data_server.py
-```
-
-## Polling
-
-The dashboard polls `/api/live` and `/api/stats` every 15 seconds with a 12s abort timeout. BTC price is fetched from CoinGecko client-side.
+https://btc-dashboard-amber.vercel.app

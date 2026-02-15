@@ -54,8 +54,8 @@ export default function TradesTab({ data }: { data: DashboardData }) {
                     </td>
                     <td className="px-3 py-2.5 font-medium whitespace-nowrap">{t.strategy || 'Unknown'}</td>
                     <td className="px-3 py-2.5 text-center text-base whitespace-nowrap"
-                      style={{ color: t.direction === 'LONG' ? '#3fb950' : '#f85149' }}>
-                      {t.direction === 'LONG' ? '↑' : '↓'}
+                      style={{ color: (t.direction === 'UP' || t.direction === 'LONG') ? '#3fb950' : '#f85149' }}>
+                      {(t.direction === 'UP' || t.direction === 'LONG') ? '↑' : '↓'}
                     </td>
                     <td className="px-3 py-2.5 text-center whitespace-nowrap">
                       <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold"

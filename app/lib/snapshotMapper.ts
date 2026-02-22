@@ -97,6 +97,34 @@ export interface DashboardData {
     cumulative_pnl: Array<{ timestamp: string; pnl: number }>;
     max_drawdown: number;
   };
+  live_trading?: {
+    balance_usdc: number;
+    open_positions: Array<{
+      market: string;
+      side: 'BUY' | 'SELL';
+      size: number;
+      entry_price: number;
+      current_price: number;
+      pnl: number;
+      strategy: string;
+      opened_at: string;
+    }>;
+    recent_orders: Array<{
+      id: string;
+      market: string;
+      side: 'BUY' | 'SELL';
+      size: number;
+      price: number;
+      status: 'filled' | 'open' | 'cancelled' | 'failed';
+      strategy: string;
+      timestamp: string;
+      error?: string;
+    }>;
+    daily_pnl: number;
+    total_pnl: number;
+    total_trades: number;
+    win_rate: number;
+  };
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

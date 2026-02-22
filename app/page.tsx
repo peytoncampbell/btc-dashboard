@@ -6,8 +6,9 @@ import SummaryTab from './components/tabs/SummaryTab';
 import StrategiesTab from './components/tabs/StrategiesTab';
 import TradesTab from './components/tabs/TradesTab';
 import ChartsTab from './components/tabs/ChartsTab';
+import LiveTab from './components/tabs/LiveTab';
 
-type Tab = 'summary' | 'strategies' | 'trades' | 'charts';
+type Tab = 'summary' | 'strategies' | 'trades' | 'charts' | 'live';
 
 export default function Home() {
   const [data, setData] = useState<DashboardData | null>(null);
@@ -84,6 +85,7 @@ export default function Home() {
         funding_rate: ld?.funding_rate || null,
         orderbook_imbalance: ld?.orderbook_imbalance || 0,
         strategies_config: ld?.strategies_config || {},
+        live_trading: ld?.live_trading || undefined,
       };
 
       setData(newData);
@@ -121,6 +123,7 @@ export default function Home() {
     { id: 'strategies', label: 'Strategies', icon: '🎯' },
     { id: 'trades', label: 'Trades', icon: '📋' },
     { id: 'charts', label: 'Charts', icon: '📈' },
+    { id: 'live', label: 'Live', icon: '🔴' },
   ];
 
   // Desktop: single scrollable page
@@ -133,6 +136,7 @@ export default function Home() {
           <TradesTab data={data} />
           <ChartsTab data={data} />
         </div>
+        <div className="mt-6"><LiveTab data={data} /></div>
       </div>
     );
   }
@@ -147,6 +151,7 @@ export default function Home() {
           {tab === 'strategies' && <StrategiesTab data={data} />}
           {tab === 'trades' && <TradesTab data={data} />}
           {tab === 'charts' && <ChartsTab data={data} />}
+          {tab === 'live' && <LiveTab data={data} />}
         </div>
       </div>
 

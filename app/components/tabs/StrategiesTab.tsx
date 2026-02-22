@@ -80,7 +80,8 @@ export default function StrategiesTab({ data }: { data: DashboardData }) {
             <tbody>
               {strategies.map(s => {
                 const isGood = (s.p_dd || 0) >= 2.0;
-                const isShadow = s.status === 'SHADOW';
+                const status = s.status || 'ACTIVE';
+                const isShadow = status === 'SHADOW';
                 const isExpanded = expanded === s.name;
                 const textColor = isShadow ? '#8b949e' : '#fff';
 
@@ -98,7 +99,7 @@ export default function StrategiesTab({ data }: { data: DashboardData }) {
                           background: isShadow ? '#30363d' : '#238636',
                           color: isShadow ? '#8b949e' : '#fff',
                         }}>
-                        {s.status}
+                        {status}
                       </span>
                     </td>
                     <td className="px-3 py-2.5 text-right font-bold whitespace-nowrap"

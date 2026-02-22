@@ -68,7 +68,7 @@ export default function SummaryTab({ data }: { data: DashboardData }) {
         </div>
         <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold border"
           style={{ background: '#161b22', borderColor: '#30363d', color: '#8b949e' }}>
-          PAPER
+          PAPER v2
         </span>
       </div>
 

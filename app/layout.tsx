@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "BTC Dashboard",
   description: "Real-time Bitcoin trading performance",
-  manifest: "/dashboard/manifest.json",
+  manifest: "/dash/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <link rel="apple-touch-icon" href="/dashboard/icon-192.png" />
+        <link rel="apple-touch-icon" href="/dash/icon-192.png" />
       </head>
       <body className="antialiased">{children}</body>
     </html>

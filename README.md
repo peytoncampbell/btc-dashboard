@@ -7,7 +7,7 @@ Real-time dashboard for tracking Bitcoin scalping performance on Polymarket 5-mi
 ## Features
 
 - **4 tabs:** Summary, Strategies, Trades, Charts
-- **Multi-strategy architecture:** 5 live strategies (MorningCheap, DownMomentumConfirm, TakerBuyRatio_DOWN, EarlyEntryDown, MLProfit_v5) + shadow strategies
+- **Multi-strategy architecture:** 5 live strategies (MorningCheap, DownMomentumConfirm, TakerBuyRatio_DOWN, EarlyEntryDown, MLProfit_v5) + LEGACY strategies
 - **Key metrics:** P/DD ratio, Sortino ratio, max drawdown, win rate
 - **Live data** from Supabase (synced from the bot in real time)
 - Dark theme, mobile-first, responsive

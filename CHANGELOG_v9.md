@@ -57,7 +57,7 @@ New data structures returned by `/api/data`:
   - `orderbook_depth_ratio`
   - `num_strategies_agreeing`
   - `time_in_window_pct`
-  - Plus 40+ shadow strategy signals in `shadow_signals` JSON
+  - Plus 40+ LEGACY strategy signals in `LEGACY_signals` JSON
 
 - **near_misses table**: 30 columns tracking signals that almost traded
   - Includes `would_have_won` field for backtesting
